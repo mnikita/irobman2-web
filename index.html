@@ -350,6 +350,215 @@
 </section>
 <!-- End paper abstract -->
 
+
+<!-- Introduction -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+            Robotic learning in simulation has become an indispensable tool for accelerating research and reducing costs before deployment in the real world <a href="#dr" class="citation">[1]</a>. 
+            Training in simulation provides safety, scalability, and access to large amounts of interaction data. However, the policies that perform well in simulation often degrade significantly once transferred to real 
+            robots - a challenge commonly referred to as the reality gap <a href="#ref2" class="citation">[2]</a>. This gap arises from mismatches between the simplified models used in simulation and the complex, noisy dynamics 
+            of physical systems. <br>
+          
+            A major line of research in sim-to-real transfer focuses on mitigating this gap. Two prominent strategies are Domain Randomization (DR) <a href="#ref3" class="citation">[3]</a> and System 
+            Identification (SI) <a href="#ref4" class="citation">[4]</a>. DR aims to expose policies to a wide variety of randomized environments during training, encouraging robustness to unseen real-world conditions. 
+            SI, on the other hand, attempts to explicitly identify the dynamics of the target system, either before or during deployment, and adjust the simulation parameters accordingly. While DR offers generalization at the 
+            expense of sample efficiency, SI provides more targeted adaptation but often suffers from insufficient or uninformative data for accurate identification. <br>
+          
+            The ASID (Active exploration for System Identification in robotic manipulation) framework <a href="#ref5" class="citation">[5]</a> addresses this limitation by proposing methods for actively selecting exploratory 
+            behaviors that maximize information about unknown system parameters. Rather than passively collecting data or relying on heuristic exploration, ASID leverages an optimization criterion based on Fisher Information to 
+            generate trajectories that are maximally informative for system identification. This approach aims to make SI more efficient and reliable, ultimately improving sim-to-real transfer in robotic manipulation tasks. <br>
+          </p>
+          <p>
+            Beyond system identification, such objectives resonate with the broader idea of curiosity-driven exploration - encouraging robots to explore their environment without being explicitly told what to 
+            do <a href="#ref6" class="citation">[6]</a>. One reason this can be extremely useful is acquiring general-purpose behaviors to accelerate the learning of new downstream tasks. Instead of training from scratch for every 
+            new objective, agents can benefit 
+            from a repertoire of skills - temporally extended action patterns that serve as primitives for hierarchical reinforcement learning <a href="#ref8" class="citation">[8]</a>. The paper "Diversity is All You Need" 
+            (DIAYN) <a href="#ref9" class="citation">[9]</a> introduced the idea of unsupervised skill discovery, where an agent learns a diverse set of behaviors without requiring an external reward function. These unsupervised 
+            skills not only provide a foundation for faster task learning but also enhance exploration in environments with sparse or delayed rewards, and can support applications such as imitation learning and transfer across related 
+            tasks <a href="#ref10" class="citation">[10]</a>.<br>
+          </p>
+          
+          <div style="text-align: center; margin: 2rem 0;">
+            <img src="static/images/carousel3.jpg" alt="System architecture diagram" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);"/>
+            <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
+              Learned skills by DIAYN
+            </p>
+          </div>
+
+          <p>
+            However, while DIAYN and its successors demonstrated compelling results in locomotion domains such as cheetah or humanoid agents <a href="#ref11" class="citation">[11,12]</a>, robotic manipulation remains a largely 
+            unsolved challenge <a href="#ref13" class="citation">[13]</a>. Current methods struggle to produce diverse and reusable manipulation skills without task-specific supervision, leaving open the question of how to adapt 
+            unsupervised exploration principles to this more complex setting.<br>
+          </p>
+          <p>
+            Our project builds on this motivation by seeking to extend the ASID framework beyond system identification. ASID showed how the Fisher Information can guide robots toward collecting trajectories that are informative 
+            for parameter inference. We propose to adapt this principle for unsupervised skill discovery: instead of treating the objective as purely about maximizing entropy or covering all parameters equally, we reinterpret simulated 
+            parameters as a curiosity signal. By selectively focusing on information along certain parameter axes while ignoring or surpressing others, the agent can discover a richer and more diverse set of skills. 
+            This perspective opens the door to curiosity-guided skill discovery for robotic manipulation, bridging the gap between system identification for sim-to-real transfer and unsupervised exploration for skill learning.<br>
+          </p>
+          
+          <!-- Lists in main section -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Key Contributions</h3>
+          <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+            <li>Extension of ASID framework for unsupervised skill discovery in robotic manipulation</li>
+            <li>Novel information-theoretic approach to curiosity-driven exploration</li>
+            <li>Comprehensive evaluation across multiple manipulation tasks and environments</li>
+            <li>Demonstration of improved sim-to-real transfer performance compared to baseline methods</li>
+          </ul>
+          
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Experimental Validation</h3>
+          <ol style="margin-left: 2rem; margin-bottom: 1.5rem;">
+            <li>Simulation experiments with varying physical parameters and task complexities</li>
+            <li>Real-world validation on physical robotic manipulation platforms</li>
+            <li>Comparison with state-of-the-art domain randomization and system identification methods</li>
+            <li>Analysis of skill diversity and transfer performance metrics</li>
+            <li>Ablation studies to understand the contribution of each component</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Background Section with Subsections -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Background and Related Works</h2>
+        <div class="content has-text-justified">
+          <p>
+            TODO
+          </p>
+          
+          <!-- Subsection: Simulation-to-Reality Transfer -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Simulation-to-Reality Transfer</h3>
+          <p>
+            <b><em>Why Use Simulators</em></b> 
+            Simulators play a central role in robotics because they allow large-scale data generation without physical costs. They enable training of policies in parallel, 
+            at accelerated time scales, and with full access to ground-truth state information. Formally, the real-world environment is characterized by 
+            dynamics P(TODO) with ture parameters TODO. A simulator provides approximate dynamics TODO Training in simulation corresponds to optimizing policies 
+            under, with the hope that they transfer successfully to P.
+          </p>
+
+          <p>
+            <b><em>The Sim-to-Real Gap</em></b> 
+            The difference between P is called the Sim-to-Real gap. It arises from:
+            <ul style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
+              <li><em>Modeling approximations.</em> Physical simulators cannot perfectly capture complex phenomena such as contact friction or deformable objects.</li>
+              <li><em>Parameter discrepancies.</em> Even if the model form is correct, simulator parameters such as masses, delays, or sensor noise rarely match reality exactly.</li>
+              <li><em>Non-stationarity of real environments.</em> Real-world conditions change over time due to wear, environmental variations, or sensor drift.</li>
+            </ul>
+            Bridging the Sim2Real gap is essential for deploying RL policies learned in simulation.
+          </p>
+
+          <p>
+            <b><em>Domain Randomization</em></b>
+            A prominent strategy is domain randomization (DR). Introduced by Tobin et al. (2017), DR trains policies on a distribution of simulators 
+            with randomized parameters, thereby producing robustness to variations. 
+            The intuition is that if the policy succeeds across a wide variety of simulated domains, it is likely to generalize to the real world.
+            <ul style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
+              <li><em>Tobin et al. (2017).</em> The authors randomized visual properties such as textures, lighting, and object appearances in a vision-based robotic 
+                      grasping task. This prevented the policy from overfitting to the simulator's graphics and enabled zero-shot transfer to real images.</li>
+              <li><em>Peng et al. (2018).</em> Extended this idea to dynamics randomization, perturbing physical parameters such as masses, friction coefficients, 
+                      and actuator delays. Training across this ensemble yielded policies that transferred directly to real quadrupeds, demonstrating the effectiveness of randomizing physics as well as visuals.</li>
+              <li><em>DROPO (Tiboni et al.).</em> Recognizing that naive randomization can waste samples on unrealistic domains, DROPO formulates domain randomization 
+                      itself as an optimization problem. The algorithm adapts the distribution of randomized parameters to maximize policy learning progress, thereby 
+                      improving sample efficiency.</li>
+              <li><em>DORAEMON (Tiboni et al.).</em> This approach instead maximizes the entropy of the parameter distribution, ensuring coverage of diverse dynamics. 
+                      By emphasizing diversity, DORAEMON enhances robustness to real-world variability</li>
+            </ul>
+            Domain randomization is powerful but limited by the fidelity of the simulator: if the real world lies outside the span of randomized domains, 
+            transfer may still fail.
+          </p>
+
+          <p>
+            <b><em>System Identification</em></b>
+            System Identification (SI) aims to directly align the simulator with reality by estimating physical parameters that make simulated trajectories match 
+            real observations. Classical SI techniques require carefully designed excitation trajectories that sufficiently probe the dynamics. 
+            Optimization can be performed using gradient-free methods such as CMA-ES, or gradient-based methods when differentiable simulators are available. <br>
+            While SI can improve simulator fidelity, it places the burden on the experimenter to design informative trajectories. Furthermore, 
+            iterative real-world data collection is often required, which is costly.
+          </p>
+
+          <p>
+            <b><em>Active Exploration for System Identification (ASID)</em></b>
+            ASID reframes SI as an active exploration problem. Instead of relying on hand-designed excitation signals, ASID trains exploration policies that maximize the 
+            Fisher information about unknown dynamics parameters. The Fisher Information Matrix (FIM) for parameter ϕ under trajectory distribution TODO is defined as
+            TODO
+            Maximizing the determinant or trace of I(ϕ) ensures that the resulting data are maximally informative for parameter estimation.
+            ASID exhibits that exploratory policies trained in simulation often transfer well to reality, even when task policies do not. 
+            By decoupling exploration from exploitation, ASID enables robots to collect informative trajectory in the real world that can then be used to refine the 
+            simulator and learn downstream task policies. This represents a synthesis of classical SI with modern RL-based exploration. <br>
+            
+            ASID pipeline consists of three tightly connected stages:
+            <ul style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
+            <li><em>Exploration:</em> An exploration policy π_exp is trained in simulation with the explicit goal of maximizing the Fisher information of the resulting 
+              trajectories. This ensures that actions taken in the real system will be maximally informative for distinguishing underlying dynamics parameters. 
+              Importantly, training is done purely in simulation, exploiting abundant and inexpensive synthetic rollouts</li>
+            <li><em>System Identification:</em> The learned exploration policy is executed on the real robot to collect informative trajectories. These data are then used 
+              in a system identification step, which estimates key simulation parameters such as inertial properties, friction coefficients, or kinematic configurations. 
+              By reducing model mismatch, the updated simulator provides a more accurate substrate for downstream learning</li>
+            <li><em>Policy Optimization and Transfer:</em> With the refined simulator in place, a task-specific policy πtask is trained using standard reinforcement 
+              learning. Finally the trained policy can be deployed zero-shot in the real world. i.e., without requireing further adaptation. </li>
+            </ul>
+            
+          </p>
+
+
+          <!-- Subsection: Skill Discovery -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Unsupervised Skill Discovery</h3>
+          <p>
+            <b><em>Unsupervised Reinforcement Learning</em></b>
+            Unsupervised reinforcement learning (URL) aims to pretrain agents without external task rewards by relying on intrinsic objectives that encourage broad 
+            exploration and the discovery of diverse behaviors. Instead of optimizing a single extrinsic return, the agent seeks to acquire skills or representations 
+            that can later accelerate downstream task learning, reduce sample complexity, or support zero-shot transfer. This paradigm is particularly appealing in robotics, 
+            where task-specific rewards are expensive to design and real-world interactions are costly or unsafe. The central challenge is defining intrinsic signals 
+            that produce both diverse and useful behaviors, rather than uncontrolled exploration.
+          </p>
+
+          <p>
+            <b><em>Unsupervised Reinforcement Learning</em></b>
+            A dominant line of work formulates skill discovery as maximizing the mutual information between latent skill variables and the resulting state distributions, 
+            implemented with discriminators that predict skills from observed trajectories. Early work such as Variational Intrinsic Control (Gregor et al., 2016) and 
+            Diversity Is All You Need (Eysenbach et al., 2019) showed that a latent-conditioned policy can be trained to produce distinct, repeatable behaviors purely 
+            through information-theoretic objectives. Extensions like Dynamics-Aware Discovery of Skills (Sharma et al., 2020) incorporate learned dynamics models to bias 
+            skills toward predictable and physically consistent interactions, which is particularly relevant for manipulation. Other approaches maximize state coverage 
+            directly (Hazan et al., 2019; Lee et al., 2019), or employ novelty- and prediction-based intrinsic motivation (Pathak et al., 2017; Burda et al., 2019), 
+            but broad coverage alone does not guarantee that learned skills are semantically meaningful or composable.<br>
+            
+            These advances demonstrate the feasibility of acquiring reusable primitives in simulation, and applications have been reported in locomotion 
+            (Eysenbach et al., 2019), hierarchical RL (Nachum et al., 2018), and robotic manipulation (Sharma et al., 2020; Pertsch et al., 2021). However, 
+            key challenges remain: unsupervised objectives often require large numbers of interactions, and ensuring sample efficiency and safety in real robots 
+            is nontrivial. Moreover, skills discovered through diversity maximization may not align with downstream tasks, and their transfer from simulation to the 
+            real world is complicated by modeling errors and partial observability. Addressing these gaps requires incorporating task relevance, grounding in robot 
+            dynamics, and sim-to-real adaptation mechanisms—directions that motivate integrated frameworks such as active system identification.
+          </p>
+
+
+          <!-- Subsection: Skill Discovery -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Unsupervised Skill Discovery</h3>
+          <p>
+            Building upon the active exploration framework, we extend the approach to discover diverse manipulation skills without task-specific supervision. 
+            The skill discovery process operates on the principle of maximizing mutual information between skills and states.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ////////////////////////////////////////////////////////////////// TEMPLATES ////////////////////////////////////////////////////////////////////////////// -->
+
+
 <!-- Methodology Section with Subsections -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -626,58 +835,7 @@
   </div>
 </section>
 
-<!-- Introduction -->
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-        <h2 class="title is-3">Introduction</h2>
-        <div class="content has-text-justified">
-          <p>
-            Robotic learning in simulation has become an indispensable tool for accelerating research and reducing costs before deployment in the real world <a href="#dr" class="citation">[1]</a>. Training in simulation provides safety, scalability, and access to large amounts of interaction data. However, the policies that perform well in simulation often degrade significantly once transferred to real robots - a challenge commonly referred to as the reality gap <a href="#ref2" class="citation">[2]</a>. This gap arises from mismatches between the simplified models used in simulation and the complex, noisy dynamics of physical systems. <br>
-          </p>
-          <p>
-            A major line of research in sim-to-real transfer focuses on mitigating this gap. Two prominent strategies are Domain Randomization (DR) <a href="#ref3" class="citation">[3]</a> and System Identification (SI) <a href="#ref4" class="citation">[4]</a>. DR aims to expose policies to a wide variety of randomized environments during training, encouraging robustness to unseen real-world conditions. SI, on the other hand, attempts to explicitly identify the dynamics of the target system, either before or during deployment, and adjust the simulation parameters accordingly. While DR offers generalization at the expense of sample efficiency, SI provides more targeted adaptation but often suffers from insufficient or uninformative data for accurate identification. <br>
-          </p>
-          <p>
-            The ASID (Active exploration for System Identification in robotic manipulation) framework <a href="#ref5" class="citation">[5]</a> addresses this limitation by proposing methods for actively selecting exploratory behaviors that maximize information about unknown system parameters. Rather than passively collecting data or relying on heuristic exploration, ASID leverages an optimization criterion based on Fisher Information to generate trajectories that are maximally informative for system identification. This approach aims to make SI more efficient and reliable, ultimately improving sim-to-real transfer in robotic manipulation tasks. <br>
-          </p>
-          <p>
-            Beyond system identification, such objectives resonate with the broader idea of curiosity-driven exploration - encouraging robots to explore their environment without being explicitly told what to do <a href="#ref6" class="citation">[6]</a>. Other approaches have pursued this direction by aiming to visit as much of the state space as possible, under the intuition that wider coverage should reveal more skills <a href="#ref7" class="citation">[7]</a>. However, merely covering the state space does not guarantee that the learned skills are meaningful or useful for downstream tasks.<br>
-          </p>
-          <p>
-            This brings us to the complementary problem of acquiring general-purpose behaviors that can accelerate the learning of new downstream tasks. Instead of training from scratch for every new objective, agents can benefit from a repertoire of skills - temporally extended action patterns that serve as primitives for hierarchical reinforcement learning <a href="#ref8" class="citation">[8]</a>. The paper "Diversity is All You Need" (DIAYN) <a href="#ref9" class="citation">[9]</a> introduced the idea of unsupervised skill discovery, where an agent learns a diverse set of behaviors without requiring an external reward function. These unsupervised skills not only provide a foundation for faster task learning but also enhance exploration in environments with sparse or delayed rewards, and can support applications such as imitation learning and transfer across related tasks <a href="#ref10" class="citation">[10]</a>.<br>
-          </p>
-          <p>
-            However, while DIAYN and its successors demonstrated compelling results in locomotion domains such as cheetah or humanoid agents <a href="#ref11" class="citation">[11,12]</a>, robotic manipulation remains a largely unsolved challenge <a href="#ref13" class="citation">[13]</a>. Current methods struggle to produce diverse and reusable manipulation skills without task-specific supervision, leaving open the question of how to adapt unsupervised exploration principles to this more complex setting.<br>
-          </p>
-          <p>
-            Our project builds on this motivation by seeking to extend the ASID framework beyond system identification. ASID showed how the Fisher Information can guide robots toward collecting trajectories that are informative for parameter inference. We propose to adapt this principle for unsupervised skill discovery: instead of treating the objective as purely about maximizing entropy or covering all parameters equally, we reinterpret simulated parameters as a curiosity signal. By selectively focusing on information along certain parameter axes while ignoring others, the agent can discover a richer and more diverse set of skills. This perspective opens the door to curiosity-guided skill discovery for robotic manipulation, bridging the gap between system identification for sim-to-real transfer and unsupervised exploration for skill learning.<br>
-          </p>
-          
-          <!-- Lists in main section -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Key Contributions</h3>
-          <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
-            <li>Extension of ASID framework for unsupervised skill discovery in robotic manipulation</li>
-            <li>Novel information-theoretic approach to curiosity-driven exploration</li>
-            <li>Comprehensive evaluation across multiple manipulation tasks and environments</li>
-            <li>Demonstration of improved sim-to-real transfer performance compared to baseline methods</li>
-          </ul>
-          
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Experimental Validation</h3>
-          <ol style="margin-left: 2rem; margin-bottom: 1.5rem;">
-            <li>Simulation experiments with varying physical parameters and task complexities</li>
-            <li>Real-world validation on physical robotic manipulation platforms</li>
-            <li>Comparison with state-of-the-art domain randomization and system identification methods</li>
-            <li>Analysis of skill diversity and transfer performance metrics</li>
-            <li>Ablation studies to understand the contribution of each component</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+
 
 <!-- Image carousel -->
 <section class="hero is-small">
@@ -821,7 +979,7 @@
                 Sadeghi, F., & Levine, S. (2016). CAD2RL: Real single-image flight without a single real image. <em>Robotics: Science and Systems</em>.
               </span>
             </li>
-            <li id="ref4">
+            <li id="ref4">  <!--fisher information-->
               <span class="reference-text">
                 Chebotar, Y., Handa, A., Makoviychuk, V., Macklin, M., Issac, J., Ratliff, N., & Fox, D. (2019). Closing the sim-to-real loop: Adapting simulation randomization with real world progress. <em>IEEE International Conference on Robotics and Automation (ICRA)</em>, 8973-8979.
               </span>
