@@ -556,6 +556,188 @@
 </section>
 
 
+<!-- ////////////////////////////////////////////////////////////////// CONTENT STRUCTURE TEMPLATES ////////////////////////////////////////////////////////////////////////////// -->
+
+<!-- Content Structure Templates Section -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Content Structure Templates</h2>
+        <div class="content has-text-justified">
+          <p>
+            This section demonstrates various content structure templates...
+          </p>
+          
+          <!-- Template 1: Two Images Side-by-Side -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 1: Two Images Side-by-Side</h3>
+          <p>
+            Use this template to display two images side-by-side within a subsection.
+          </p>
+          
+          <div class="two-images-layout">
+            <div class="image-container">
+              <img src="static/images/carousel1.jpg" alt="First comparison image" loading="lazy"/>
+              <p class="image-caption">Simulation Results</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/carousel2.jpg" alt="Second comparison image" loading="lazy"/>
+              <p class="image-caption">Real-World Transfer</p>
+            </div>
+          </div>
+          
+          <!-- Template 2: Three Images Horizontal -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 2: Three Images Horizontal</h3>
+          <p>
+            Use this template to display three images in a horizontal line.
+          </p>
+          
+          <div class="three-images-layout">
+            <div class="image-container">
+              <img src="static/images/carousel1.jpg" alt="First step image" loading="lazy"/>
+              <p class="image-caption">Step 1: Initialization</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/carousel2.jpg" alt="Second step image" loading="lazy"/>
+              <p class="image-caption">Step 2: Processing</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/carousel3.jpg" alt="Third step image" loading="lazy"/>
+              <p class="image-caption">Step 3: Final Result</p>
+            </div>
+          </div>
+          
+          <!-- Template 3: Two Column Text -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 3: Two Column Text</h3>
+          <p>
+            Use this template to display text content in two columns.
+          </p>
+          
+          <div class="two-column-text">
+            <div class="column">
+              <h4>Method A: Traditional Approach</h4>
+              <p>
+                The traditional approach relies on hand-crafted features and rule-based systems.
+              </p>
+              <p>
+                <strong>Advantages:</strong> High interpretability, fast execution, well-understood behavior.
+              </p>
+              <p>
+                <strong>Limitations:</strong> Limited adaptability, requires domain expertise, struggles with complex scenarios.
+              </p>
+            </div>
+            <div class="column">
+              <h4>Method B: Learning-Based Approach</h4>
+              <p>
+                Our learning-based approach leverages deep learning to...
+              </p>
+              <p>
+                <strong>Advantages:</strong> High adaptability, minimal human intervention, handles complex scenarios.
+              </p>
+              <p>
+                <strong>Limitations:</strong> Requires large datasets, less interpretable, potential for unexpected behavior.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Template 4: Pseudocode with Line Numbers -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 4: Pseudocode with Line Numbers</h3>
+          <p>
+            Use this template to display pseudocode or algorithms with automatic line numbering.
+          </p>
+          
+          <div class="pseudocode-container">
+            <div class="pseudocode-header">
+              <h4 class="pseudocode-title">Algorithm</h4>
+              <span class="pseudocode-lang">Pseudocode</span>
+            </div>
+            <div class="pseudocode-content">
+<span class="pseudocode-line">function Exploration(θ, T, N):</span>
+<span class="pseudocode-line">    // Initialize parameter distribution</span>
+<span class="pseudocode-line">    P ← Uniform(min, max)</span>
+<span class="pseudocode-line">    </span>
+<span class="pseudocode-line">    for t = 1 to T do:</span>
+<span class="pseudocode-line">        // Generate candidate trajectories</span>
+<span class="pseudocode-line">        candidates ← GenerateTrajectories(p, N)</span>
+<span class="pseudocode-line">        </span>
+<span class="pseudocode-line">        // Evaluate Information</span>
+<span class="pseudocode-line">        for each t in candidates do:</span>
+<span class="pseudocode-line">            I ← ComputeInfo(t, θ)</span>
+<span class="pseudocode-line">        end for</span>
+<span class="pseudocode-line">    end for</span>
+<span class="pseudocode-line">    </span>
+<span class="pseudocode-line">    return θ</span>
+<span class="pseudocode-line">end function</span>
+            </div>
+          </div>
+          
+          <!-- Template Usage -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Templates</h3>
+          <div class="content">
+            <p>
+              templates:
+            </p>
+            
+            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Two Images:</h4>
+            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="two-images-layout"&gt;
+  &lt;div class="image-container"&gt;
+    &lt;img src="path/to/your/image1.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;p class="image-caption"&gt;Your Caption&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="image-container"&gt;
+    &lt;img src="path/to/your/image2.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;p class="image-caption"&gt;Your Caption&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            
+            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Three Images:</h4>
+            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="three-images-layout"&gt;
+  &lt;div class="image-container"&gt;
+    &lt;img src="path/to/your/image1.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;p class="image-caption"&gt;Your Caption&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="image-container"&gt;
+    &lt;img src="path/to/your/image2.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;p class="image-caption"&gt;Your Caption&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="image-container"&gt;
+    &lt;img src="path/to/your/image3.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;p class="image-caption"&gt;Your Caption&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            
+            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Two Column Text:</h4>
+            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="two-column-text"&gt;
+  &lt;div class="column"&gt;
+    &lt;h4&gt;Left Column Title&lt;/h4&gt;
+    &lt;p&gt;Your left column content here.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="column"&gt;
+    &lt;h4&gt;Right Column Title&lt;/h4&gt;
+    &lt;p&gt;Your right column content here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            
+            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Pseudocode:</h4>
+            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="pseudocode-container"&gt;
+  &lt;div class="pseudocode-header"&gt;
+    &lt;h4 class="pseudocode-title"&gt;Algorithm Name&lt;/h4&gt;
+    &lt;span class="pseudocode-lang"&gt;Pseudocode&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="pseudocode-content"&gt;
+    &lt;span class="pseudocode-line"&gt;function YourFunction():&lt;/span&gt;
+    &lt;span class="pseudocode-line"&gt;    // Your code here&lt;/span&gt;
+    &lt;span class="pseudocode-line"&gt;    return result&lt;/span&gt;
+    &lt;span class="pseudocode-line"&gt;end function&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ////////////////////////////////////////////////////////////////// TEMPLATES ////////////////////////////////////////////////////////////////////////////// -->
 
 
