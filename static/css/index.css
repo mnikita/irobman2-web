@@ -654,6 +654,54 @@ code {
   .content.has-text-justified {
     font-size: 1rem;
   }
+  
+  /* Responsive table */
+  .table {
+    font-size: 0.8rem;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  /* Responsive image layouts */
+  .image-text-layout {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .image-text-layout .image-content {
+    flex: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  /* Responsive carousel */
+  #comparison-carousel .columns {
+    flex-direction: column;
+  }
+  
+  #comparison-carousel .column {
+    padding: 0.25rem;
+  }
+  
+  /* Responsive references */
+  .references-list li {
+    padding-left: 2rem;
+    font-size: 0.9rem;
+  }
+  
+  .references-list li::before {
+    font-size: 0.9rem;
+    min-width: 1.2rem;
+  }
+  
+  .citation {
+    font-size: 0.8em;
+    padding: 1px 3px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -721,6 +769,270 @@ code {
 
 .hero, .section {
   animation: fadeInUp 0.6s ease-out;
+}
+
+/* Side-by-side carousel styling */
+#comparison-carousel .item {
+  padding: 1rem;
+}
+
+#comparison-carousel .columns {
+  margin: 0;
+}
+
+#comparison-carousel .column {
+  padding: 0.5rem;
+}
+
+#comparison-carousel .column img {
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+#comparison-carousel .column img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Table styling improvements */
+.table {
+  font-size: 0.9rem;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+.table th {
+  background-color: var(--background-accent);
+  font-weight: 600;
+  color: var(--text-primary);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: var(--background-secondary);
+}
+
+.table tbody tr:hover {
+  background-color: var(--background-accent);
+  transition: var(--transition);
+}
+
+/* Math expression styling */
+.math-expression {
+  font-family: 'Times New Roman', 'Computer Modern', serif;
+  font-style: italic;
+  font-size: 1.1em;
+  text-align: center;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: var(--background-accent);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Subsection styling */
+.title.is-4 {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  color: var(--text-primary);
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.title.is-4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 24px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+}
+
+.title.is-5 {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  color: var(--text-primary);
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* List styling improvements */
+ul, ol {
+  line-height: 1.7;
+}
+
+ul li, ol li {
+  margin-bottom: 0.5rem;
+}
+
+ul li::marker {
+  color: var(--primary-color);
+}
+
+ol li::marker {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Image with flowing text layout */
+.image-text-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.image-text-layout .text-content {
+  flex: 1;
+}
+
+.image-text-layout .image-content {
+  flex: 0 0 300px;
+}
+
+.image-text-layout img {
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.image-text-layout img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.image-text-layout .image-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Centered image styling */
+.centered-image {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.centered-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+}
+
+.centered-image img:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.centered-image .image-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Citation and References Styling */
+.citation {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9em;
+  margin: 0 2px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: var(--background-accent);
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.citation:hover {
+  color: var(--primary-hover);
+}
+
+/* References List Styling */
+.references-list {
+  counter-reset: reference-counter;
+  list-style: none !important;
+  padding: 0;
+  margin: 0;
+}
+
+.references-list li {
+  counter-increment: reference-counter;
+  margin-bottom: 1.5rem;
+  padding-left: 3rem;
+  position: relative;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  list-style: none !important;
+}
+
+.references-list li::before {
+  content: counter(reference-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  min-width: 1.5rem;
+  text-align: left;
+}
+
+.reference-text {
+  display: block;
+  color: var(--text-primary);
+  text-align: justify;
+  hyphens: auto;
+}
+
+.reference-text em {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* References section header */
+#references .title.is-3 {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+#references .title.is-3::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+}
+
+/* Smooth scrolling for citation links */
+html {
+  scroll-behavior: smooth;
 }
 
 /* Improved focus states for accessibility */

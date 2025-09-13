@@ -134,6 +134,19 @@ $(document).ready(function() {
 	// Initialize all div with carousel class
     var carousels = bulmaCarousel.attach('.carousel', options);
 	
+    // Initialize comparison carousel with different settings
+    var comparisonOptions = {
+		slidesToScroll: 1,
+		slidesToShow: 1,
+		loop: true,
+		infinite: true,
+		autoplay: true,
+		autoplaySpeed: 4000,
+    }
+    
+    // Initialize comparison carousel specifically
+    var comparisonCarousel = bulmaCarousel.attach('#comparison-carousel', comparisonOptions);
+	
     bulmaSlider.attach();
     
     // Setup video autoplay for carousel
