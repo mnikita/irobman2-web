@@ -1012,6 +1012,7 @@
 
 
 
+
           <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Experiment</h3>
 
           In this section we pesent experimental setup and results for unsupervised learning of skills using the adapted fisher information objective.
@@ -1289,9 +1290,47 @@
           </div>
 
 
+
+
+
           
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Discussion and Future Work</h3>
+
+          Our experiments with weighted Fisher Information rewards revealed several open challenges and design trade-offs. First, 
+          the choice of negative weights must be handled carefully. While moderate values such as 0.5 worked well in balancing parameter exploration, 
+          larger negative weights often amplified parameter coupling and collapsed the reward signal. 
+          Smaller magnitudes for penalizing information appear more stable and should be systematically studied in future work.<br>
+
+          A second key trade-off lies in reward shaping. While the introduced distance penalty successfully reduced sparsity and encouraged continuous rod interaction, 
+          it comes at the risk of biasing exploration towards mere proximity rather than meaningful skill discovery. Striking the right balance between shaping and unbiased 
+          learning remains an open question.<br>
+
+          Another limitation is the manual tuning requirement. Both normalization factors and finite-difference deltas must be hand-picked for each environment and parameter. 
+          This introduces overhead and prevents straightforward generalization. Automating this tuning process, e.g., via adaptive normalization or gradient-based calibration, 
+          would make the method more practical.<br>
+
+          On the systems side, hardware limitations restricted the amount training we could perform. To compensate, we used pretrained policies, but this inevitably 
+          introduced bias into exploration. Future work should focus on enabling longer training schedules to hopefully learn more complex behavior.<br>
+
+          A promising direction for stabilizing learning lies in experimenting with non-linear weighting functions. Instead of simple linear combinations of FIM components, 
+          transformations such as square roots could smooth out extreme values and improve training robustness. Finally, our current formulation only exploits the diagonal of 
+          the Fisher matrix. The off-diagonal entries encode parameter coupling and could be leveraged to explicitly reward disentanglement of parameter sensitivities, potentially 
+          leading to richer skill sets.<br>
 
 
+
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Conclusion</h3>
+          In this work, we re-implemented the two central stages of the ASID (Active Exploration for System Identification in Robotic Manipulation) framework: Explotation and System Identificatoin.<br>
+          
+          Our results confirm the viability of ASID's design: exploration guided by Fisher information enables informative interactions, and the identified parameters substantially reduce the sim-to-real gap. 
+          At the same time, our extensions with weighted Fisher Information reward point towards more flexible, skill-conditioned exploration.<br>
+
+          Overall, the re-implementation and adaptation of the objective not only validated the original paper's findings but also opened new directions for extending the framework 
+          towards curiosity-driven, skill-conditioned exploration and more robust system identification in robotic manipulation.<br>
+
+          Our weighted-FIM extension demonstrates the feasibility of steering exploration towards parameter-specific skills, but also highlights the difficulty of balancing information scaling, 
+          sparsity, and coupling effects. Moving forward, a natural next step is to condition the policy on learned skills induced by different weight configurations, and to transfer these skills to 
+          downstream tasks, accelerating their learning.
 
         </div>
       </div>
