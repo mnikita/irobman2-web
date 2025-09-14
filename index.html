@@ -215,21 +215,21 @@
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
                 Nikita Maurer</span><br>
-                Supervised by Gabriele Tiboni</span>
+                Department of Computer Science<br>Technische Universität Darmstadt, Germany</span>
                 <!--<span class="author-block">
                   <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Gabriele Tiboni</a><sup>*</sup>,</span>
                   </div>-->
 
                  <div class="is-size-5 publication-authors">
                     <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Department of Computer Science<br>Technische Universität Darmstadt, Germany</span>
+                    <span class="author-block">Supervised by Gabriele Tiboni</span>
                     <!-- TODO: Remove this line if no equal contribution -->
                     <!--<span class="eql-cntrb"><small><br><sup>*</sup>Supervised by Gabriele Tiboni</small></span>-->
                   </div>
                 
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/mnikita/irobman2" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -328,7 +328,7 @@ End  -->
               
             </div>
             <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
-              https://sites.google.com/view/diayn
+              From DIAYN: https://sites.google.com/view/diayn
             </p>
           </div>
 
@@ -344,23 +344,6 @@ End  -->
             This perspective opens the door to curiosity-guided skill discovery for robotic manipulation, bridging the gap between system identification for sim-to-real transfer and unsupervised exploration for skill learning.<br>
           </p>
           
-          <!-- Lists in main section -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Key Contributions</h3>
-          <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
-            <li>Extension of ASID framework for unsupervised skill discovery in robotic manipulation</li>
-            <li>Novel information-theoretic approach to curiosity-driven exploration</li>
-            <li>Comprehensive evaluation across multiple manipulation tasks and environments</li>
-            <li>Demonstration of improved sim-to-real transfer performance compared to baseline methods</li>
-          </ul>
-          
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Experimental Validation</h3>
-          <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
-            <li>Simulation experiments with varying physical parameters and task complexities</li>
-            <li>Real-world validation on physical robotic manipulation platforms</li>
-            <li>Comparison with state-of-the-art domain randomization and system identification methods</li>
-            <li>Analysis of skill diversity and transfer performance metrics</li>
-            <li>Ablation studies to understand the contribution of each component</li>
-          </ol>
         </div>
       </div>
     </div>
@@ -1010,8 +993,9 @@ End  -->
 
 
 
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Experiment</h3>
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Discovering Skills</h3>
 
+          <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Experimental Setup</h3>
           In this section we pesent experimental setup and results for unsupervised learning of skills using the adapted fisher information objective.
           We perform an wholistic experiment in the same rod ballancing environement as introduced before.
 
@@ -1030,127 +1014,125 @@ End  -->
 
 
           <p>
-            The following table presents the configuration parameters used across different experimental setups. These parameters control the physical properties of the simulated environment and directly impact the sim-to-real transfer performance.
+            The following table presents the configuration parameters used across different exploration trainings.
           </p>
           
           <div style="overflow-x: auto; margin: 2rem 0;">
             <table class="table is-bordered is-striped is-fullwidth" style="margin: 0 auto;">
               <thead>
                 <tr style="background-color: #f8fafc;">
-                  <th style="text-align: center; font-weight: 600;">Configuration</th>
-                  <th style="text-align: center; font-weight: 600;">Mass (kg)</th>
-                  <th style="text-align: center; font-weight: 600;">Inertia (kg⋅m²)</th>
-                  <th style="text-align: center; font-weight: 600;">Friction (μ)</th>
-                  <th style="text-align: center; font-weight: 600;">Damping</th>
-                  <th style="text-align: center; font-weight: 600;">Stiffness</th>
-                  <th style="text-align: center; font-weight: 600;">Environment</th>
-                  <th style="text-align: center; font-weight: 600;">Notes</th>
+                  <th style="text-align: center; font-weight: 600;"></th>
+                  <th style="text-align: center; font-weight: 600;"></th>
+                  <th style="text-align: center; font-weight: 600;"></th>
+                  <th style="text-align: center; font-weight: 600;"></th>
+                  <th style="text-align: center; font-weight: 600;"></th>
+                  <th style="text-align: center; font-weight: 600;"></th>
+                  <th style="text-align: center; font-weight: 600;"></th>
+                  <th style="text-align: center; font-weight: 600;"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="text-align: center; font-weight: 500;">Light Object</td>
-                  <td style="text-align: center;">0.1</td>
-                  <td style="text-align: center;">0.001</td>
-                  <td style="text-align: center;">0.3</td>
-                  <td style="text-align: center;">0.1</td>
-                  <td style="text-align: center;">1000</td>
-                  <td style="text-align: center;">Simulation</td>
-                  <td style="text-align: center;">Baseline config</td>
+                  <td style="text-align: center; font-weight: 500;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
                 </tr>
                 <tr>
-                  <td style="text-align: center; font-weight: 500;">Medium Object</td>
-                  <td style="text-align: center;">0.5</td>
-                  <td style="text-align: center;">0.005</td>
-                  <td style="text-align: center;">0.5</td>
-                  <td style="text-align: center;">0.2</td>
-                  <td style="text-align: center;">2000</td>
-                  <td style="text-align: center;">Simulation</td>
-                  <td style="text-align: center;">Standard weight</td>
+                  <td style="text-align: center; font-weight: 500;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
                 </tr>
                 <tr>
-                  <td style="text-align: center; font-weight: 500;">Heavy Object</td>
-                  <td style="text-align: center;">1.0</td>
-                  <td style="text-align: center;">0.01</td>
-                  <td style="text-align: center;">0.7</td>
-                  <td style="text-align: center;">0.3</td>
-                  <td style="text-align: center;">3000</td>
-                  <td style="text-align: center;">Simulation</td>
-                  <td style="text-align: center;">High inertia</td>
+                  <td style="text-align: center; font-weight: 500;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
                 </tr>
                 <tr>
-                  <td style="text-align: center; font-weight: 500;">Real World</td>
-                  <td style="text-align: center;">0.3</td>
-                  <td style="text-align: center;">0.003</td>
-                  <td style="text-align: center;">0.4</td>
-                  <td style="text-align: center;">0.15</td>
-                  <td style="text-align: center;">1500</td>
-                  <td style="text-align: center;">Physical</td>
-                  <td style="text-align: center;">Identified params</td>
+                  <td style="text-align: center; font-weight: 500;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
                 </tr>
                 <tr>
-                  <td style="text-align: center; font-weight: 500;">Domain Random</td>
-                  <td style="text-align: center;">0.1-1.0</td>
-                  <td style="text-align: center;">0.001-0.01</td>
-                  <td style="text-align: center;">0.2-0.8</td>
-                  <td style="text-align: center;">0.05-0.4</td>
-                  <td style="text-align: center;">500-4000</td>
-                  <td style="text-align: center;">Simulation</td>
-                  <td style="text-align: center;">Randomized range</td>
+                  <td style="text-align: center; font-weight: 500;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
                 </tr>
                 <tr>
-                  <td style="text-align: center; font-weight: 500;">High Friction</td>
-                  <td style="text-align: center;">0.4</td>
-                  <td style="text-align: center;">0.004</td>
-                  <td style="text-align: center;">0.9</td>
-                  <td style="text-align: center;">0.25</td>
-                  <td style="text-align: center;">2500</td>
-                  <td style="text-align: center;">Simulation</td>
-                  <td style="text-align: center;">Rough surface</td>
+                  <td style="text-align: center; font-weight: 500;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
                 </tr>
                 <tr>
-                  <td style="text-align: center; font-weight: 500;">Low Friction</td>
-                  <td style="text-align: center;">0.2</td>
-                  <td style="text-align: center;">0.002</td>
-                  <td style="text-align: center;">0.1</td>
-                  <td style="text-align: center;">0.05</td>
-                  <td style="text-align: center;">800</td>
-                  <td style="text-align: center;">Simulation</td>
-                  <td style="text-align: center;">Smooth surface</td>
+                  <td style="text-align: center; font-weight: 500;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
                 </tr>
                 <tr>
-                  <td style="text-align: center; font-weight: 500;">Adaptive</td>
-                  <td style="text-align: center;">Variable</td>
-                  <td style="text-align: center;">Variable</td>
-                  <td style="text-align: center;">Variable</td>
-                  <td style="text-align: center;">Variable</td>
-                  <td style="text-align: center;">Variable</td>
-                  <td style="text-align: center;">Both</td>
-                  <td style="text-align: center;">Online adaptation</td>
+                  <td style="text-align: center; font-weight: 500;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
+                  <td style="text-align: center;"></td>
                 </tr>
               </tbody>
             </table>
           </div>
           
           <p style="margin-top: 1.5rem; font-style: italic; color: #64748b;">
-            Note: The adaptive configuration uses online parameter estimation to continuously update the physical properties based on observed interactions with the real environment.
+          
           </p>
 
-          
+          <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Results</h3>
 
 
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Inertia vs Friction</h3>
           <p>
+            <b>Inertia vs Friction </b>
           </p>
 
           <div class="two-images-layout">
             <div class="image-container">
               <img src="static/images/skills/plots/inertia-friction_arrow.png" alt="First comparison image" loading="lazy"/>
-              <p class="image-caption">Simulation Results</p>
+              <p class="image-caption"></p>
             </div>
             <div class="image-container">
               <img src="static/images/skills/plots/friction-inertia_arrow.png" alt="Second comparison image" loading="lazy"/>
-              <p class="image-caption">Real-World Transfer</p>
+              <p class="image-caption"></p>
             </div>
           </div>
 
@@ -1159,11 +1141,11 @@ End  -->
               <div class="carousel-track">
                 <div class="carousel-slide">
                   <img src="static/images/skills/gifs/inertia-friction_682_crop.gif" alt="Inertia - Friction" loading="lazy"/>
-                  <div class="carousel-caption">First experimental result showing initial performance metrics</div>
+                  <div class="carousel-caption"></div>
                 </div>
                 <div class="carousel-slide">
                   <img src="static/images/skills/gifs/friction-inertia_1536_crop.gif" alt="Friction - Inertia" loading="lazy"/>
-                  <div class="carousel-caption">Second experimental result demonstrating improved accuracy</div>
+                  <div class="carousel-caption"></div>
                 </div>
               </div>
               <button class="carousel-nav prev" aria-label="Previous image">
@@ -1183,21 +1165,18 @@ End  -->
 
 
 
-
-
-
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Inertia vs Mass</h3>
           <p>
+            <b>Mass vs Inertia </b>
           </p>
 
           <div class="two-images-layout">
-            <div class="image-container">
-              <img src="static/images/skills/plots/inertia-mass_arrow.png" alt="First comparison image" loading="lazy"/>
-              <p class="image-caption">Simulation Results</p>
-            </div>
             <div class="image-container">
               <img src="static/images/skills/plots/mass-inertia_arrow.png" alt="Second comparison image" loading="lazy"/>
-              <p class="image-caption">Real-World Transfer</p>
+              <p class="image-caption"></p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/skills/plots/inertia-mass_arrow.png" alt="First comparison image" loading="lazy"/>
+              <p class="image-caption"></p>
             </div>
           </div>
 
@@ -1205,12 +1184,12 @@ End  -->
             <div class="carousel-container">
               <div class="carousel-track">
                 <div class="carousel-slide">
-                  <img src="static/images/skills/gifs/inertia-mass_1066_crop.gif" alt="Inertia - Mass" loading="lazy"/>
-                  <div class="carousel-caption">First experimental result showing initial performance metrics</div>
+                  <img src="static/images/skills/gifs/mass-inertia_1576_crop.gif" alt="Mass - Inertia" loading="lazy"/>
+                  <div class="carousel-caption"></div>
                 </div>
                 <div class="carousel-slide">
-                  <img src="static/images/skills/gifs/mass-inertia_1576_crop.gif" alt="Mass - Inertia" loading="lazy"/>
-                  <div class="carousel-caption">Second experimental result demonstrating improved accuracy</div>
+                  <img src="static/images/skills/gifs/inertia-mass_1066_crop.gif" alt="Inertia - Mass" loading="lazy"/>
+                  <div class="carousel-caption"></div>
                 </div>
               </div>
               <button class="carousel-nav prev" aria-label="Previous image">
@@ -1231,18 +1210,18 @@ End  -->
 
           
 
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Mass vs Friction</h3>
           <p>
+            <b>Mass vs Friction </b>
           </p>
 
           <div class="two-images-layout">
             <div class="image-container">
-              <img src="static/images/skills/plots/friction-mass_arrow.png" alt="First comparison image" loading="lazy"/>
-              <p class="image-caption">Simulation Results</p>
+              <img src="static/images/skills/plots/mass-friction_arrow.png" alt="Second comparison image" loading="lazy"/>
+              <p class="image-caption"></p>
             </div>
             <div class="image-container">
-              <img src="static/images/skills/plots/mass-friction_arrow.png" alt="Second comparison image" loading="lazy"/>
-              <p class="image-caption">Real-World Transfer</p>
+              <img src="static/images/skills/plots/friction-mass_arrow.png" alt="First comparison image" loading="lazy"/>
+              <p class="image-caption"></p>
             </div>
           </div>
 
@@ -1250,12 +1229,12 @@ End  -->
             <div class="carousel-container">
               <div class="carousel-track">
                 <div class="carousel-slide">
-                  <img src="static/images/skills/gifs/friction-mass_1662_crop.gif" alt="Inertia - Mass" loading="lazy"/>
-                  <div class="carousel-caption">First experimental result showing initial performance metrics</div>
+                  <img src="static/images/skills/gifs/mass-friction_2089_crop.gif" alt="Mass - Inertia" loading="lazy"/>
+                  <div class="carousel-caption"></div>
                 </div>
                 <div class="carousel-slide">
-                  <img src="static/images/skills/gifs/mass-friction_2089_crop.gif" alt="Mass - Inertia" loading="lazy"/>
-                  <div class="carousel-caption">Second experimental result demonstrating improved accuracy</div>
+                  <img src="static/images/skills/gifs/friction-mass_1662_crop.gif" alt="Inertia - Mass" loading="lazy"/>
+                  <div class="carousel-caption"></div>
                 </div>
               </div>
               <button class="carousel-nav prev" aria-label="Previous image">
@@ -1273,12 +1252,20 @@ End  -->
             </div>
           </div>
 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
-
-          
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Discussion and Future Work</h3>
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Discussion and Future Work</h2>
+        <div class="content has-text-justified">
 
           Our experiments with weighted Fisher Information rewards revealed several open challenges and design trade-offs. First, 
           the choice of negative weights must be handled carefully. While moderate values such as 0.5 worked well in balancing parameter exploration, 
@@ -1300,8 +1287,20 @@ End  -->
           transformations such as square roots could smooth out extreme values and improve training robustness. Finally, our current formulation only exploits the diagonal of 
           the Fisher matrix. The off-diagonal entries encode parameter coupling and could be leveraged to explicitly reward disentanglement of parameter sensitivities, potentially 
           leading to richer skill sets.<br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Conclusion</h2>
+        <div class="content has-text-justified">
 
           <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Conclusion</h3>
           In this work, we re-implemented the two central stages of the ASID (Active Exploration for System Identification in Robotic Manipulation) framework: Explotation and System Identificatoin.<br>
