@@ -400,7 +400,7 @@
           </p>
           
 
-          
+
           <p>
             However, while DIAYN and its successors demonstrated compelling results in locomotion domains such as cheetah or humanoid agents <a href="#ref11" class="citation">[11,12]</a>, robotic manipulation remains a largely 
             unsolved challenge <a href="#ref13" class="citation">[13]</a>. Current methods struggle to produce diverse and reusable manipulation skills without task-specific supervision, leaving open the question of how to adapt 
@@ -701,7 +701,7 @@
           <div class="pseudocode-container">
               <div class="pseudocode-header">
                 <h4 class="pseudocode-title">Pseudocode for REPS </h4>
-              </div>
+        </div>
               <div class="pseudocode-content">
                 <span class="pseudocode-line">Initialize mean = initial_params</span>
                 <span class="pseudocode-line">Initialize covariance from parameter bounds</span>
@@ -759,36 +759,23 @@
           <p>
             The exploration policy was trained using Soft Actor-Critic (SAC), with a total of 250,000 timesteps. We used 12 parallel training environments and 4 parallel evaluation environments (~3.5 hours - CPU only).
           </p>
-          
-          <div class="multi-images-layout">
-            <div class="image-container">
-              <img src="static/images/carousel1.jpg" alt="First step image" loading="lazy"/>
-              <p class="image-caption">Step 1: Initialization</p>
-            </div>
-            <div class="image-container">
-              <img src="static/images/carousel2.jpg" alt="Second step image" loading="lazy"/>
-              <p class="image-caption">Step 2: Processing</p>
-            </div>
-            <div class="image-container">
-              <img src="static/images/carousel3.jpg" alt="Third step image" loading="lazy"/>
-              <p class="image-caption">Step 3: Final Result</p>
-            </div>
-          </div>
 
           <div style="text-align: center; margin: 2rem 0;">
-            <img src="static/images/sysid/inertia_exploration_sysid.gif" alt="System architecture diagram" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);"/>
+            <img src="static/images/sysid/inertia_exploration_sysid.gif" alt="Exploration policy" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);"/>
             <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
               High-level system architecture showing the integration of active exploration, skill discovery, and sim-to-real transfer components
             </p>
           </div>
 
-          </p>
-          <h3 class="title is-5" style="margin-top: 2rem; margin-bottom: 1rem;">System Identification Results</h3>
-          <p>
-            The exploration policy was trained using Soft Actor-Critic (SAC), with a total of 250,000 timesteps. We used 12 parallel training environments and 4 parallel evaluation environments (~3.5 hours - CPU only).
-          </p>
           
-          <div class="three-images-layout">
+          <div style="text-align: center; margin: 2rem 0;">
+            <img src="static/images/sysid/return_sysid.png" alt="Return curve" style="max-width: 80%; height: auto; border-radius: 12px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);"/>
+            <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
+              Return
+            </p>
+          </div>
+
+          <div class="multi-images-layout">
             <div class="image-container">
               <img src="static/images/sysid/actor_loss_sysid.png" alt="First step image" loading="lazy"/>
               <p class="image-caption">Step 1: Initialization</p>
@@ -799,7 +786,75 @@
             </div>
           </div>
 
+          </p>
+          <h3 class="title is-5" style="margin-top: 2rem; margin-bottom: 1rem;">System Identification Results</h3>
+          <p>
+            The exploration policy was trained using Soft Actor-Critic (SAC), with a total of 250,000 timesteps. We used 12 parallel training environments and 4 parallel evaluation environments (~3.5 hours - CPU only).
+          </p>
+
           
+
+          <div style="text-align: center; margin: 2rem 0;">
+            <img src="static/images/sysid/optimization_history.png" alt="Exploration policy" style="max-width: 70%; height: auto; border-radius: 12px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);"/>
+            <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
+              High-level system architecture showing the integration of active exploration, skill discovery, and sim-to-real transfer components
+            </p>
+          </div>
+
+
+          <div style="text-align: center; margin: 2rem 0;">
+            <img src="static/images/sysid/parameter_history.png" alt="Exploration policy" style="max-width: 85%; height: auto; border-radius: 12px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);"/>
+            <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
+              High-level system architecture showing the integration of active exploration, skill discovery, and sim-to-real transfer components
+            </p>
+          </div>
+
+
+          <div class="multi-images-layout">
+
+            <div class="image-container">
+              <img src="static/images/sysid/cem/cem_offline_init_right.gif" alt="First step image" loading="lazy"/>
+              <p class="image-caption">Step 1: Initialization</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/sysid/cem/cem_offline_10_right.gif" alt="First step image" loading="lazy"/>
+              <p class="image-caption">Step 1: Initialization</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/sysid/cem/cem_offline_final_right.gif" alt="First step image" loading="lazy"/>
+              <p class="image-caption">Step 1: Initialization</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/sysid/real_left.gif" alt="First step image" loading="lazy"/>
+              <p class="image-caption">Step 1: Initialization</p>
+            </div>
+            <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: -2.5rem; font-style: italic;">
+              High-level system architecture showing the integration of active exploration, skill discovery, and sim-to-real transfer components
+            </p>
+          </div>
+
+          <div class="multi-images-layout">
+            <div class="image-container">
+              <img src="static/images/sysid/reps/reps_offline_init_right.gif" alt="First step image" loading="lazy"/>
+              <p class="image-caption">Step 1: Initialization</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/sysid/reps/reps_offline_10_right.gif" alt="First step image" loading="lazy"/>
+              <p class="image-caption">Step 1: Initialization</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/sysid/reps/reps_offline_final_right.gif" alt="First step image" loading="lazy"/>
+              <p class="image-caption">Step 1: Initialization</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/sysid/real_left.gif" alt="First step image" loading="lazy"/>
+              <p class="image-caption">Step 1: Initialization</p>
+            </div>
+            <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: -2.5rem; font-style: italic;">
+              High-level system architecture showing the integration of active exploration, skill discovery, and sim-to-real transfer components
+            </p>
+          </div>
+
         </div>
       </div>
     </div>
@@ -820,6 +875,20 @@
           <p>
             . <br>
           </p>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
           
         </div>
       </div>
@@ -1134,7 +1203,7 @@
               represents the action-value function. This formulation allows us to optimize the policy parameters $\theta$ 
               by following the gradient direction that maximizes expected return.
             </p>
-
+          
           <!-- Template Usage -->
           <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Content Templates</h3>
           <div class="content">

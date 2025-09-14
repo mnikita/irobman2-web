@@ -1156,10 +1156,6 @@ a:focus {
   color: var(--text-secondary);
   font-style: italic;
   margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: var(--background-accent);
-  border-radius: var(--border-radius);
-  border-left: 4px solid var(--primary-color);
 }
 
 /* Image Grid Template (nxm layout) */
@@ -1238,10 +1234,6 @@ a:focus {
   color: var(--text-secondary);
   font-style: italic;
   margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: var(--background-accent);
-  border-radius: var(--border-radius);
-  border-left: 4px solid var(--primary-color);
 }
 
 /* Two Column Text Template */
@@ -1499,9 +1491,6 @@ a:focus {
   color: var(--text-secondary);
   margin-top: 0.5rem;
   font-style: italic;
-  padding: 0.5rem;
-  background: var(--background-accent);
-  border-radius: var(--border-radius);
   width: 100%;
 }
 
