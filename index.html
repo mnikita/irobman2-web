@@ -399,7 +399,25 @@
             tasks <a href="#ref10" class="citation">[10]</a>.<br>
           </p>
           
-
+          <div class="multi-images-full-width">
+            <div class="images-container">
+              <div class="image-container">
+                <img src="static/images/diayn/diayn_clip2.mov.gif" alt="First result" loading="lazy"/>
+              </div>
+              <div class="image-container">
+                <img src="static/images/diayn/diayn_clip10.mov.gif" alt="First result" loading="lazy"/>
+              </div>
+              <div class="image-container">
+                <img src="static/images/diayn/diayn_clip18.mov.gif" alt="First result" loading="lazy"/>
+              </div>
+              <div class="image-container">
+                <img src="static/images/diayn/diayn_clip13.mov.gif" alt="First result" loading="lazy"/>
+              </div>
+            </div>
+            <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
+              https://sites.google.com/view/diayn
+            </p>
+          </div>
 
           <p>
             However, while DIAYN and its successors demonstrated compelling results in locomotion domains such as cheetah or humanoid agents <a href="#ref11" class="citation">[11,12]</a>, robotic manipulation remains a largely 
@@ -543,6 +561,13 @@
             </ul>
             
           </p>
+
+          <div style="text-align: center; margin: 2rem 0;">
+            <img src="static/images/asid/asid_method.png" alt="Exploration policy" style="max-width: 100%; height: auto; border-radius: 12px;"/>
+            <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
+              High-level system architecture showing the integration of active exploration, skill discovery, and sim-to-real transfer components
+            </p>
+          </div>
 
 
           <!-- Subsection: Skill Discovery -->
@@ -795,7 +820,7 @@
           
 
           <div style="text-align: center; margin: 2rem 0;">
-            <img src="static/images/sysid/optimization_history.png" alt="Exploration policy" style="max-width: 70%; height: auto; border-radius: 12px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);"/>
+            <img src="static/images/sysid/optimization_history.png" alt="Exploration policy" style="max-width: 60%; height: auto; border-radius: 12px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);"/>
             <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
               High-level system architecture showing the integration of active exploration, skill discovery, and sim-to-real transfer components
             </p>
@@ -877,19 +902,269 @@
           </p>
           
 
+          <div style="text-align: center; margin: 2rem 0;">
+            <img src="static/images/others/tuned.gif" alt="Exploration policy" style="max-width: 100%; height: auto; border-radius: 12px;"/>
+            <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
+              High-level system architecture showing the integration of active exploration, skill discovery, and sim-to-real transfer components
+            </p>
+          </div>
+
+          
+
+
+
+          <p>
+            The following table presents the configuration parameters used across different experimental setups. These parameters control the physical properties of the simulated environment and directly impact the sim-to-real transfer performance.
+          </p>
+          
+          <div style="overflow-x: auto; margin: 2rem 0;">
+            <table class="table is-bordered is-striped is-fullwidth" style="margin: 0 auto;">
+              <thead>
+                <tr style="background-color: #f8fafc;">
+                  <th style="text-align: center; font-weight: 600;">Configuration</th>
+                  <th style="text-align: center; font-weight: 600;">Mass (kg)</th>
+                  <th style="text-align: center; font-weight: 600;">Inertia (kg⋅m²)</th>
+                  <th style="text-align: center; font-weight: 600;">Friction (μ)</th>
+                  <th style="text-align: center; font-weight: 600;">Damping</th>
+                  <th style="text-align: center; font-weight: 600;">Stiffness</th>
+                  <th style="text-align: center; font-weight: 600;">Environment</th>
+                  <th style="text-align: center; font-weight: 600;">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="text-align: center; font-weight: 500;">Light Object</td>
+                  <td style="text-align: center;">0.1</td>
+                  <td style="text-align: center;">0.001</td>
+                  <td style="text-align: center;">0.3</td>
+                  <td style="text-align: center;">0.1</td>
+                  <td style="text-align: center;">1000</td>
+                  <td style="text-align: center;">Simulation</td>
+                  <td style="text-align: center;">Baseline config</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center; font-weight: 500;">Medium Object</td>
+                  <td style="text-align: center;">0.5</td>
+                  <td style="text-align: center;">0.005</td>
+                  <td style="text-align: center;">0.5</td>
+                  <td style="text-align: center;">0.2</td>
+                  <td style="text-align: center;">2000</td>
+                  <td style="text-align: center;">Simulation</td>
+                  <td style="text-align: center;">Standard weight</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center; font-weight: 500;">Heavy Object</td>
+                  <td style="text-align: center;">1.0</td>
+                  <td style="text-align: center;">0.01</td>
+                  <td style="text-align: center;">0.7</td>
+                  <td style="text-align: center;">0.3</td>
+                  <td style="text-align: center;">3000</td>
+                  <td style="text-align: center;">Simulation</td>
+                  <td style="text-align: center;">High inertia</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center; font-weight: 500;">Real World</td>
+                  <td style="text-align: center;">0.3</td>
+                  <td style="text-align: center;">0.003</td>
+                  <td style="text-align: center;">0.4</td>
+                  <td style="text-align: center;">0.15</td>
+                  <td style="text-align: center;">1500</td>
+                  <td style="text-align: center;">Physical</td>
+                  <td style="text-align: center;">Identified params</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center; font-weight: 500;">Domain Random</td>
+                  <td style="text-align: center;">0.1-1.0</td>
+                  <td style="text-align: center;">0.001-0.01</td>
+                  <td style="text-align: center;">0.2-0.8</td>
+                  <td style="text-align: center;">0.05-0.4</td>
+                  <td style="text-align: center;">500-4000</td>
+                  <td style="text-align: center;">Simulation</td>
+                  <td style="text-align: center;">Randomized range</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center; font-weight: 500;">High Friction</td>
+                  <td style="text-align: center;">0.4</td>
+                  <td style="text-align: center;">0.004</td>
+                  <td style="text-align: center;">0.9</td>
+                  <td style="text-align: center;">0.25</td>
+                  <td style="text-align: center;">2500</td>
+                  <td style="text-align: center;">Simulation</td>
+                  <td style="text-align: center;">Rough surface</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center; font-weight: 500;">Low Friction</td>
+                  <td style="text-align: center;">0.2</td>
+                  <td style="text-align: center;">0.002</td>
+                  <td style="text-align: center;">0.1</td>
+                  <td style="text-align: center;">0.05</td>
+                  <td style="text-align: center;">800</td>
+                  <td style="text-align: center;">Simulation</td>
+                  <td style="text-align: center;">Smooth surface</td>
+                </tr>
+                <tr>
+                  <td style="text-align: center; font-weight: 500;">Adaptive</td>
+                  <td style="text-align: center;">Variable</td>
+                  <td style="text-align: center;">Variable</td>
+                  <td style="text-align: center;">Variable</td>
+                  <td style="text-align: center;">Variable</td>
+                  <td style="text-align: center;">Variable</td>
+                  <td style="text-align: center;">Both</td>
+                  <td style="text-align: center;">Online adaptation</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <p style="margin-top: 1.5rem; font-style: italic; color: #64748b;">
+            Note: The adaptive configuration uses online parameter estimation to continuously update the physical properties based on observed interactions with the real environment.
+          </p>
+
+          
+
+
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">My single image carousel</h3>
+          <p>
+            My carousel.
+          </p>
+
+          <div class="two-images-layout">
+            <div class="image-container">
+              <img src="static/images/skills/plots/inertia-friction_arrow.png" alt="First comparison image" loading="lazy"/>
+              <p class="image-caption">Simulation Results</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/skills/plots/friction-inertia_arrow.png" alt="Second comparison image" loading="lazy"/>
+              <p class="image-caption">Real-World Transfer</p>
+            </div>
+          </div>
+
+          <div class="content-carousel single-image">
+            <div class="carousel-container">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img src="static/images/skills/gifs/inertia-friction_682_crop.gif" alt="Inertia - Friction" loading="lazy"/>
+                  <div class="carousel-caption">First experimental result showing initial performance metrics</div>
+                </div>
+                <div class="carousel-slide">
+                  <img src="static/images/skills/gifs/friction-inertia_1536_crop.gif" alt="Friction - Inertia" loading="lazy"/>
+                  <div class="carousel-caption">Second experimental result demonstrating improved accuracy</div>
+                </div>
+              </div>
+              <button class="carousel-nav prev" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="carousel-nav next" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="carousel-indicators">
+              <button class="carousel-indicator active" aria-label="Go to slide 1"></button>
+              <button class="carousel-indicator" aria-label="Go to slide 2"></button>
+              <button class="carousel-indicator" aria-label="Go to slide 3"></button>
+              <button class="carousel-indicator" aria-label="Go to slide 4"></button>
+            </div>
+          </div>
 
 
 
 
 
 
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">My single image carousel</h3>
+          <p>
+            My carousel.
+          </p>
 
+          <div class="two-images-layout">
+            <div class="image-container">
+              <img src="static/images/skills/plots/inertia-mass_arrow.png" alt="First comparison image" loading="lazy"/>
+              <p class="image-caption">Simulation Results</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/skills/plots/mass-inertia_arrow.png" alt="Second comparison image" loading="lazy"/>
+              <p class="image-caption">Real-World Transfer</p>
+            </div>
+          </div>
 
-
-
+          <div class="content-carousel single-image">
+            <div class="carousel-container">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img src="static/images/skills/gifs/inertia-mass_1066_crop.gif" alt="Inertia - Mass" loading="lazy"/>
+                  <div class="carousel-caption">First experimental result showing initial performance metrics</div>
+                </div>
+                <div class="carousel-slide">
+                  <img src="static/images/skills/gifs/mass-inertia_1576_crop.gif" alt="Mass - Inertia" loading="lazy"/>
+                  <div class="carousel-caption">Second experimental result demonstrating improved accuracy</div>
+                </div>
+              </div>
+              <button class="carousel-nav prev" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="carousel-nav next" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="carousel-indicators">
+              <button class="carousel-indicator active" aria-label="Go to slide 1"></button>
+              <button class="carousel-indicator" aria-label="Go to slide 2"></button>
+              <button class="carousel-indicator" aria-label="Go to slide 3"></button>
+              <button class="carousel-indicator" aria-label="Go to slide 4"></button>
+            </div>
+          </div>
 
 
           
+
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">My single image carousel</h3>
+          <p>
+            My carousel.
+          </p>
+
+          <div class="two-images-layout">
+            <div class="image-container">
+              <img src="static/images/skills/plots/friction-mass_arrow.png" alt="First comparison image" loading="lazy"/>
+              <p class="image-caption">Simulation Results</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/skills/plots/mass-friction_arrow.png" alt="Second comparison image" loading="lazy"/>
+              <p class="image-caption">Real-World Transfer</p>
+            </div>
+          </div>
+
+          <div class="content-carousel single-image">
+            <div class="carousel-container">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img src="static/images/skills/gifs/friction-mass_1662_crop.gif" alt="Inertia - Mass" loading="lazy"/>
+                  <div class="carousel-caption">First experimental result showing initial performance metrics</div>
+                </div>
+                <div class="carousel-slide">
+                  <img src="static/images/skills/gifs/mass-friction_2089_crop.gif" alt="Mass - Inertia" loading="lazy"/>
+                  <div class="carousel-caption">Second experimental result demonstrating improved accuracy</div>
+                </div>
+              </div>
+              <button class="carousel-nav prev" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="carousel-nav next" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="carousel-indicators">
+              <button class="carousel-indicator active" aria-label="Go to slide 1"></button>
+              <button class="carousel-indicator" aria-label="Go to slide 2"></button>
+              <button class="carousel-indicator" aria-label="Go to slide 3"></button>
+              <button class="carousel-indicator" aria-label="Go to slide 4"></button>
+            </div>
+          </div>
+
+
+          
+
+
+
         </div>
       </div>
     </div>
