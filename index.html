@@ -399,13 +399,8 @@
             tasks <a href="#ref10" class="citation">[10]</a>.<br>
           </p>
           
-          <div style="text-align: center; margin: 2rem 0;">
-            <img src="static/images/carousel3.jpg" alt="System architecture diagram" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);"/>
-            <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
-              Learned skills by DIAYN
-            </p>
-          </div>
 
+          
           <p>
             However, while DIAYN and its successors demonstrated compelling results in locomotion domains such as cheetah or humanoid agents <a href="#ref11" class="citation">[11,12]</a>, robotic manipulation remains a largely 
             unsolved challenge <a href="#ref13" class="citation">[13]</a>. Current methods struggle to produce diverse and reusable manipulation skills without task-specific supervision, leaving open the question of how to adapt 
@@ -420,7 +415,7 @@
           
           <!-- Lists in main section -->
           <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Key Contributions</h3>
-          <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+          <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
             <li>Extension of ASID framework for unsupervised skill discovery in robotic manipulation</li>
             <li>Novel information-theoretic approach to curiosity-driven exploration</li>
             <li>Comprehensive evaluation across multiple manipulation tasks and environments</li>
@@ -428,7 +423,7 @@
           </ul>
           
           <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Experimental Validation</h3>
-          <ol style="margin-left: 2rem; margin-bottom: 1.5rem;">
+          <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
             <li>Simulation experiments with varying physical parameters and task complexities</li>
             <li>Real-world validation on physical robotic manipulation platforms</li>
             <li>Comparison with state-of-the-art domain randomization and system identification methods</li>
@@ -466,7 +461,7 @@
           <p>
             <b><em>The Sim-to-Real Gap</em></b> 
             The difference between P is called the Sim-to-Real gap. It arises from:
-            <ul style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
+            <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
               <li><em>Modeling approximations.</em> Physical simulators cannot perfectly capture complex phenomena such as contact friction or deformable objects.</li>
               <li><em>Parameter discrepancies.</em> Even if the model form is correct, simulator parameters such as masses, delays, or sensor noise rarely match reality exactly.</li>
               <li><em>Non-stationarity of real environments.</em> Real-world conditions change over time due to wear, environmental variations, or sensor drift.</li>
@@ -479,7 +474,7 @@
             A prominent strategy is domain randomization (DR). Introduced by Tobin et al. (2017), DR trains policies on a distribution of simulators 
             with randomized parameters, thereby producing robustness to variations. 
             The intuition is that if the policy succeeds across a wide variety of simulated domains, it is likely to generalize to the real world.
-            <ul style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
+            <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
               <li><em>Tobin et al. (2017).</em> The authors randomized visual properties such as textures, lighting, and object appearances in a vision-based robotic 
                       grasping task. This prevented the policy from overfitting to the simulator's graphics and enabled zero-shot transfer to real images.</li>
               <li><em>Peng et al. (2018).</em> Extended this idea to dynamics randomization, perturbing physical parameters such as masses, friction coefficients, 
@@ -503,7 +498,7 @@
             SI methods typically rely on trajectory matching, where real and simulated trajectories are compared and parameters are adjusted to minimize discrepancies.
             
             Two main strategies can be distinguished:
-            <ul style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
+            <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
               <li><em>Open-loop matching:</em> The real action sequence is replayed in the simulator, and the resulting observations are compared. 
                 This is simple and cost-effective, but mismatches can accumulate if the simulator drifts away from the real trajectory. </li>
               <li><em></em>Closed-loop matching:</em> Both simulator and real system execute the same policy, and discrepancies are measured between the resulting behaviors. 
@@ -511,7 +506,7 @@
             </ul>
 
             A second distinction concerns whether adaptation is done online or offline:
-            <ul style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
+            <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
               <li><em>Online methods:</em> alternate between simulation and real-world rollouts, continuously updating the parameter distribution. This makes them adaptive 
                 but also dependent on the quality of the current policy. </li>
               <li><em>Offline methods:</em> use fixed datasets of real trajectories. They avoid repeated deployments but may suffer if real trajectories 
@@ -536,7 +531,7 @@
             simulator and learn downstream task policies. This represents a synthesis of classical SI with modern RL-based exploration. <br>
             
             ASID pipeline consists of three tightly connected stages:
-            <ul style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
+            <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
             <li><em>Exploration:</em> An exploration policy π_exp is trained in simulation with the explicit goal of maximizing the Fisher information of the resulting 
               trajectories. This ensures that actions taken in the real system will be maximally informative for distinguishing underlying dynamics parameters. 
               Importantly, training is done purely in simulation, exploiting abundant and inexpensive synthetic rollouts</li>
@@ -593,7 +588,7 @@
         <h2 class="title is-3">Re-Implementing ASID</h2>
         <div class="content has-text-justified">
           <p>
-            TODO
+            In this project we only consider Simulation.
           </p>
           
           <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Exploration</h3>
@@ -606,9 +601,9 @@
             Policies trained under this objective naturally seek out states where the dynamics are most affected by parameter changes, thereby producing observations that support accurate system identification later on.
           
             In practice, the authors identify three key challenges in making this objective workable:
-            <ol style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
+            <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
               <li><em>Complexity of the information measure.</em> In general, computing Fisher information exactly is intractable. To make the problem solvable, the authors assume a simplified structure of the 
-                system dynamics that highlights states where parameter sensitivity is highest.</li>
+                system dynamics that highlights states where parameter sensitivity is highest. This is realized by applying Gaussian process noise for observations.</li>
               <li><em>Unknown true parameters.</em> Since the actual system parameters are not known during training, the optimization cannot be performed directly. Instead, the method relies on domain randomization, 
                 training policies against a distribution of possible parameters rather than a single fixed value. This approximation is sufficient to yield effective exploration behaviors in practice.</li>
               <li><em>Non-differentiable simulators.</em> Many physics engines, including Mujoco, do not expose analytical derivatives with respect to system parameters. To address this, the authors approximate 
@@ -619,31 +614,40 @@
           <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">System Identification</h3>
           <p>
             In the system identification phase, our goal is to adapt specific parameters in the simulator, so that it faithfully reproduces the real-world dynamics observed during the exploration phase.
-            We collect a trajectory $\tau_{\text{real}}$ by executing the learned exploration policy $\pi_{\text{exp}}$ in the physical environment. The simulator is then updated such that simulated rollouts align with this reference trajectory. 
-            Concretely, the objective is to find a distribution over simulation parameters q that minimizes the expected trajectory mismatch between observations
-            ...
-            where ... denotes the trajectory distribution in the simulator when replaying the exact action sequence from the real trajectory ... (offline).
-            This ensures that discrepancies in dynamics are attributed to parameter misspecification, rather than policy mismatch.
+            First, a trajectory $\tau_{\text{real}} \sim p_{\boldsymbol{\theta}}^*( \cdot | \pi_{\text{exp}})$ is collected by executing the learned exploration policy $\pi_{\text{exp}}$ in the real environment. 
+            The simulator is then updated such that simulated rollouts align with this reference trajectory. 
+            Concretely, the objective is to find a distribution over simulation parameters $\boldsymbol{q}_{\phi}$ that minimizes the expected trajectory mismatch between observations
+            <p style="text-align: center;">
+              $$ \mathbb{E}_{\boldsymbol{\theta} \sim q_\phi} [ \mathbb{E}_{\tau_{\text{sim}} \sim p_{\boldsymbol{\theta}}( \cdot | \mathcal{A}(\tau_{\text{real}}) )}  [|| \tau_{\text{real}} - \tau_{\text{sim}} ||_2^2] ]$$
+            </p>
+            where $p_{\boldsymbol{\theta}}(\cdot | \mathcal{A}(\tau_{\text{real}}))$ is the trajectory distribution in the simulator when replaying the exact action sequence from the real trajectory $\tau_{\text{real}}$ (offline).
+            This ensures that discrepancies in dynamics are attributed to parameter misspecification, rather than policy mismatch.<br>
 
-            In our reimplementation, we additionally explore a variation of the procedure where trajectories are generated by executing the current policy directly in the simulator (online rollout) 
-            instead of replaying the real-world action sequence. This experimental comparison enables us to investigate the trade-off between strict action-replay matching and adaptive on-policy identification.
+            In our reimplementation, we additionally explore a variation of the procedure where trajectory samples are generated by executing the current policy directly (online) 
+            instead of replaying the real-world action sequence. This experimental comparison enables us to investigate the trade-off between strict action-replay matching and on-policy identification.<br>
             
-            For the trajectory optimization, the ASID framework allows the use of any black-box optimizer. Like the authors, we implemented Relative Entropy Policy Search (REPS) for simulation and compare it with 
-            our implementation of the Cross Entropy Method (CEM), which the authors use for the real experiments.<br>
+            For the trajectory optimization, the ASID framework allows the use of any black-box optimizer. The authors use Relative Entropy Policy Search (REPS) for simulation and Cross Entropy Method (CEM) for the real experiments. 
+            In this project, we implement both methods and compare them. <br>
           </p>
           <p>
-            <b><em>Cross Entropy Method (CEM)</em></b>
+            <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Cross Entropy Method (CEM)</h3>
             CEM is a population-based black-box optimization algorithm. It maintains a Gaussian distribution $q(\theta) = \mathcal{N}(\mu, \sigma^2)$ over parameters $\theta$ and iteratively refines this distribution by 
             focusing on "elite" samples - those with the lowest objective values (or equivalently, highest rewards). Over time, $q$ concentrates around promising regions of the parameter space.
 
+            Hyperparameters include:
+            <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
+              <li><em>Number of samples $N$.</em> the number of candidate parameter vectors sampled per iteration.</li>
+              <li><em>Elite ratio $e$.</em> fraction of samples selected as elites ($N_e = eN$).</li>
+              <li><em>Smoothing factor $\alpha$.</em> controls how strongly the new mean/std deviate from the previous iteration.</li>
+              <li><em>Number of iterations $T$.</em> number of optimization cycles (termination condition).</li>
+            </ol>
+
+            Our implementation proceeds as follows:
             <div class="pseudocode-container">
               <div class="pseudocode-header">
-                <h4 class="pseudocode-title">CEM Algorithm</h4>
-                <span class="pseudocode-lang">Pseudocode
+                <h4 class="pseudocode-title">Pseudocode for CEM </h4>
               </div>
               <div class="pseudocode-content">
-                <span class="pseudocode-line">Hyperparameters: Number of samples N, Number of iterations T, Elite ratio e, Smoothing factor α</span>
-                <span class="pseudocode-line"></span>
                 <span class="pseudocode-line">Input: objective_fn, initial mean μ0, std σ0</span>
                 <span class="pseudocode-line">For iteration = 1 … T:</span>
                 <span class="pseudocode-line">    Sample θ1 … θN ~ N(μ, σ^2)</span>
@@ -657,34 +661,145 @@
             </div>
 
             Note the following implementation details:
-            <ol style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
-              <li>The initial standard deviation is chosen as $\text{range} / \sqrt(12)$ per parameter, corresponding to the standard deviation of a uniform distribution over the parameter bounds. 
+            <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
+              <li>Following a rule-of-thumb, the initial standard deviation is chosen as $\text{range} / \sqrt(12)$ per parameter, corresponding to the standard deviation of a uniform distribution over the parameter bounds. 
                 This ensures that the Gaussian initially covers the parameter space reasonably. </li>
               <li>A minimum variance constraint is enforced to prevent premature collapse of the search distribution.</li>
-              <li>Updates to the mean and standard deviation are smoothed using the hyperparameter $\alpha$ to control the deviation from the previous iteration.</li>
+              <li>Updates to the mean and standard deviation are smoothed using the hyperparameter $\alpha$.</li>
             </ol>
           </p>
 
           <p>
-            <b><em>Relative Entropy Policy Search (REPS)</em></b>
-            REPS formulates parameter updates as a constrained optimization problem: maximize expected reward under a new distribution $p*(\theta)$, while keeping its KL-divergence from the current distribution $q(\theta)$
-            below a threshold $\epsilon$. This guarantees gradual updates and prevents premature convergence. In our system identification setting, REPS balances fitting trajectories to observed data with maintaining exploration.
-            Spepifically, TODO
+            <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Relative Entropy Policy Search (REPS)</h3>
+            Relative Entropy Policy Search (REPS) is an information-theoretic optimization method originally developed for reinforcement learning, but it can be applied generally 
+            to black-box optimization problems such as system identification. The central idea is to update a sampling distribution over candidate parameters in such a way that the expected reward is maximized, 
+            while constraining the update by a KL-divergence bound. This ensures that updates are stable and avoid premature collapse of the distribution.
+            Formally, given a set of sampled rewards $r_i$ REPS solves the constrained optimization problem
           </p>
+          <p style="text-align: center;">
+          $$\max_q \sum_{i} q_i r_i \text{s.t.} D_{KL}(q || u) \leq \epsilon, \sum_{i} q_i = 1$$
+          </p>
+
+          where $u$ is the uniform distribution over samples and $\epsilon > 0$ controls the size of the update. The dual problem introduces a Lagrange multiplier $\eta$, leading to the optimal distribution
+          <p style="text-align: center;">
+          $$q^*_i \propto \text{exp}(\frac{r_i}{\eta})$$
+          </p>
+
+          Thus, the sample weights $w_i$ are given by a normalized exponential tilt of the rewards, where \eta is obtained by minimizing the convex dual
+          <p style="text-align: center;">
+          $$ g(\eta) = \eta \epsilon + \eta log(\frac{1}{N} \sum_{i=1}^N exp(\frac{r_i}{\eta}))$$
+          </p>
+
+          Hyperparameters include:
+          <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
+              <li><em>$\epsilon$</em> KL-divergence bound controlling update size.</li>
+              <li><em>num_sampels</em> num_samples: Number of parameter samples drawn per iteration.</li>
+              <li><em>Number of iterations $T$.</em> Number of optimization steps (termination condition).</li>
+          </ol>
+          
+          Our implementation proceeds as follows:
+          <div class="pseudocode-container">
+              <div class="pseudocode-header">
+                <h4 class="pseudocode-title">Pseudocode for REPS </h4>
+              </div>
+              <div class="pseudocode-content">
+                <span class="pseudocode-line">Initialize mean = initial_params</span>
+                <span class="pseudocode-line">Initialize covariance from parameter bounds</span>
+                <span class="pseudocode-line">samples ← draw num_samples from N(mean, covariance)</span>
+                <span class="pseudocode-line">rewards ← - objective_fn(samples)   # negative trajectory mismatch</span>
+                <span class="pseudocode-line"></span>
+                <span class="pseudocode-line"># Solve dual</span>
+                <span class="pseudocode-line">η* ← argmin g(η) using Newton's method</span>
+                <span class="pseudocode-line">weights ← softmax(rewards / η*)</span>
+                <span class="pseudocode-line"></span>
+                <span class="pseudocode-line"># Moment matching update</span>
+                <span class="pseudocode-line">mean ← Σ_i w_i * samples[i]</span>
+                <span class="pseudocode-line">covariance ← Σ_i w_i * (samples[i] - mean)(samples[i] - mean)^T</span>
+                <span class="pseudocode-line"></span>
+                <span class="pseudocode-line">return mean</span>
+              </div>
+            </div>
+
+          Note some implementation details:
+          <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
+            <li>Similar to CEM, the initial covariance is set to $\text{diag}\frac{\text{range}}{\sqrt{12}^2}$, accoding to parameter ranges.</li>
+            <li>Instead of commonly used Broyden-Fletcher-Goldfarb-Shanno method (BFGS), we solve the dual optimization problem with Newton's method, exploiting the closed-form gradient and Hessian of $g(\eta)$ </li>
+            <li>To avoid numerical overflow, we use the log-sum-exp trick in the computation of the partition function.</li>
+          </ol>
+          
+
           
         <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Applying ASID to the Rod Balancing Task</h3>
           <p>
             Balancing and stacking objects are canonical tasks in robotic manipulation that critically depend on accurate inertial parameters.
             To evaluate ASID's ability to perform active system identification, the original authors designed a <em>Rod Balancing</em> task. In this setting, the agent interacts with a rod whose internal mass distribution 
             is varied across episodes. The agent must infer the inertial parameters of the rod by probing it through exploratory actions. Once identified, this knowledge is required to solve the downstream task: 
-            balancing the rod by placing it stably on a ledge. This downstream control problem is highly sensitive to system parameters, making accurate system identification essential. 
+            balancing the rod by placing it on a tower of cubes. It is essential to identify the rods exact center of mass (refered to as inertia) to stabalize it on top. 
             As the focus of our re-implementation lies in reproducing the exploration behavior and verifying its potential for accurate system identification, we do not consider learning the actual balancing task. However, we 
             use the provided simulation environment by the authors.
           </p>
 
+          <p>
+            <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Experimental Setup</h3>
+            The simulated Franka Emika Panda robot arm is mounted on a fixed table. According to the applied domain randomization, the placement of the rod is perturbed uniformly within fixed ranges:
+            $x = 0.4 \pm 0.1$ meters and $y = 0.3 + 0.1$.
+            The rod itself is modeled as a box of dimensions 0.04 $\times$ 0.3 $\times$ 0.04 meters. For the rod balancing task, the only parameter of interest is the mass distribution 
+            (inertia) along the length of the rod, which is uniformly varied within $[-0.1, 0.1]$ for each episode.<br>
+
+            The robot is controlled at the end-effector level. Following the original design, the arm is constrained to operate in the x-y plane, resulting in two degrees of freedom (2-DoF) for the exploration task.
+            <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
+              <li><b>Action space.</b> The 7 dimensional control signal corresponds to the 7-DoF joint velocities of the Franka arm plus the gripper width. Each dimension is bounded within $[-0.1, 0.1]$.</li>
+              <li><b>Observation space.</b> The 22 dimensional observation vector is composed of three components: (1) joint positions of the 7-DoF arm and gripper width, (2) 7-DoF end-effector pose and gripper width, 
+                and (3) 7 dimensional rod pose using quaternion orientation. </li>
+            </ul>
+          </p>
           
+          </p>
+          <h3 class="title is-5" style="margin-top: 2rem; margin-bottom: 1rem;">Exploration Results</h3>
+          <p>
+            The exploration policy was trained using Soft Actor-Critic (SAC), with a total of 250,000 timesteps. We used 12 parallel training environments and 4 parallel evaluation environments (~3.5 hours - CPU only).
+          </p>
+          
+          <div class="multi-images-layout">
+            <div class="image-container">
+              <img src="static/images/carousel1.jpg" alt="First step image" loading="lazy"/>
+              <p class="image-caption">Step 1: Initialization</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/carousel2.jpg" alt="Second step image" loading="lazy"/>
+              <p class="image-caption">Step 2: Processing</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/carousel3.jpg" alt="Third step image" loading="lazy"/>
+              <p class="image-caption">Step 3: Final Result</p>
+            </div>
+          </div>
 
+          <div style="text-align: center; margin: 2rem 0;">
+            <img src="static/images/sysid/inertia_exploration_sysid.gif" alt="System architecture diagram" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);"/>
+            <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
+              High-level system architecture showing the integration of active exploration, skill discovery, and sim-to-real transfer components
+            </p>
+          </div>
 
+          </p>
+          <h3 class="title is-5" style="margin-top: 2rem; margin-bottom: 1rem;">System Identification Results</h3>
+          <p>
+            The exploration policy was trained using Soft Actor-Critic (SAC), with a total of 250,000 timesteps. We used 12 parallel training environments and 4 parallel evaluation environments (~3.5 hours - CPU only).
+          </p>
+          
+          <div class="three-images-layout">
+            <div class="image-container">
+              <img src="static/images/sysid/actor_loss_sysid.png" alt="First step image" loading="lazy"/>
+              <p class="image-caption">Step 1: Initialization</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/sysid/critic_loss_sysid.png" alt="Second step image" loading="lazy"/>
+              <p class="image-caption">Step 2: Processing</p>
+            </div>
+          </div>
+
+          
         </div>
       </div>
     </div>
@@ -694,11 +809,13 @@
 
 
 
+
+
 <section class="section hero is-small">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
-        <h2 class="title is-3">Fisher Information for Skill Discovery</h2>
+        <h2 class="title is-3">Adapting ASIDs Fisher Information Objective for Skill Discovery</h2>
         <div class="content has-text-justified">
           <p>
             . <br>
@@ -743,13 +860,13 @@
             </div>
           </div>
           
-          <!-- Template 2: Three Images Horizontal -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 2: Three Images Horizontal</h3>
+          <!-- Template 2: Multi Images Horizontal (2+ images) -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 2: Multi Images Horizontal</h3>
           <p>
-            Use this template to display three images in a horizontal line.
+            Use this template to display 2 or more images in a horizontal line with individual captions.
           </p>
           
-          <div class="three-images-layout">
+          <div class="multi-images-layout">
             <div class="image-container">
               <img src="static/images/carousel1.jpg" alt="First step image" loading="lazy"/>
               <p class="image-caption">Step 1: Initialization</p>
@@ -797,8 +914,159 @@
             </div>
           </div>
           
-          <!-- Template 4: Pseudocode with Line Numbers -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 4: Pseudocode with Line Numbers</h3>
+          <!-- Template 4: Multi Images Full Width -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 4: Multi Images Full Width</h3>
+          <p>
+            Use this template to display multiple images covering the full width with a shared centered caption.
+          </p>
+          
+          <div class="multi-images-full-width">
+            <div class="images-container">
+              <div class="image-container">
+                <img src="static/images/carousel1.jpg" alt="First result" loading="lazy"/>
+              </div>
+              <div class="image-container">
+                <img src="static/images/carousel2.jpg" alt="Second result" loading="lazy"/>
+              </div>
+              <div class="image-container">
+                <img src="static/images/carousel3.jpg" alt="Third result" loading="lazy"/>
+              </div>
+              <div class="image-container">
+                <img src="static/images/carousel4.jpg" alt="Fourth result" loading="lazy"/>
+              </div>
+            </div>
+            <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
+              High-level system architecture showing the integration of active exploration, skill discovery, and sim-to-real transfer components
+            </p>
+          </div>
+          
+          <!-- Template 5: Image Grid -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 5: Image Grid (nxm layout)</h3>
+          <p>
+            Use this template to display images in a grid layout with a shared centered caption. Supports various grid sizes.
+          </p>
+          
+          <div class="image-grid grid-3x2">
+            <div class="grid-container">
+              <div class="image-container">
+                <img src="static/images/carousel1.jpg" alt="Grid image 1" loading="lazy"/>
+              </div>
+              <div class="image-container">
+                <img src="static/images/carousel2.jpg" alt="Grid image 2" loading="lazy"/>
+              </div>
+              <div class="image-container">
+                <img src="static/images/carousel3.jpg" alt="Grid image 3" loading="lazy"/>
+              </div>
+              <div class="image-container">
+                <img src="static/images/carousel4.jpg" alt="Grid image 4" loading="lazy"/>
+              </div>
+              <div class="image-container">
+                <img src="static/images/carousel1.jpg" alt="Grid image 5" loading="lazy"/>
+              </div>
+              <div class="image-container">
+                <img src="static/images/carousel2.jpg" alt="Grid image 6" loading="lazy"/>
+              </div>
+            </div>
+            <p class="shared-caption">Grid layout showing systematic evaluation results across different parameter configurations and experimental conditions.</p>
+          </div>
+          
+          <!-- Template 6: Single Image Carousel -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 6: Single Image Carousel</h3>
+          <p>
+            Use this template to display a carousel of single images with navigation controls and indicators.
+          </p>
+          
+          <div class="content-carousel single-image">
+            <div class="carousel-container">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img src="static/images/carousel1.jpg" alt="Research result 1" loading="lazy"/>
+                  <div class="carousel-caption">First experimental result showing initial performance metrics</div>
+                </div>
+                <div class="carousel-slide">
+                  <img src="static/images/carousel2.jpg" alt="Research result 2" loading="lazy"/>
+                  <div class="carousel-caption">Second experimental result demonstrating improved accuracy</div>
+                </div>
+                <div class="carousel-slide">
+                  <img src="static/images/carousel3.jpg" alt="Research result 3" loading="lazy"/>
+                  <div class="carousel-caption">Third experimental result showing final optimization</div>
+                </div>
+                <div class="carousel-slide">
+                  <img src="static/images/carousel4.jpg" alt="Research result 4" loading="lazy"/>
+                  <div class="carousel-caption">Fourth experimental result with comparative analysis</div>
+                </div>
+              </div>
+              <button class="carousel-nav prev" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="carousel-nav next" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="carousel-indicators">
+              <button class="carousel-indicator active" aria-label="Go to slide 1"></button>
+              <button class="carousel-indicator" aria-label="Go to slide 2"></button>
+              <button class="carousel-indicator" aria-label="Go to slide 3"></button>
+              <button class="carousel-indicator" aria-label="Go to slide 4"></button>
+            </div>
+          </div>
+          
+          <!-- Template 7: Side-by-Side Image Carousel -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 7: Side-by-Side Image Carousel</h3>
+          <p>
+            Use this template to display a carousel of side-by-side image comparisons with individual captions.
+          </p>
+          
+          <div class="content-carousel side-by-side">
+            <div class="carousel-container">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <div class="image-container">
+                    <img src="static/images/carousel1.jpg" alt="Simulation result" loading="lazy"/>
+                    <p class="image-caption">Simulation Performance</p>
+                  </div>
+                  <div class="image-container">
+                    <img src="static/images/carousel2.jpg" alt="Real-world result" loading="lazy"/>
+                    <p class="image-caption">Real-World Transfer</p>
+                  </div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="image-container">
+                    <img src="static/images/carousel3.jpg" alt="Baseline method" loading="lazy"/>
+                    <p class="image-caption">Baseline Approach</p>
+                  </div>
+                  <div class="image-container">
+                    <img src="static/images/carousel4.jpg" alt="Our method" loading="lazy"/>
+                    <p class="image-caption">Our Method</p>
+                  </div>
+                </div>
+                <div class="carousel-slide">
+                  <div class="image-container">
+                    <img src="static/images/carousel1.jpg" alt="Before optimization" loading="lazy"/>
+                    <p class="image-caption">Before Optimization</p>
+                  </div>
+                  <div class="image-container">
+                    <img src="static/images/carousel2.jpg" alt="After optimization" loading="lazy"/>
+                    <p class="image-caption">After Optimization</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-nav prev" aria-label="Previous comparison">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="carousel-nav next" aria-label="Next comparison">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="carousel-indicators">
+              <button class="carousel-indicator active" aria-label="Go to comparison 1"></button>
+              <button class="carousel-indicator" aria-label="Go to comparison 2"></button>
+              <button class="carousel-indicator" aria-label="Go to comparison 3"></button>
+            </div>
+          </div>
+          
+          <!-- Template 8: Pseudocode with Line Numbers -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 8: Pseudocode with Line Numbers</h3>
           <p>
             Use this template to display pseudocode or algorithms with automatic line numbering.
           </p>
@@ -836,7 +1104,7 @@
             </p>
             
             <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">Inline Math Examples:</h4>
-            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+            <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
               <li>Variables: $\theta$, $\phi$, $\tau$</li>
               <li>Functions: $f(x)$, $p(\tau|\theta)$, $R(s,a)$</li>
               <li>Subscripts and superscripts: $x_i$, $x^2$, $x_i^{(t)}$</li>
@@ -886,8 +1154,8 @@
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             
-            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Three Images:</h4>
-            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="three-images-layout"&gt;
+            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Multi Images (2+ images):</h4>
+            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="multi-images-layout"&gt;
   &lt;div class="image-container"&gt;
     &lt;img src="path/to/your/image1.jpg" alt="Description" loading="lazy"/&gt;
     &lt;p class="image-caption"&gt;Your Caption&lt;/p&gt;
@@ -902,6 +1170,50 @@
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             
+            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Multi Images Full Width:</h4>
+            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="multi-images-full-width"&gt;
+  &lt;div class="images-container"&gt;
+    &lt;div class="image-container"&gt;
+      &lt;img src="path/to/your/image1.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;img src="path/to/your/image2.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;img src="path/to/your/image3.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p class="shared-caption"&gt;Your shared caption for all images&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            
+            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Image Grid (nxm layout):</h4>
+            <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
+              Available grid classes: <code>grid-2x2</code>, <code>grid-3x2</code>, <code>grid-4x2</code>, <code>grid-2x3</code>, <code>grid-3x3</code>, <code>grid-4x3</code>
+            </p>
+            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="image-grid grid-3x2"&gt;
+  &lt;div class="grid-container"&gt;
+    &lt;div class="image-container"&gt;
+      &lt;img src="path/to/your/image1.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;img src="path/to/your/image2.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;img src="path/to/your/image3.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;img src="path/to/your/image4.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;img src="path/to/your/image5.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;img src="path/to/your/image6.jpg" alt="Description" loading="lazy"/&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;p class="shared-caption"&gt;Your shared caption for all images&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            
             <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Two Column Text:</h4>
             <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="two-column-text"&gt;
   &lt;div class="column"&gt;
@@ -911,6 +1223,60 @@
   &lt;div class="column"&gt;
     &lt;h4&gt;Right Column Title&lt;/h4&gt;
     &lt;p&gt;Your right column content here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            
+            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Single Image Carousel:</h4>
+            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="content-carousel single-image"&gt;
+  &lt;div class="carousel-container"&gt;
+    &lt;div class="carousel-track"&gt;
+      &lt;div class="carousel-slide"&gt;
+        &lt;img src="path/to/image1.jpg" alt="Description" loading="lazy"/&gt;
+        &lt;div class="carousel-caption"&gt;Your caption&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="carousel-slide"&gt;
+        &lt;img src="path/to/image2.jpg" alt="Description" loading="lazy"/&gt;
+        &lt;div class="carousel-caption"&gt;Your caption&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="carousel-nav prev" aria-label="Previous image"&gt;
+      &lt;i class="fas fa-chevron-left"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;button class="carousel-nav next" aria-label="Next image"&gt;
+      &lt;i class="fas fa-chevron-right"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="carousel-indicators"&gt;
+    &lt;button class="carousel-indicator active"&gt;&lt;/button&gt;
+    &lt;button class="carousel-indicator"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            
+            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Side-by-Side Image Carousel:</h4>
+            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="content-carousel side-by-side"&gt;
+  &lt;div class="carousel-container"&gt;
+    &lt;div class="carousel-track"&gt;
+      &lt;div class="carousel-slide"&gt;
+        &lt;div class="image-container"&gt;
+          &lt;img src="path/to/image1.jpg" alt="Description" loading="lazy"/&gt;
+          &lt;p class="image-caption"&gt;Left caption&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="image-container"&gt;
+          &lt;img src="path/to/image2.jpg" alt="Description" loading="lazy"/&gt;
+          &lt;p class="image-caption"&gt;Right caption&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="carousel-nav prev" aria-label="Previous comparison"&gt;
+      &lt;i class="fas fa-chevron-left"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+    &lt;button class="carousel-nav next" aria-label="Next comparison"&gt;
+      &lt;i class="fas fa-chevron-right"&gt;&lt;/i&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="carousel-indicators"&gt;
+    &lt;button class="carousel-indicator active"&gt;&lt;/button&gt;
+    &lt;button class="carousel-indicator"&gt;&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             
@@ -962,7 +1328,7 @@
           
           <!-- Lists within subsection -->
           <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">Key Features:</h4>
-          <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+          <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
             <li>Adaptive parameter selection based on information gain</li>
             <li>Real-time trajectory optimization</li>
             <li>Integration with existing sim-to-real transfer methods</li>
@@ -970,7 +1336,7 @@
           </ul>
           
           <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">Implementation Steps:</h4>
-          <ol style="margin-left: 2rem; margin-bottom: 1.5rem;">
+          <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
             <li>Initialize parameter distribution P(θ)</li>
             <li>Generate candidate trajectories using current policy</li>
             <li>Evaluate Fisher Information for each trajectory</li>
