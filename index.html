@@ -101,6 +101,22 @@
   <!-- Fonts - Optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
+  <!-- MathJax for mathematical notation -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -482,9 +498,31 @@
             <b><em>System Identification</em></b>
             System Identification (SI) aims to directly align the simulator with reality by estimating physical parameters that make simulated trajectories match 
             real observations. Classical SI techniques require carefully designed excitation trajectories that sufficiently probe the dynamics. 
+
             Optimization can be performed using gradient-free methods such as CMA-ES, or gradient-based methods when differentiable simulators are available. <br>
-            While SI can improve simulator fidelity, it places the burden on the experimenter to design informative trajectories. Furthermore, 
-            iterative real-world data collection is often required, which is costly.
+            SI methods typically rely on trajectory matching, where real and simulated trajectories are compared and parameters are adjusted to minimize discrepancies.
+            
+            Two main strategies can be distinguished:
+            <ul style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
+              <li><em>Open-loop matching:</em> The real action sequence is replayed in the simulator, and the resulting observations are compared. 
+                This is simple and cost-effective, but mismatches can accumulate if the simulator drifts away from the real trajectory. </li>
+              <li><em></em>Closed-loop matching:</em> Both simulator and real system execute the same policy, and discrepancies are measured between the resulting behaviors. 
+                This is more robust, but requires the availability of working policies early on.</li>
+            </ul>
+
+            A second distinction concerns whether adaptation is done online or offline:
+            <ul style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
+              <li><em>Online methods:</em> alternate between simulation and real-world rollouts, continuously updating the parameter distribution. This makes them adaptive 
+                but also dependent on the quality of the current policy. </li>
+              <li><em>Offline methods:</em> use fixed datasets of real trajectories. They avoid repeated deployments but may suffer if real trajectories 
+                cannot be reliably reproduced in simulation.</li>
+            </ul>
+            Tiboni et al. (2022) compared online and offline methods across benchmarks. TODO ref
+
+            Recent work illustrates these categories. SimOpt (Chebotar et al., 2019) is an online, closed-loop approach that updates parameter distributions after comparing simulated 
+            and real rollouts of the same policy. BayRn (Muratore et al., 2021) combines domain randomization with Bayesian optimization, adapting parameter distributions based on 
+            sparse real-world feedback. DROID (Tsai et al., 2021) aligns simulator parameters with human demonstrations in an offline, open-loop manner. DROPO (Tiboni et al., 2022) 
+            also works offline, using real trajectories to adjust parameter distributions by replaying them in simulation.
           </p>
 
           <p>
@@ -540,13 +578,130 @@
             real world is complicated by modeling errors and partial observability. Addressing these gaps requires incorporating task relevance, grounding in robot 
             dynamics, and sim-to-real adaptation mechanisms—directions that motivate integrated frameworks such as active system identification.
           </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-          <!-- Subsection: Skill Discovery -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Unsupervised Skill Discovery</h3>
+<!-- Re-Implementing ASID -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Re-Implementing ASID</h2>
+        <div class="content has-text-justified">
           <p>
-            Building upon the active exploration framework, we extend the approach to discover diverse manipulation skills without task-specific supervision. 
-            The skill discovery process operates on the principle of maximizing mutual information between skills and states.
+            TODO
+          </p>
+          
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Exploration</h3>
+          <p>
+            For the exploration stage, we directly rely on the publicly available ASID exploration module provided by the original authors. (TODO) 
+            The exploration module is implemented in Python and makes use of the Soft Actor-Critic (SAC) algorithm together with vectorized Mujoco environments, which enables efficient parallel trainign.
+
+            The objective of exploration in ASID is to collect trajectories that are maximally informative about the system's unknown physical parameters. 
+            This is formalized through the notion of Fisher information, which measures how sensitive the system's next states are to variations in these parameters. 
+            Policies trained under this objective naturally seek out states where the dynamics are most affected by parameter changes, thereby producing observations that support accurate system identification later on.
+          
+            In practice, the authors identify three key challenges in making this objective workable:
+            <ol style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
+              <li><em>Complexity of the information measure.</em> In general, computing Fisher information exactly is intractable. To make the problem solvable, the authors assume a simplified structure of the 
+                system dynamics that highlights states where parameter sensitivity is highest.</li>
+              <li><em>Unknown true parameters.</em> Since the actual system parameters are not known during training, the optimization cannot be performed directly. Instead, the method relies on domain randomization, 
+                training policies against a distribution of possible parameters rather than a single fixed value. This approximation is sufficient to yield effective exploration behaviors in practice.</li>
+              <li><em>Non-differentiable simulators.</em> Many physics engines, including Mujoco, do not expose analytical derivatives with respect to system parameters. To address this, the authors approximate 
+                parameter sensitivities using finite differences: perturbing parameters slightly in both directions and measuring the effect on the next state.</li>
+            </ol>
+          </p>
+
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">System Identification</h3>
+          <p>
+            In the system identification phase, our goal is to adapt specific parameters in the simulator, so that it faithfully reproduces the real-world dynamics observed during the exploration phase.
+            We collect a trajectory $\tau_{\text{real}}$ by executing the learned exploration policy $\pi_{\text{exp}}$ in the physical environment. The simulator is then updated such that simulated rollouts align with this reference trajectory. 
+            Concretely, the objective is to find a distribution over simulation parameters q that minimizes the expected trajectory mismatch between observations
+            ...
+            where ... denotes the trajectory distribution in the simulator when replaying the exact action sequence from the real trajectory ... (offline).
+            This ensures that discrepancies in dynamics are attributed to parameter misspecification, rather than policy mismatch.
+
+            In our reimplementation, we additionally explore a variation of the procedure where trajectories are generated by executing the current policy directly in the simulator (online rollout) 
+            instead of replaying the real-world action sequence. This experimental comparison enables us to investigate the trade-off between strict action-replay matching and adaptive on-policy identification.
+            
+            For the trajectory optimization, the ASID framework allows the use of any black-box optimizer. Like the authors, we implemented Relative Entropy Policy Search (REPS) for simulation and compare it with 
+            our implementation of the Cross Entropy Method (CEM), which the authors use for the real experiments.<br>
+          </p>
+          <p>
+            <b><em>Cross Entropy Method (CEM)</em></b>
+            CEM is a population-based black-box optimization algorithm. It maintains a Gaussian distribution $q(\theta) = \mathcal{N}(\mu, \sigma^2)$ over parameters $\theta$ and iteratively refines this distribution by 
+            focusing on "elite" samples - those with the lowest objective values (or equivalently, highest rewards). Over time, $q$ concentrates around promising regions of the parameter space.
+
+            <div class="pseudocode-container">
+              <div class="pseudocode-header">
+                <h4 class="pseudocode-title">CEM Algorithm</h4>
+                <span class="pseudocode-lang">Pseudocode
+              </div>
+              <div class="pseudocode-content">
+                <span class="pseudocode-line">Hyperparameters: Number of samples N, Number of iterations T, Elite ratio e, Smoothing factor α</span>
+                <span class="pseudocode-line"></span>
+                <span class="pseudocode-line">Input: objective_fn, initial mean μ0, std σ0</span>
+                <span class="pseudocode-line">For iteration = 1 … T:</span>
+                <span class="pseudocode-line">    Sample θ1 … θN ~ N(μ, σ^2)</span>
+                <span class="pseudocode-line">    Evaluate objectives objectives ← f(θi)</span>
+                <span class="pseudocode-line">    Select top (minimum) Ne elite samples</span>
+                <span class="pseudocode-line">    Update mean: μ ← α μ + (1-α) mean(elites)</span>
+                <span class="pseudocode-line">    Update std:  σ ← α σ + (1-α) std(elites)</span>
+                <span class="pseudocode-line">    Enforce minimum σ per parameter (exploration floor)</span>
+                <span class="pseudocode-line">Output: final mean μ</span>
+              </div>
+            </div>
+
+            Note the following implementation details:
+            <ol style="margin-left: 1.0rem; margin-bottom: 1.0rem;">
+              <li>The initial standard deviation is chosen as $\text{range} / \sqrt(12)$ per parameter, corresponding to the standard deviation of a uniform distribution over the parameter bounds. 
+                This ensures that the Gaussian initially covers the parameter space reasonably. </li>
+              <li>A minimum variance constraint is enforced to prevent premature collapse of the search distribution.</li>
+              <li>Updates to the mean and standard deviation are smoothed using the hyperparameter $\alpha$ to control the deviation from the previous iteration.</li>
+            </ol>
+          </p>
+
+          <p>
+            <b><em>Relative Entropy Policy Search (REPS)</em></b>
+            REPS formulates parameter updates as a constrained optimization problem: maximize expected reward under a new distribution $p*(\theta)$, while keeping its KL-divergence from the current distribution $q(\theta)$
+            below a threshold $\epsilon$. This guarantees gradual updates and prevents premature convergence. In our system identification setting, REPS balances fitting trajectories to observed data with maintaining exploration.
+            Spepifically, TODO
+          </p>
+          
+        <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Applying ASID to the Rod Balancing Task</h3>
+          <p>
+            Balancing and stacking objects are canonical tasks in robotic manipulation that critically depend on accurate inertial parameters.
+            To evaluate ASID's ability to perform active system identification, the original authors designed a <em>Rod Balancing</em> task. In this setting, the agent interacts with a rod whose internal mass distribution 
+            is varied across episodes. The agent must infer the inertial parameters of the rod by probing it through exploratory actions. Once identified, this knowledge is required to solve the downstream task: 
+            balancing the rod by placing it stably on a ledge. This downstream control problem is highly sensitive to system parameters, making accurate system identification essential. 
+            As the focus of our re-implementation lies in reproducing the exploration behavior and verifying its potential for accurate system identification, we do not consider learning the actual balancing task. However, we 
+            use the provided simulation environment by the authors.
+          </p>
+
+          
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Fisher Information for Skill Discovery</h2>
+        <div class="content has-text-justified">
+          <p>
+            . <br>
           </p>
           
         </div>
@@ -554,6 +709,8 @@
     </div>
   </div>
 </section>
+
+
 
 
 <!-- ////////////////////////////////////////////////////////////////// CONTENT STRUCTURE TEMPLATES ////////////////////////////////////////////////////////////////////////////// -->
@@ -671,11 +828,50 @@
             </div>
           </div>
           
-          <!-- Template Usage -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Templates</h3>
+          <!-- Math Usage Examples -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Mathematical Notation Examples</h3>
           <div class="content">
             <p>
-              templates:
+              This section demonstrates how to use mathematical notation in your content:
+            </p>
+            
+            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">Inline Math Examples:</h4>
+            <ul style="margin-left: 2rem; margin-bottom: 1.5rem;">
+              <li>Variables: $\theta$, $\phi$, $\tau$</li>
+              <li>Functions: $f(x)$, $p(\tau|\theta)$, $R(s,a)$</li>
+              <li>Subscripts and superscripts: $x_i$, $x^2$, $x_i^{(t)}$</li>
+              <li>Greek letters: $\alpha$, $\beta$, $\gamma$, $\delta$, $\epsilon$</li>
+              <li>Mathematical operators: $\nabla_\theta$, $\mathbb{E}[\cdot]$, $\sum_{i=1}^n$</li>
+              <li>Fractions: $\frac{1}{2}$, $\frac{\partial f}{\partial x}$</li>
+              <li>Integrals: $\int_0^1 f(x) dx$</li>
+            </ul>
+            
+            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">Display Math Examples:</h4>
+            <p>For centered equations, use double dollar signs:</p>
+            <p style="text-align: center; font-style: italic; margin: 1rem 0;">
+              $$\mathcal{L}(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^T \gamma^t r(s_t, a_t) \right]$$
+            </p>
+            <p>Or for multi-line equations:</p>
+            <p style="text-align: center; font-style: italic; margin: 1rem 0;">
+              $$\begin{align}
+              \nabla_\theta J(\theta) &= \mathbb{E}_{\tau \sim \pi_\theta} \left[ \nabla_\theta \log \pi_\theta(\tau) R(\tau) \right] \\
+              &= \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]
+              \end{align}$$
+            </p>
+            
+            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">Usage in Text:</h4>
+            <p>
+              You can seamlessly integrate math into your text. For example, the policy gradient theorem states that 
+              $\nabla_\theta J(\theta) = \mathbb{E}[\nabla_\theta \log \pi_\theta(a|s) Q^\pi(s,a)]$, where $Q^\pi(s,a)$ 
+              represents the action-value function. This formulation allows us to optimize the policy parameters $\theta$ 
+              by following the gradient direction that maximizes expected return.
+            </p>
+
+          <!-- Template Usage -->
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Content Templates</h3>
+          <div class="content">
+            <p>
+              Content structure templates:
             </p>
             
             <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Two Images:</h4>
@@ -758,10 +954,10 @@
             The active exploration component leverages Fisher Information <a href="#ref14" class="citation">[14]</a> to guide the robot toward maximally informative trajectories. This is achieved through the optimization of the following objective:
           </p>
           <p style="text-align: center; font-style: italic; margin: 1.5rem 0;">
-            I(θ) = E[∇_θ log p(τ|θ) ∇_θ log p(τ|θ)^T]
+            $$I(\theta) = \mathbb{E}[\nabla_\theta \log p(\tau|\theta) \nabla_\theta \log p(\tau|\theta)^T]$$
           </p>
           <p>
-            Where θ represents the system parameters and τ denotes the trajectory. This formulation ensures that the robot explores regions of the parameter space that provide the most information about the underlying dynamics <a href="#ref15" class="citation">[15]</a>.
+            Where $\theta$ represents the system parameters and $\tau$ denotes the trajectory. This formulation ensures that the robot explores regions of the parameter space that provide the most information about the underlying dynamics <a href="#ref15" class="citation">[15]</a>.
           </p>
           
           <!-- Lists within subsection -->
@@ -793,10 +989,10 @@
           <div style="display: flex; align-items: flex-start; margin: 2rem 0; gap: 2rem;">
             <div style="flex: 1;">
               <p>
-                The skill discovery algorithm learns a diverse set of behaviors by encouraging the agent to visit different regions of the state space. This is achieved through a reward function that balances exploration and exploitation, ensuring that the learned skills are both diverse and useful for downstream tasks.
+                The skill discovery algorithm learns a diverse set of behaviors by encouraging the agent to visit different regions of the state space. This is achieved through a reward function $R(s, a, z)$ that balances exploration and exploitation, ensuring that the learned skills are both diverse and useful for downstream tasks.
               </p>
               <p>
-                Each discovered skill corresponds to a specific manipulation primitive that can be combined with other skills to perform complex tasks. The diversity of skills is measured using a distance metric in the state space, ensuring that each skill explores a unique region of the manipulation workspace.
+                Each discovered skill corresponds to a specific manipulation primitive that can be combined with other skills to perform complex tasks. The diversity of skills is measured using a distance metric $d(s_i, s_j)$ in the state space, ensuring that each skill explores a unique region of the manipulation workspace.
               </p>
             </div>
             <div style="flex: 0 0 300px;">
