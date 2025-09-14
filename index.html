@@ -249,22 +249,19 @@
 </section>
 
 
-<!-- Teaser video-->
+<!-- Teaser video
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      IMAGE
-      <!-- TODO: Replace with your video description -->
       <h2 class="subtitle has-text-centered">
         Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
       </h2>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+End  -->
 
-<!-- Paper abstract-->
+<!-- Paper abstract
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -279,7 +276,7 @@
     </div>
   </div>
 </section>
-
+-->
 
 
 <!-- Introduction -->
@@ -386,8 +383,8 @@
           <p>
             Simulators play a central role in robotics because they allow large-scale data generation without physical costs. They enable training of policies in parallel, 
             at accelerated time scales, and with full access to ground-truth state information. Formally, the real-world environment is characterized by 
-            dynamics P(TODO) with ture parameters TODO. A simulator provides approximate dynamics TODO Training in simulation corresponds to optimizing policies 
-            under, with the hope that they transfer successfully to P.
+            dynamics $P$ with ture parameters $\theta$. A simulator provides approximate dynamics Training in simulation corresponds to optimizing policies 
+            under, with the hope that they transfer successfully to $P$.
           </p>
 
           <p>
@@ -444,7 +441,7 @@
               <li><b>Offline methods:</b> use fixed datasets of real trajectories. They avoid repeated deployments but may suffer if real trajectories 
                 cannot be reliably reproduced in simulation.</li>
             </ul>
-            Tiboni et al. (2022) compared online and offline methods across benchmarks. TODO ref
+            Tiboni et al. (2022) compared online and offline methods across benchmarks.
 
             Recent work illustrates these categories. SimOpt (Chebotar et al., 2019) is an online, closed-loop approach that updates parameter distributions after comparing simulated 
             and real rollouts of the same policy. BayRn (Muratore et al., 2021) combines domain randomization with Bayesian optimization, adapting parameter distributions based on 
@@ -455,9 +452,9 @@
           <p>
             <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Active Exploration for System Identification (ASID)</h3>
             ASID reframes SI as an active exploration problem. Instead of relying on hand-designed excitation signals, ASID trains exploration policies that maximize the 
-            Fisher information about unknown dynamics parameters. The Fisher Information Matrix (FIM) for parameter $\phi$ under trajectory distribution TODO is defined as
-            TODO
-            Maximizing the determinant or trace of I(ϕ) ensures that the resulting data are maximally informative for parameter estimation.
+            Fisher information about unknown dynamics parameters. The Fisher Information Matrix (FIM) for parameter $\phi$ under trajectory distribution is defined as TODO.
+            
+            Maximizing the determinant or trace of $I(\phi)$ ensures that the resulting data are maximally informative for parameter estimation.
             ASID exhibits that exploratory policies trained in simulation often transfer well to reality, even when task policies do not. 
             By decoupling exploration from exploitation, ASID enables robots to collect informative trajectory in the real world that can then be used to refine the 
             simulator and learn downstream task policies. This represents a synthesis of classical SI with modern RL-based exploration. <br>
@@ -530,7 +527,7 @@
           
           <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Exploration</h3>
           <p>
-            For the exploration stage, we directly rely on the publicly available ASID exploration module provided by the original authors. (TODO) 
+            For the exploration stage, we directly rely on the publicly available ASID exploration module provided by the original authors.
             The exploration module is implemented in Python and makes use of the Soft Actor-Critic (SAC) algorithm together with vectorized Mujoco environments, which enables efficient parallel trainign.
 
             The objective of exploration in ASID is to collect trajectories that are maximally informative about the system's unknown physical parameters. 
@@ -1142,9 +1139,8 @@
           
 
 
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">My single image carousel</h3>
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Inertia vs Friction</h3>
           <p>
-            My carousel.
           </p>
 
           <div class="two-images-layout">
@@ -1190,9 +1186,8 @@
 
 
 
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">My single image carousel</h3>
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Inertia vs Mass</h3>
           <p>
-            My carousel.
           </p>
 
           <div class="two-images-layout">
@@ -1236,9 +1231,8 @@
 
           
 
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">My single image carousel</h3>
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Mass vs Friction</h3>
           <p>
-            My carousel.
           </p>
 
           <div class="two-images-layout">
@@ -1328,478 +1322,6 @@
   </div>
 </section>
 
-
-
-
-<!-- ////////////////////////////////////////////////////////////////// CONTENT STRUCTURE TEMPLATES ////////////////////////////////////////////////////////////////////////////// -->
-
-<!-- Content Structure Templates Section -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full">
-        <h2 class="title is-3">Content Structure Templates</h2>
-        <div class="content has-text-justified">
-          <p>
-            This section demonstrates various content structure templates...
-          </p>
-          
-          <!-- Template 1: Two Images Side-by-Side -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 1: Two Images Side-by-Side</h3>
-          <p>
-            Use this template to display two images side-by-side within a subsection.
-          </p>
-          
-          <div class="two-images-layout">
-            <div class="image-container">
-              <img src="static/images/carousel1.jpg" alt="First comparison image" loading="lazy"/>
-              <p class="image-caption">Simulation Results</p>
-            </div>
-            <div class="image-container">
-              <img src="static/images/carousel2.jpg" alt="Second comparison image" loading="lazy"/>
-              <p class="image-caption">Real-World Transfer</p>
-            </div>
-          </div>
-          
-          <!-- Template 2: Multi Images Horizontal (2+ images) -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 2: Multi Images Horizontal</h3>
-          <p>
-            Use this template to display 2 or more images in a horizontal line with individual captions.
-          </p>
-          
-          <div class="multi-images-layout">
-            <div class="image-container">
-              <img src="static/images/carousel1.jpg" alt="First step image" loading="lazy"/>
-              <p class="image-caption">Step 1: Initialization</p>
-            </div>
-            <div class="image-container">
-              <img src="static/images/carousel2.jpg" alt="Second step image" loading="lazy"/>
-              <p class="image-caption">Step 2: Processing</p>
-            </div>
-            <div class="image-container">
-              <img src="static/images/carousel3.jpg" alt="Third step image" loading="lazy"/>
-              <p class="image-caption">Step 3: Final Result</p>
-            </div>
-          </div>
-          
-          <!-- Template 3: Two Column Text -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 3: Two Column Text</h3>
-          <p>
-            Use this template to display text content in two columns.
-          </p>
-          
-          <div class="two-column-text">
-            <div class="column">
-              <h4>Method A: Traditional Approach</h4>
-              <p>
-                The traditional approach relies on hand-crafted features and rule-based systems.
-              </p>
-              <p>
-                <strong>Advantages:</strong> High interpretability, fast execution, well-understood behavior.
-              </p>
-              <p>
-                <strong>Limitations:</strong> Limited adaptability, requires domain expertise, struggles with complex scenarios.
-              </p>
-            </div>
-            <div class="column">
-              <h4>Method B: Learning-Based Approach</h4>
-              <p>
-                Our learning-based approach leverages deep learning to...
-              </p>
-              <p>
-                <strong>Advantages:</strong> High adaptability, minimal human intervention, handles complex scenarios.
-              </p>
-              <p>
-                <strong>Limitations:</strong> Requires large datasets, less interpretable, potential for unexpected behavior.
-              </p>
-            </div>
-          </div>
-          
-          <!-- Template 4: Multi Images Full Width -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 4: Multi Images Full Width</h3>
-          <p>
-            Use this template to display multiple images covering the full width with a shared centered caption.
-          </p>
-          
-          <div class="multi-images-full-width">
-            <div class="images-container">
-              <div class="image-container">
-                <img src="static/images/carousel1.jpg" alt="First result" loading="lazy"/>
-              </div>
-              <div class="image-container">
-                <img src="static/images/carousel2.jpg" alt="Second result" loading="lazy"/>
-              </div>
-              <div class="image-container">
-                <img src="static/images/carousel3.jpg" alt="Third result" loading="lazy"/>
-              </div>
-              <div class="image-container">
-                <img src="static/images/carousel4.jpg" alt="Fourth result" loading="lazy"/>
-              </div>
-            </div>
-            <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
-              High-level system architecture showing the integration of active exploration, skill discovery, and sim-to-real transfer components
-            </p>
-          </div>
-          
-          <!-- Template 5: Image Grid -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 5: Image Grid (nxm layout)</h3>
-          <p>
-            Use this template to display images in a grid layout with a shared centered caption. Supports various grid sizes.
-          </p>
-          
-          <div class="image-grid grid-3x2">
-            <div class="grid-container">
-              <div class="image-container">
-                <img src="static/images/carousel1.jpg" alt="Grid image 1" loading="lazy"/>
-              </div>
-              <div class="image-container">
-                <img src="static/images/carousel2.jpg" alt="Grid image 2" loading="lazy"/>
-              </div>
-              <div class="image-container">
-                <img src="static/images/carousel3.jpg" alt="Grid image 3" loading="lazy"/>
-              </div>
-              <div class="image-container">
-                <img src="static/images/carousel4.jpg" alt="Grid image 4" loading="lazy"/>
-              </div>
-              <div class="image-container">
-                <img src="static/images/carousel1.jpg" alt="Grid image 5" loading="lazy"/>
-              </div>
-              <div class="image-container">
-                <img src="static/images/carousel2.jpg" alt="Grid image 6" loading="lazy"/>
-              </div>
-            </div>
-            <p class="shared-caption">Grid layout showing systematic evaluation results across different parameter configurations and experimental conditions.</p>
-          </div>
-          
-          <!-- Template 6: Single Image Carousel -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 6: Single Image Carousel</h3>
-          <p>
-            Use this template to display a carousel of single images with navigation controls and indicators.
-          </p>
-          
-          <div class="content-carousel single-image">
-            <div class="carousel-container">
-              <div class="carousel-track">
-                <div class="carousel-slide">
-                  <img src="static/images/carousel1.jpg" alt="Research result 1" loading="lazy"/>
-                  <div class="carousel-caption">First experimental result showing initial performance metrics</div>
-                </div>
-                <div class="carousel-slide">
-                  <img src="static/images/carousel2.jpg" alt="Research result 2" loading="lazy"/>
-                  <div class="carousel-caption">Second experimental result demonstrating improved accuracy</div>
-                </div>
-                <div class="carousel-slide">
-                  <img src="static/images/carousel3.jpg" alt="Research result 3" loading="lazy"/>
-                  <div class="carousel-caption">Third experimental result showing final optimization</div>
-                </div>
-                <div class="carousel-slide">
-                  <img src="static/images/carousel4.jpg" alt="Research result 4" loading="lazy"/>
-                  <div class="carousel-caption">Fourth experimental result with comparative analysis</div>
-                </div>
-              </div>
-              <button class="carousel-nav prev" aria-label="Previous image">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <button class="carousel-nav next" aria-label="Next image">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
-            <div class="carousel-indicators">
-              <button class="carousel-indicator active" aria-label="Go to slide 1"></button>
-              <button class="carousel-indicator" aria-label="Go to slide 2"></button>
-              <button class="carousel-indicator" aria-label="Go to slide 3"></button>
-              <button class="carousel-indicator" aria-label="Go to slide 4"></button>
-            </div>
-          </div>
-          
-          <!-- Template 7: Side-by-Side Image Carousel -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 7: Side-by-Side Image Carousel</h3>
-          <p>
-            Use this template to display a carousel of side-by-side image comparisons with individual captions.
-          </p>
-          
-          <div class="content-carousel side-by-side">
-            <div class="carousel-container">
-              <div class="carousel-track">
-                <div class="carousel-slide">
-                  <div class="image-container">
-                    <img src="static/images/carousel1.jpg" alt="Simulation result" loading="lazy"/>
-                    <p class="image-caption">Simulation Performance</p>
-                  </div>
-                  <div class="image-container">
-                    <img src="static/images/carousel2.jpg" alt="Real-world result" loading="lazy"/>
-                    <p class="image-caption">Real-World Transfer</p>
-                  </div>
-                </div>
-                <div class="carousel-slide">
-                  <div class="image-container">
-                    <img src="static/images/carousel3.jpg" alt="Baseline method" loading="lazy"/>
-                    <p class="image-caption">Baseline Approach</p>
-                  </div>
-                  <div class="image-container">
-                    <img src="static/images/carousel4.jpg" alt="Our method" loading="lazy"/>
-                    <p class="image-caption">Our Method</p>
-                  </div>
-                </div>
-                <div class="carousel-slide">
-                  <div class="image-container">
-                    <img src="static/images/carousel1.jpg" alt="Before optimization" loading="lazy"/>
-                    <p class="image-caption">Before Optimization</p>
-                  </div>
-                  <div class="image-container">
-                    <img src="static/images/carousel2.jpg" alt="After optimization" loading="lazy"/>
-                    <p class="image-caption">After Optimization</p>
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-nav prev" aria-label="Previous comparison">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <button class="carousel-nav next" aria-label="Next comparison">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
-            <div class="carousel-indicators">
-              <button class="carousel-indicator active" aria-label="Go to comparison 1"></button>
-              <button class="carousel-indicator" aria-label="Go to comparison 2"></button>
-              <button class="carousel-indicator" aria-label="Go to comparison 3"></button>
-            </div>
-          </div>
-          
-          <!-- Template 8: Pseudocode with Line Numbers -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Template 8: Pseudocode with Line Numbers</h3>
-          <p>
-            Use this template to display pseudocode or algorithms with automatic line numbering.
-          </p>
-          
-          <div class="pseudocode-container">
-            <div class="pseudocode-header">
-              <h4 class="pseudocode-title">Algorithm</h4>
-              <span class="pseudocode-lang">Pseudocode</span>
-            </div>
-            <div class="pseudocode-content">
-<span class="pseudocode-line">function Exploration(θ, T, N):</span>
-<span class="pseudocode-line">    // Initialize parameter distribution</span>
-<span class="pseudocode-line">    P ← Uniform(min, max)</span>
-<span class="pseudocode-line">    </span>
-<span class="pseudocode-line">    for t = 1 to T do:</span>
-<span class="pseudocode-line">        // Generate candidate trajectories</span>
-<span class="pseudocode-line">        candidates ← GenerateTrajectories(p, N)</span>
-<span class="pseudocode-line">        </span>
-<span class="pseudocode-line">        // Evaluate Information</span>
-<span class="pseudocode-line">        for each t in candidates do:</span>
-<span class="pseudocode-line">            I ← ComputeInfo(t, θ)</span>
-<span class="pseudocode-line">        end for</span>
-<span class="pseudocode-line">    end for</span>
-<span class="pseudocode-line">    </span>
-<span class="pseudocode-line">    return θ</span>
-<span class="pseudocode-line">end function</span>
-            </div>
-          </div>
-          
-          <!-- Math Usage Examples -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Mathematical Notation Examples</h3>
-          <div class="content">
-            <p>
-              This section demonstrates how to use mathematical notation in your content:
-            </p>
-            
-            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">Inline Math Examples:</h4>
-            <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
-              <li>Variables: $\theta$, $\phi$, $\tau$</li>
-              <li>Functions: $f(x)$, $p(\tau|\theta)$, $R(s,a)$</li>
-              <li>Subscripts and superscripts: $x_i$, $x^2$, $x_i^{(t)}$</li>
-              <li>Greek letters: $\alpha$, $\beta$, $\gamma$, $\delta$, $\epsilon$</li>
-              <li>Mathematical operators: $\nabla_\theta$, $\mathbb{E}[\cdot]$, $\sum_{i=1}^n$</li>
-              <li>Fractions: $\frac{1}{2}$, $\frac{\partial f}{\partial x}$</li>
-              <li>Integrals: $\int_0^1 f(x) dx$</li>
-            </ul>
-            
-            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">Display Math Examples:</h4>
-            <p>For centered equations, use double dollar signs:</p>
-            <p style="text-align: center; font-style: italic; margin: 1rem 0;">
-              $$\mathcal{L}(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^T \gamma^t r(s_t, a_t) \right]$$
-            </p>
-            <p>Or for multi-line equations:</p>
-            <p style="text-align: center; font-style: italic; margin: 1rem 0;">
-              $$\begin{align}
-              \nabla_\theta J(\theta) &= \mathbb{E}_{\tau \sim \pi_\theta} \left[ \nabla_\theta \log \pi_\theta(\tau) R(\tau) \right] \\
-              &= \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t) R(\tau) \right]
-              \end{align}$$
-            </p>
-            
-            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">Usage in Text:</h4>
-            <p>
-              You can seamlessly integrate math into your text. For example, the policy gradient theorem states that 
-              $\nabla_\theta J(\theta) = \mathbb{E}[\nabla_\theta \log \pi_\theta(a|s) Q^\pi(s,a)]$, where $Q^\pi(s,a)$ 
-              represents the action-value function. This formulation allows us to optimize the policy parameters $\theta$ 
-              by following the gradient direction that maximizes expected return.
-            </p>
-          
-          <!-- Template Usage -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Content Templates</h3>
-          <div class="content">
-            <p>
-              Content structure templates:
-            </p>
-            
-            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Two Images:</h4>
-            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="two-images-layout"&gt;
-  &lt;div class="image-container"&gt;
-    &lt;img src="path/to/your/image1.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;p class="image-caption"&gt;Your Caption&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class="image-container"&gt;
-    &lt;img src="path/to/your/image2.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;p class="image-caption"&gt;Your Caption&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            
-            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Multi Images (2+ images):</h4>
-            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="multi-images-layout"&gt;
-  &lt;div class="image-container"&gt;
-    &lt;img src="path/to/your/image1.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;p class="image-caption"&gt;Your Caption&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class="image-container"&gt;
-    &lt;img src="path/to/your/image2.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;p class="image-caption"&gt;Your Caption&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class="image-container"&gt;
-    &lt;img src="path/to/your/image3.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;p class="image-caption"&gt;Your Caption&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            
-            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Multi Images Full Width:</h4>
-            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="multi-images-full-width"&gt;
-  &lt;div class="images-container"&gt;
-    &lt;div class="image-container"&gt;
-      &lt;img src="path/to/your/image1.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;/div&gt;
-    &lt;div class="image-container"&gt;
-      &lt;img src="path/to/your/image2.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;/div&gt;
-    &lt;div class="image-container"&gt;
-      &lt;img src="path/to/your/image3.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;p class="shared-caption"&gt;Your shared caption for all images&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-            
-            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Image Grid (nxm layout):</h4>
-            <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
-              Available grid classes: <code>grid-2x2</code>, <code>grid-3x2</code>, <code>grid-4x2</code>, <code>grid-2x3</code>, <code>grid-3x3</code>, <code>grid-4x3</code>
-            </p>
-            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="image-grid grid-3x2"&gt;
-  &lt;div class="grid-container"&gt;
-    &lt;div class="image-container"&gt;
-      &lt;img src="path/to/your/image1.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;/div&gt;
-    &lt;div class="image-container"&gt;
-      &lt;img src="path/to/your/image2.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;/div&gt;
-    &lt;div class="image-container"&gt;
-      &lt;img src="path/to/your/image3.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;/div&gt;
-    &lt;div class="image-container"&gt;
-      &lt;img src="path/to/your/image4.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;/div&gt;
-    &lt;div class="image-container"&gt;
-      &lt;img src="path/to/your/image5.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;/div&gt;
-    &lt;div class="image-container"&gt;
-      &lt;img src="path/to/your/image6.jpg" alt="Description" loading="lazy"/&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;p class="shared-caption"&gt;Your shared caption for all images&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-            
-            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Two Column Text:</h4>
-            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="two-column-text"&gt;
-  &lt;div class="column"&gt;
-    &lt;h4&gt;Left Column Title&lt;/h4&gt;
-    &lt;p&gt;Your left column content here.&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class="column"&gt;
-    &lt;h4&gt;Right Column Title&lt;/h4&gt;
-    &lt;p&gt;Your right column content here.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            
-            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Single Image Carousel:</h4>
-            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="content-carousel single-image"&gt;
-  &lt;div class="carousel-container"&gt;
-    &lt;div class="carousel-track"&gt;
-      &lt;div class="carousel-slide"&gt;
-        &lt;img src="path/to/image1.jpg" alt="Description" loading="lazy"/&gt;
-        &lt;div class="carousel-caption"&gt;Your caption&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class="carousel-slide"&gt;
-        &lt;img src="path/to/image2.jpg" alt="Description" loading="lazy"/&gt;
-        &lt;div class="carousel-caption"&gt;Your caption&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;button class="carousel-nav prev" aria-label="Previous image"&gt;
-      &lt;i class="fas fa-chevron-left"&gt;&lt;/i&gt;
-    &lt;/button&gt;
-    &lt;button class="carousel-nav next" aria-label="Next image"&gt;
-      &lt;i class="fas fa-chevron-right"&gt;&lt;/i&gt;
-    &lt;/button&gt;
-  &lt;/div&gt;
-  &lt;div class="carousel-indicators"&gt;
-    &lt;button class="carousel-indicator active"&gt;&lt;/button&gt;
-    &lt;button class="carousel-indicator"&gt;&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            
-            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Side-by-Side Image Carousel:</h4>
-            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="content-carousel side-by-side"&gt;
-  &lt;div class="carousel-container"&gt;
-    &lt;div class="carousel-track"&gt;
-      &lt;div class="carousel-slide"&gt;
-        &lt;div class="image-container"&gt;
-          &lt;img src="path/to/image1.jpg" alt="Description" loading="lazy"/&gt;
-          &lt;p class="image-caption"&gt;Left caption&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="image-container"&gt;
-          &lt;img src="path/to/image2.jpg" alt="Description" loading="lazy"/&gt;
-          &lt;p class="image-caption"&gt;Right caption&lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;button class="carousel-nav prev" aria-label="Previous comparison"&gt;
-      &lt;i class="fas fa-chevron-left"&gt;&lt;/i&gt;
-    &lt;/button&gt;
-    &lt;button class="carousel-nav next" aria-label="Next comparison"&gt;
-      &lt;i class="fas fa-chevron-right"&gt;&lt;/i&gt;
-    &lt;/button&gt;
-  &lt;/div&gt;
-  &lt;div class="carousel-indicators"&gt;
-    &lt;button class="carousel-indicator active"&gt;&lt;/button&gt;
-    &lt;button class="carousel-indicator"&gt;&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-            
-            <h4 class="title is-5" style="margin-top: 1.5rem; margin-bottom: 1rem;">For Pseudocode:</h4>
-            <pre style="background: var(--background-accent); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem;"><code>&lt;div class="pseudocode-container"&gt;
-  &lt;div class="pseudocode-header"&gt;
-    &lt;h4 class="pseudocode-title"&gt;Algorithm Name&lt;/h4&gt;
-    &lt;span class="pseudocode-lang"&gt;Pseudocode&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class="pseudocode-content"&gt;
-    &lt;span class="pseudocode-line"&gt;function YourFunction():&lt;/span&gt;
-    &lt;span class="pseudocode-line"&gt;    // Your code here&lt;/span&gt;
-    &lt;span class="pseudocode-line"&gt;    return result&lt;/span&gt;
-    &lt;span class="pseudocode-line"&gt;end function&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <!-- References Section -->
@@ -1892,7 +1414,8 @@
   </div>
 </section>
 
-<!--BibTex citation -->
+
+<!--BibTex citation
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <div class="bibtex-header">
@@ -1911,7 +1434,7 @@
 }</code></pre>
     </div>
 </section>
-<!--End BibTex citation -->
+End BibTex citation -->
 
 
   <footer class="footer">
