@@ -843,7 +843,6 @@
           </div>
           
           <p>
-            
             Again, we oberve the obvious performance difference between REPS and CEM variants. Interestingly, CEM's parameter evolutions for friction suggest slight improvement. 
             Generally, the inertia parameter seems to be inferable more accurately by the REPS variants compared to friction. This is likely due to the exploration policy beeing 
             explicitely targeted to maximize inertial sensitivity. 
@@ -916,15 +915,125 @@
       <div class="column is-full">
         <h2 class="title is-3">Fisher Information for Skill Discovery</h2>
         <div class="content has-text-justified">
+          
+          
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Idea</h3>
           <p>
-            . <br>
+            In the original ASID framework, the reward for the exploration policy is defined as the trace of the Fisher Information Matrix (FIM), 
+            i.e., the sum of its diagonal components. This encourages the policy to collect trajectories that are informative with respect to all 
+            system parameters simultaneously. While this formulation is principled, it implicitly treats all parameters as equally relevant, 
+            which may not always be desirable in practice.
+          </p>
+          <p>
+            We extend this objective by introducing parameter-specific weights on the diagonal components of the FIM. 
+            Instead of maximizing the total information, the agent can now be guided to prioritize certain directions in parameter space over others. 
+            This design allows us to interpret the weights as a form of curiosity modulation: high weights encourage exploration towards a parameter, 
+            while low or even negative weights discourage it.
+            Taking the rod balancing task as an example. If the exploration policy is rewarded for maximizing information about mass while 
+            ignoring (or penalizing) information about friction, we hypothesize that the robot would attempt to learn some kind of grasping skill.
+          </p>
+          <p>  
+            This mechanism allows us to sample different weight configurations and obtain families of exploratory skills, 
+            each corresponding to a distinct focus on specific system parameters. In a later stage, task policies could be conditioned on 
+            such latent skills to leverage parameter-focused exploration. Furthermore, the sample distribution could be iteratively adapted
+            to encourage learning usefull skills. 
           </p>
           
+
+          
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Implementation</h3>
+
+          We introduce a vector of parameter weights $w \in \mathbb{R}^{d_{\text{param}}}$, which allows scaling of the diagonal entries of the Fisher Information Matrix $F$. 
+          The modified reward becomes:
+          <p style="text-align: center;">
+            $$ r = \sum_{j = 1}^{d_{\text{param}}} w_j F_{jj}$$
+          </p>
+          This formulation generalizes the original "ASID case", which corresponds to the special case $w_j = 1$.
+          Unlike the original ASID reward, our formulation may yield negative values when some weights are set negative, effectively penalizing information gain in 
+          certain directions. Therefore, we additionally clip the reward values to the interval [-1000, 1000].
+
+
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Challenges and Solutions in Weighted FIM Exploration</h3>
+          <p>
+            The introduction of weighted Fisher Information rewards required extensive experimentation to address several non-trivial challenges. 
+            To keep the complexity manageable, we restricted our analysis to pairs of parameters (e.g. inertia - friction), which already revealed key difficulties 
+            in balancing sensitivities, shaping rewards, and selecting weights.
+          </p>
+
+          <h3 class="title is-5" style="margin-top: 2rem; margin-bottom: 1rem;">Different Parameter Sensitivities</h3>
+          <p>
+            The first challenge was the imbalance in the magnitudes of information components. In the original ASID formulation, summing the diagonal entries of the FIM (i.e., 
+            the trace) is straightforward, since all contributions are positive. With weighted rewards, however, negative weights can lead to 
+            unintended dominance of one parameter. For example, even a small negative weight (e.g. -0.1) on friction could overpower inertia contributions 
+            if the Fisher information for friction was several orders of magnitude larger, resulting in consistently negative rewards.
+          </p>
+
+          <p>
+            A related problem arose in the computation of finite-difference gradients for the FIM, where different parameters required different step sizes $\delta t$.
+            We experimented with several solutions:
+
+            <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
+              <li><em>Normalizing the entire FIM or its diagonal entries.</em> this preserved relative magnitudes but destroyed the absolute information scale, 
+                which is crucial for interpretability. With only two parameters, normalization collapses one component to 1, making the reward uninformative.</li>
+              <li><em>Parameter-specific normalization factors and delta values:</em> by assigning tailored scaling to each parameter, the reward contributions 
+                could be balanced without distorting the underlying information structure. This proved most effective, though it required careful tuning to 
+                identify good normalization constants.</li>
+            </ol>
+
+          </p>
+          <h3 class="title is-5" style="margin-top: 2rem; margin-bottom: 1rem;">Sparse Reward Environment</h3>
+          <p>
+            The environment only yields meaningful Fisher information when the robot interacts with the rod. Without such contact, 
+            rewards vanish, leading to sparse signals and slow policy improvement. To alleviate this, we introduced reward shaping by 
+            adding a penalty proportional to the Euclidean distance between the gripper and the rod. This encouraged the robot to approach the rod, 
+            thus increasing the chance of interaction.
+
+          </p>
+          <p>
+            A subtle trade-off emerged: too strong a penalty biased the policy towards simply reaching the rod without performing informative interactions. 
+            To mitigate this, we initially deactivated the distance penalty once the rod was reached. However, experiments showed that keeping a small shaping 
+            term active was beneficial, as it encouraged the robot to sustain contact with the rod - even in cases where the resulting Fisher reward was negative - thereby 
+            maintaining exploration pressure.
+          </p>
+          <h3 class="title is-5" style="margin-top: 2rem; margin-bottom: 1rem;">Selecting Effective Weights</h3>
+          <p>
+            
+            inally, choosing suitable weight combinations was itself a challenge. Some parameters exhibited coupled responses, making it difficult 
+            to separate their effects, especially during early interactions. For example, assigning weights $[+1, -1]$ often led to near-zero rewards, 
+            as coupled dynamics canceled out. Conversely, small asymmetries such as $[+1, \pm 1]$ did not sufficiently enforce distinct parameter-specific 
+            exploration.
+
+          </p>
+          <p>
+            Through initial empirical evaluation, we found that moderate asymmetries such as $[1.0, -0.5]$ worked reasonably. 
+            provided a compromise: they introduced a clear bias towards one parameter while still penalizing the other, without completely collapsing the 
+            reward signal. While this choice already encouraged meaningful parameter-focused skills, there is still optimization potential.
+          </p>
+
+
+
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Experiment</h3>
+
+          In this section we pesent experimental setup and results for unsupervised learning of skills using the adapted fisher information objective.
+          We perform an wholistic experiment in the same rod ballancing environement as introduced before. Following configurations are set:
+          <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
+            <li>7-DoF </li>
+            <li>7-DoF </li>
+            <li>7-DoF </li>
+            <li>7-DoF </li>
+            <li>7-DoF </li>
+            <li>7-DoF </li>
+            <li>7-DoF </li>
+            
+          </ol>
+
+
+
 
           <div style="text-align: center; margin: 2rem 0;">
             <img src="static/images/others/tuned.gif" alt="Exploration policy" style="max-width: 100%; height: auto; border-radius: 12px;"/>
             <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
-              High-level system architecture showing the integration of active exploration, skill discovery, and sim-to-real transfer components
+              Trajectory and reward with tuned components including individual parameter contributions for inertia, friction and mass. Additionaly the distance penalty is shown.
             </p>
           </div>
 
