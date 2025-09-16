@@ -6,33 +6,33 @@
   
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
+  <meta name="title" content="Active Exploration beyond System Identification: Weighted Fisher Information for Unsupervised Skill Discovery in Robot Manipulation">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta name="description" content="">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
+  <meta name="keywords" content="">
   <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="author" content="Nikita Maurer supervised by Gabriele Tiboni">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
+  <meta property="og:site_name" content="Pearl Lab, Department of Computer Science, TU Darmstadt">
   <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
+  <meta property="og:title" content="Active Exploration beyond System Identification: Weighted Fisher Information for Unsupervised Skill Discovery in Robot Manipulation">
   <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta property="og:description" content="">
   <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
+  <meta property="og:url" content="https://mnikita.github.io/irobman2-web/">
   <!-- TODO: Create a 1200x630px preview image and update path -->
   <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="og:image:alt" content="Active Exploration beyond System Identification: Weighted Fisher Information for Unsupervised Skill Discovery in Robot Manipulation - Research Preview">
   <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:author" content="Nikita Maurer">
   <meta property="article:section" content="Research">
   <meta property="article:tag" content="KEYWORD1">
   <meta property="article:tag" content="KEYWORD2">
@@ -60,8 +60,8 @@
   <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
   
   <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="theme-color" content="#ef4444">
+  <meta name="msapplication-TileColor" content="#ef4444">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   
@@ -74,7 +74,7 @@
 
 
   <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
+  <title>Active Exploration beyond System Identification:  Weighted Fisher Information for Unsupervised Skill Discovery in Robot Manipulation - Nikita Maurer supervised by Gabriele Tiboni | Academic Research</title>
   
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
@@ -210,12 +210,12 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Active Exploration beyond System Identification</h1>
+            <h1 class="title is-1 publication-title">Active Exploration beyond System Identification:<br> Weighted Fisher Information for Unsupervised Skill Discovery in Robot Manipulation</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
                 Nikita Maurer</span><br>
-                Department of Computer Science<br>Technische Universität Darmstadt, Germany</span>
+                <!--Department of Computer Science<br>Technische Universität Darmstadt, Germany</span>-->
                 <!--<span class="author-block">
                   <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Gabriele Tiboni</a><sup>*</sup>,</span>
                   </div>-->
@@ -261,22 +261,24 @@
 </section>
 End  -->
 
-<!-- Paper abstract
+<!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3"></h2>
         <div class="content has-text-justified">
-          <p>
-            In this project we only consider Simulation.
+          <p style="text-align: center;">
+            This project has been developed as part of the "Lab on Intelligent Robotic Manipulation II" of summer term 2025 at TU Darmstadt within the Pearl Lab. 
+            The objective was to re-implement the paper "ASID: Active Exploration for System Identification in Robotic Manipulation" <a href="#asid_5" class="citation">[5]</a> and to adapt its Fisher information 
+            based exploration objective toward a new direction in unsupervised skill discovery. The idea for this extension was suggested by Gabriele Tiboni, to whom we gratefully acknowledge the credit.
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
--->
+
 
 
 <!-- Introduction -->
@@ -287,28 +289,28 @@ End  -->
         <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
           <p>
-            Robotic learning in simulation has become an indispensable tool for accelerating research and reducing costs before deployment in the real world <a href="#dr" class="citation">[1]</a>. 
-            Training in simulation provides safety, scalability, and access to large amounts of interaction data. However, the policies that perform well in simulation often degrade significantly once transferred to real 
-            robots - a challenge commonly referred to as the reality gap <a href="#ref2" class="citation">[2]</a>. This gap arises from mismatches between the simplified models used in simulation and the complex, noisy dynamics 
+            Robotic learning in simulation has become an essential tool for accelerating research and reducing costs before deployment in the real world <a href="#sim_1" class="citation">[1]</a>. 
+            Training in simulation provides safety, scalability, and access to large amounts of interaction data. However, the policies that perform well in simulation often degrade of fail once transferred to real 
+            robots - a challenge commonly referred to as the reality gap <a href="#gap_2" class="citation">[2]</a>. This gap arises from mismatches between the simplified models used in simulation and the complex, noisy dynamics 
             of physical systems. <br>
           
-            A major line of research in sim-to-real transfer focuses on mitigating this gap. Two prominent strategies are Domain Randomization (DR) <a href="#ref3" class="citation">[3]</a> and System 
-            Identification (SI) <a href="#ref4" class="citation">[4]</a>. DR aims to expose policies to a wide variety of randomized environments during training, encouraging robustness to unseen real-world conditions. 
+            A major line of research in sim-to-real transfer focuses on mitigating this gap. Two prominent strategies are Domain Randomization (DR) <a href="#dr_3" class="citation">[3]</a> and System 
+            Identification (SI) <a href="#si_4" class="citation">[4]</a>. DR aims to expose policies to a wide variety of randomized environments during training, encouraging robustness to unseen real-world conditions. 
             SI, on the other hand, attempts to explicitly identify the dynamics of the target system, either before or during deployment, and adjust the simulation parameters accordingly. While DR offers generalization at the 
-            expense of sample efficiency, SI provides more targeted adaptation but often suffers from insufficient or uninformative data for accurate identification. <br>
+            expense of sample efficiency, SI provides more targeted adaptation but can suffer from insufficient or uninformative data for accurate identification. <br>
           
-            The ASID (Active exploration for System Identification in robotic manipulation) framework <a href="#ref5" class="citation">[5]</a> addresses this limitation by proposing methods for actively selecting exploratory 
+            The ASID (Active exploration for System Identification in robotic manipulation) framework <a href="#asid_5" class="citation">[5]</a> addresses this limitation by proposing methods for actively selecting exploratory 
             behaviors that maximize information about unknown system parameters. Rather than passively collecting data or relying on heuristic exploration, ASID leverages an optimization criterion based on Fisher Information to 
             generate trajectories that are maximally informative for system identification. This approach aims to make SI more efficient and reliable, ultimately improving sim-to-real transfer in robotic manipulation tasks. <br>
           </p>
           <p>
-            Beyond system identification, such objectives resonate with the broader idea of curiosity-driven exploration - encouraging robots to explore their environment without being explicitly told what to 
-            do <a href="#ref6" class="citation">[6]</a>. One reason this can be extremely useful is acquiring general-purpose behaviors to accelerate the learning of new downstream tasks. Instead of training from scratch for every 
+            Beyond system identification, such objectives resonate with the broader idea of curiosity-driven exploration <a href="#curios_6" class="citation">[6]</a> - encouraging robots to explore their environment without being explicitly told what to 
+            do. One reason this can be extremely useful is acquiring general-purpose behaviors to accelerate the learning of new downstream tasks. Instead of training from scratch for every 
             new objective, agents can benefit 
-            from a repertoire of skills - temporally extended action patterns that serve as primitives for hierarchical reinforcement learning <a href="#ref8" class="citation">[8]</a>. The paper "Diversity is All You Need" 
-            (DIAYN) <a href="#ref9" class="citation">[9]</a> introduced the idea of unsupervised skill discovery, where an agent learns a diverse set of behaviors without requiring an external reward function. These unsupervised 
+            from a repertoire of skills - temporally extended action patterns that serve as primitives for hierarchical reinforcement learning. The paper "Diversity is All You Need" 
+            (DIAYN) <a href="#diayn_7" class="citation">[7]</a> introduced the idea of unsupervised skill discovery, where an agent learns a diverse set of behaviors without requiring an external reward function. These unsupervised 
             skills not only provide a foundation for faster task learning but also enhance exploration in environments with sparse or delayed rewards, and can support applications such as imitation learning and transfer across related 
-            tasks <a href="#ref10" class="citation">[10]</a>.<br>
+            tasks.<br>
           </p>
           
           <div class="multi-images-full-width">
@@ -328,17 +330,17 @@ End  -->
               
             </div>
             <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
-              From DIAYN: https://sites.google.com/view/diayn
+              Skills learned by <em>Half Cheetah</em> (Mujoco) agent. Adopted from DIAYN: <a href="https://sites.google.com/view/diayn">https://sites.google.com/view/diayn</a>
             </p>
           </div>
 
           <p>
-            However, while DIAYN and its successors demonstrated compelling results in locomotion domains such as cheetah or humanoid agents <a href="#ref11" class="citation">[11,12]</a>, robotic manipulation remains a largely 
-            unsolved challenge <a href="#ref13" class="citation">[13]</a>. Current methods struggle to produce diverse and reusable manipulation skills without task-specific supervision, leaving open the question of how to adapt 
+            However, while DIAYN and its successors demonstrated compelling results in locomotion domains such as cheetah agents, robotic manipulation remains challenging. 
+            Current methods struggle to produce diverse and reusable manipulation skills without task-specific supervision, leaving open the question of how to adapt 
             unsupervised exploration principles to this more complex setting.<br>
           </p>
           <p>
-            Our project builds on this motivation by seeking to extend the ASID framework beyond system identification. ASID showed how the Fisher Information can guide robots toward collecting trajectories that are informative 
+            Our project builds on this motivation by extending ASIDs exploration objective beyond system identification. It showed how the Fisher information can guide robots toward collecting trajectories that are informative 
             for parameter inference. We propose to adapt this principle for unsupervised skill discovery: instead of treating the objective as purely about maximizing entropy or covering all parameters equally, we reinterpret simulated 
             parameters as a curiosity signal. By selectively focusing on information along certain parameter axes while ignoring or surpressing others, the agent can discover a richer and more diverse set of skills. 
             This perspective opens the door to curiosity-guided skill discovery for robotic manipulation, bridging the gap between system identification for sim-to-real transfer and unsupervised exploration for skill learning.<br>
@@ -365,39 +367,36 @@ End  -->
           <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Simulation-to-Reality Transfer</h3>
           <p>
             Simulators play a central role in robotics because they allow large-scale data generation without physical costs. They enable training of policies in parallel, 
-            at accelerated time scales, and with full access to ground-truth state information. Formally, the real-world environment is characterized by 
-            dynamics $P$ with ture parameters $\theta$. A simulator provides approximate dynamics Training in simulation corresponds to optimizing policies 
-            under, with the hope that they transfer successfully to $P$.
+            at accelerated time scales, and with full access to ground-truth state information. The real-world environment can be characterized by 
+            dynamics $P(s'|s,a;\theta_*)$ with ture parameters $\theta_*$. A simulator provides approximate dynamics $\hat{P}(s'|s,a;\hat{\theta})$. Training in simulation corresponds to optimizing policies 
+            under $\hat{P}$, with the hope that they transfer successfully to $P$.
           </p>
 
           <p>
             <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">The Sim-to-Real Gap</h3>
-            The difference between P is called the Sim-to-Real gap. It arises from:
+            The difference between $\hat{P}$ and $P$ is called the sim-to-real gap <a href="#gap_2" class="citation">[2]</a>. It arises from:
             <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
               <li><b>Modeling approximations.</b> Physical simulators cannot perfectly capture complex phenomena such as contact friction or deformable objects.</li>
               <li><b>Parameter discrepancies.</b> Even if the model form is correct, simulator parameters such as masses, delays, or sensor noise rarely match reality exactly.</li>
               <li><b>Non-stationarity of real environments.</b> Real-world conditions change over time due to wear, environmental variations, or sensor drift.</li>
             </ul>
-            Bridging the Sim2Real gap is essential for deploying RL policies learned in simulation.
+            Bridging the sim-to-real gap is essential for deploying RL policies learned in simulation.
           </p>
 
           <p>
             <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Domain Randomization</h3>
-            A prominent strategy is domain randomization (DR). Introduced by Tobin et al. (2017), DR trains policies on a distribution of simulators 
+            Domain Randomization (DR) trains policies on a distribution of simulators 
             with randomized parameters, thereby producing robustness to variations. 
             The intuition is that if the policy succeeds across a wide variety of simulated domains, it is likely to generalize to the real world.
             <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
-              <li><b>Tobin et al. (2017).</b> The authors randomized visual properties such as textures, lighting, and object appearances in a vision-based robotic 
-                      grasping task. This prevented the policy from overfitting to the simulator's graphics and enabled zero-shot transfer to real images.</li>
-              <li><b>Peng et al. (2018).</b> Extended this idea to dynamics randomization, perturbing physical parameters such as masses, friction coefficients, 
-                      and actuator delays. Training across this ensemble yielded policies that transferred directly to real quadrupeds, demonstrating the effectiveness of randomizing physics as well as visuals.</li>
-              <li><b>DROPO (Tiboni et al.).</b> Recognizing that naive randomization can waste samples on unrealistic domains, DROPO formulates domain randomization 
-                      itself as an optimization problem. The algorithm adapts the distribution of randomized parameters to maximize policy learning progress, thereby 
-                      improving sample efficiency.</li>
-              <li><b>DORAEMON (Tiboni et al.).</b> This approach instead maximizes the entropy of the parameter distribution, ensuring coverage of diverse dynamics. 
-                      By emphasizing diversity, DORAEMON enhances robustness to real-world variability</li>
+              <li>Tobin et al. <a href="#dr_3" class="citation">[3]</a> introduced randomizing visual properties (textures, lighting, and object appearances) in a vision-based robotic 
+                  grasping task. This prevented the policy from overfitting to the simulator's graphics and enabled zero-shot transfer to real images.</li>
+              <li>Peng et al. <a href="#dynr_8" class="citation">[8]</a> extended this idea to dynamics parameters, perturbing e.g. masses, dumping and actuator delays.</li>
+              <li>Tiboni et al. <a href="#dropo_9" class="citation">[9]</a> introduced "Domain Randomization Off-Policy Optimization" (DROPO), which formulates domain randomization itself as an optimization problem. 
+                  The algorithm adapts the distribution of randomized parameters to fit real world trajectory data. Their DORAEMON framework <a href="#doraemon_10" class="citation">[10]</a> instead 
+                  automatically maximizes the entropy of the parameter distribution based on a constraining success probability.</li>
             </ul>
-            Domain randomization is powerful but limited by the fidelity of the simulator: if the real world lies outside the span of randomized domains, 
+            Domain randomization is powerful but limited by the fidelity of the simulator: if the real world lies outside the range of randomized domains, 
             transfer may still fail.
           </p>
 
@@ -406,70 +405,62 @@ End  -->
             System Identification (SI) aims to directly align the simulator with reality by estimating physical parameters that make simulated trajectories match 
             real observations. Classical SI techniques require carefully designed excitation trajectories that sufficiently probe the dynamics. 
 
-            Optimization can be performed using gradient-free methods such as CMA-ES, or gradient-based methods when differentiable simulators are available. <br>
+            Optimization can be performed using gradient-free methods such as CMA-ES <a href="#cmaes_11" class="citation">[11]</a>, or gradient-based methods when differentiable simulators are available. <br>
             SI methods typically rely on trajectory matching, where real and simulated trajectories are compared and parameters are adjusted to minimize discrepancies.
             
             Two main strategies can be distinguished:
             <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
-              <li><b>Open-loop matching:</b> The real action sequence is replayed in the simulator, and the resulting observations are compared. 
-                This is simple and cost-effective, but mismatches can accumulate if the simulator drifts away from the real trajectory. </li>
-              <li><b>Closed-loop matching:</b> Both simulator and real system execute the same policy, and discrepancies are measured between the resulting behaviors. 
-                This is more robust, but requires the availability of working policies early on.</li>
-            </ul>
-
-            A second distinction concerns whether adaptation is done online or offline:
-            <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
               <li><b>Online methods:</b> alternate between simulation and real-world rollouts, continuously updating the parameter distribution. This makes them adaptive 
-                but also dependent on the quality of the current policy. </li>
-              <li><b>Offline methods:</b> use fixed datasets of real trajectories. They avoid repeated deployments but may suffer if real trajectories 
-                cannot be reliably reproduced in simulation.</li>
+                but also dependent on the quality of the current policy. An recent representative method is <a href="#simopt_12" class="citation">[12]</a>, which updates parameter distributions after comparing simulated 
+            and real rollouts of the same policy.</li>
+              <li><b>Offline methods:</b> use real trajectory datasets that are replayed and the missmatch between real and sim observations is optimized. They depend on accurate observations form the real system. 
+                A recent work includes DROPO <a href="#dropo_9" class="citation">[9]</a>. 
+                Furthermore, one could make a further distinction whether to reset the simulator state in between. </li>
             </ul>
-            Tiboni et al. (2022) compared online and offline methods across benchmarks.
-
-            Recent work illustrates these categories. SimOpt (Chebotar et al., 2019) is an online, closed-loop approach that updates parameter distributions after comparing simulated 
-            and real rollouts of the same policy. BayRn (Muratore et al., 2021) combines domain randomization with Bayesian optimization, adapting parameter distributions based on 
-            sparse real-world feedback. DROID (Tsai et al., 2021) aligns simulator parameters with human demonstrations in an offline, open-loop manner. DROPO (Tiboni et al., 2022) 
-            also works offline, using real trajectories to adjust parameter distributions by replaying them in simulation.
+            We refer to <a href="#bm_13" class="citation">[13]</a> for an benchmark across adaptive online and offline domain randomization approaches.
           </p>
 
           <p>
-            <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Active Exploration for System Identification (ASID)</h3>
-            ASID reframes SI as an active exploration problem. Instead of relying on hand-designed excitation signals, ASID trains exploration policies that maximize the 
-            Fisher information about unknown dynamics parameters. The Fisher Information Matrix (FIM) for parameter $\phi$ under trajectory distribution is defined as TODO.
+            <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Active Exploration for System Identification</h3>
+            The ASID framework <a href="#asid_5" class="citation">[5]</a> reframes SI as an active exploration problem. Instead of relying on hand-designed excitation signals, ASID trains exploration policies that maximize the 
+            Fisher information about unknown dynamics parameters. The Fisher Information Matrix (FIM) for parameters $\boldsymbol{\theta}$ under trajectory distribution $p_{\boldsymbol{\theta}}$ is defined as
+            <p style="text-align: center;">
+              $$\mathcal{I}(\boldsymbol{\theta}) = \mathbb{E}_{\boldsymbol{\tau} \sim p_{\boldsymbol{\theta}}} [\nabla_{\boldsymbol{\theta}} \log p_{\boldsymbol{\theta}}(\boldsymbol{\tau})\nabla_{\boldsymbol{\theta}} \log p_{\boldsymbol{\theta}}(\boldsymbol{\tau})^T]$$
+            </p>
             
-            Maximizing the determinant or trace of $I(\phi)$ ensures that the resulting data are maximally informative for parameter estimation.
+            Maximizing the trace of $\mathcal{I}(\boldsymbol{\theta})$ ensures that the resulting data are maximally informative for parameter estimation.
             ASID exhibits that exploratory policies trained in simulation often transfer well to reality, even when task policies do not. 
             By decoupling exploration from exploitation, ASID enables robots to collect informative trajectory in the real world that can then be used to refine the 
-            simulator and learn downstream task policies. This represents a synthesis of classical SI with modern RL-based exploration. <br>
+            simulator and learn downstream task policies. This represents a mixture of classical SI with modern RL-based exploration. </p>
             
-            ASID pipeline consists of three tightly connected stages:
-            <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
-            <li><b>Exploration:</b> An exploration policy π_exp is trained in simulation with the explicit goal of maximizing the Fisher information of the resulting 
-              trajectories. This ensures that actions taken in the real system will be maximally informative for distinguishing underlying dynamics parameters. 
-              Importantly, training is done purely in simulation, exploiting abundant and inexpensive synthetic rollouts</li>
-            <li><b>System Identification:</b> The learned exploration policy is executed on the real robot to collect informative trajectories. These data are then used 
-              in a system identification step, which estimates key simulation parameters such as inertial properties, friction coefficients, or kinematic configurations. 
-              By reducing model mismatch, the updated simulator provides a more accurate substrate for downstream learning</li>
-            <li><b>Policy Optimization and Transfer:</b> With the refined simulator in place, a task-specific policy πtask is trained using standard reinforcement 
-              learning. Finally the trained policy can be deployed zero-shot in the real world. i.e., without requireing further adaptation. </li>
-            </ul>
+            The ASID pipeline consists of three tightly connected stages:
+            <ol style="margin-top: 1.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
+            <li><b>Exploration:</b> An exploration policy is trained in simulation with the goal of maximizing the Fisher information of the resulting 
+              trajectories w.r.t. physical properties. This ensures that actions taken in the real system will be maximally informative for system idenfification. 
+              Importantly, training is done purely in simulation, exploiting inexpensive rollouts.</li>
+            <li><b>System Identification:</b> The learned exploration policy is executed on the real robot to collect informative trajectories. They are then used 
+              in a system identification step, to estimate key simulation parameters such as inertial properties or friction coefficients.
+              By reducing model mismatch, the updated simulator provides a more accurate model for downstream learning.</li>
+            <li><b>Policy Optimization and Transfer:</b> With the refined simulator, a task-specific policy is trained using standard RL. 
+              Finally the trained policy can be deployed zero-shot in the real world. i.e., without requireing further adaptation. </li>
+            </ol>
             
           </p>
 
           <div style="text-align: center; margin: 2rem 0;">
             <img src="static/images/asid/asid_method.png" alt="Exploration policy" style="max-width: 100%; height: auto; border-radius: 12px;"/>
             <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
-              Overview of ASID pipeline by authors: https://weirdlabuw.github.io/asid/
+              Overview of the ASID pipeline. Adopted from ASID: <a href="https://weirdlabuw.github.io/asid/">https://weirdlabuw.github.io/asid/</a>
             </p>
           </div>
 
 
           <!-- Subsection: Skill Discovery -->
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Unsupervised RL and Skill Discovery</h3>
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Unsupervised Skill Discovery</h3>
           
           <p>
             <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Unsupervised Reinforcement Learning</h3>
-            Unsupervised reinforcement learning (URL) aims to pretrain agents without external task rewards by relying on intrinsic objectives that encourage broad 
+            Unsupervised reinforcement learning aims to pretrain agents without external task rewards by relying on intrinsic objectives that encourage broad 
             exploration and the discovery of diverse behaviors. Instead of optimizing a single extrinsic return, the agent seeks to acquire skills or representations 
             that can later accelerate downstream task learning, reduce sample complexity, or support zero-shot transfer. This paradigm is particularly appealing in robotics, 
             where task-specific rewards are expensive to design and real-world interactions are costly or unsafe. The central challenge is defining intrinsic signals 
@@ -477,21 +468,19 @@ End  -->
           </p>
 
           <p>
-            <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Unsupervised Skill Discovery</h3>
-            A dominant line of work formulates skill discovery as maximizing the mutual information between latent skill variables and the resulting state distributions, 
-            implemented with discriminators that predict skills from observed trajectories. Early work such as Variational Intrinsic Control (Gregor et al., 2016) and 
-            Diversity Is All You Need (Eysenbach et al., 2019) showed that a latent-conditioned policy can be trained to produce distinct, repeatable behaviors purely 
-            through information-theoretic objectives. Extensions like Dynamics-Aware Discovery of Skills (Sharma et al., 2020) incorporate learned dynamics models to bias 
-            skills toward predictable and physically consistent interactions, which is particularly relevant for manipulation. Other approaches maximize state coverage 
-            directly (Hazan et al., 2019; Lee et al., 2019), or employ novelty- and prediction-based intrinsic motivation (Pathak et al., 2017; Burda et al., 2019), 
-            but broad coverage alone does not guarantee that learned skills are semantically meaningful or composable.<br>
+            <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Related Works</h3>
+            In prior approaches, skill discovery is treated as maximizing the mutual information between latent skill variables and the resulting state distributions:
+            "Variational Intrinsic Control" <a href="#vic_14" class="citation">[14]</a> and 
+            "Diversity Is All You Need" <a href="#diayn_7" class="citation">[7]</a> showed that a latent-conditioned policy can be trained to produce distinct, repeatable behaviors
+            through those information-theoretic objectives. Extensions like "Dynamics-Aware Discovery of Skills" <a href="#dads_15" class="citation">[15]</a> incorporate dynamics models to motivate
+            learning predictable interactions. Other approaches count state visitations 
+            <a href="#count_16" class="citation">[16]</a> or maximize state coverage <a href="#cover_17" class="citation">[17]</a>, but broad coverage alone does not guarantee that learned skills are semantically meaningful or composable.
+            An approach focussing on discovering essential and transfereable skills for robotic mainpulation (multi-)tasks is proposed in <a href="#robman_18" class="citation">[18]</a>.<br>
             
-            These advances demonstrate the feasibility of acquiring reusable primitives in simulation, and applications have been reported in locomotion 
-            (Eysenbach et al., 2019), hierarchical RL (Nachum et al., 2018), and robotic manipulation (Sharma et al., 2020; Pertsch et al., 2021). However, 
-            key challenges remain: unsupervised objectives often require large numbers of interactions, and ensuring sample efficiency and safety in real robots 
-            is nontrivial. Moreover, skills discovered through diversity maximization may not align with downstream tasks, and their transfer from simulation to the 
-            real world is complicated by modeling errors and partial observability. Addressing these gaps requires incorporating task relevance, grounding in robot 
-            dynamics, and sim-to-real adaptation mechanisms—directions that motivate integrated frameworks such as active system identification.
+            These works demonstrate the feasibility of acquiring reusable skills in simulation, and applications were realized in locomotion 
+            and robotic manipulation. However, key challenges are: unsupervised objectives often require large numbers of interactions, and ensuring sample efficiency and safety is often difficult. 
+            Also, skills discovered through maximizing diversity may not align with downstream tasks, and their transfer from sim to real is complicated by modeling errors. 
+            Those issues motivate frameworks like ASID. In this project we combine both concepts.
           </p>
           
         </div>
@@ -510,54 +499,53 @@ End  -->
           
           <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Exploration</h3>
           <p>
-            For the exploration stage, we directly rely on the publicly available ASID exploration module provided by the original authors.
-            The exploration module is implemented in Python and makes use of the Soft Actor-Critic (SAC) algorithm together with vectorized Mujoco environments, which enables efficient parallel trainign.
-
-            The objective of exploration in ASID is to collect trajectories that are maximally informative about the system's unknown physical parameters. 
-            This is formalized through the notion of Fisher information, which measures how sensitive the system's next states are to variations in these parameters. 
-            Policies trained under this objective naturally seek out states where the dynamics are most affected by parameter changes, thereby producing observations that support accurate system identification later on.
+            The objective of the exploration module in ASID is to collect trajectories that are maximally informative about the system's unknown physical parameters. 
+            This is formalized through the notion of Fisher information, which measures how sensitive the system's next states are to variations in these parameters.
+            Policies trained under this objective persue states where the dynamics are most affected by parameter changes, thereby producing observations that support accurate system identification later on.
           
             In practice, the authors identify three key challenges in making this objective workable:
             <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
-              <li><em>Complexity of the information measure.</em> In general, computing Fisher information exactly is intractable. To make the problem solvable, the authors assume a simplified structure of the 
-                system dynamics that highlights states where parameter sensitivity is highest. This is realized by applying Gaussian process noise for observations.</li>
-              <li><em>Unknown true parameters.</em> Since the actual system parameters are not known during training, the optimization cannot be performed directly. Instead, the method relies on domain randomization, 
+              <li><b>Complexity of the information measure.</b> In general, computing Fisher information exactly is intractable. To make the problem solvable, the authors assume a simplified structure of the 
+                systb dynamics that highlights states where parameter sensitivity is highest. This is realized by applying Gaussian process noise for observations.</li>
+              <li><b>Unknown true parameters.</b> Since the actual systb parameters are not known during training, the optimization cannot be performed directly. Instead, the method relies on domain randomization, 
                 training policies against a distribution of possible parameters rather than a single fixed value. This approximation is sufficient to yield effective exploration behaviors in practice.</li>
-              <li><em>Non-differentiable simulators.</em> Many physics engines, including Mujoco, do not expose analytical derivatives with respect to system parameters. To address this, the authors approximate 
+              <li><b>Non-differentiable simulators.</b> Many physics engines, including Mujoco, do not expose analytical derivatives with respect to system parameters. To address this, the authors approximate 
                 parameter sensitivities using finite differences: perturbing parameters slightly in both directions and measuring the effect on the next state.</li>
             </ol>
           </p>
+          For the exploration stage, we directly rely on the publicly available ASID <a href="https://github.com/WEIRDLabUW/asid">exploration module</a> provided by the original authors.
+          The exploration module is implemented in Python and makes use of the Soft Actor-Critic (SAC) algorithm together with vectorized Mujoco environments, which enables efficient parallel trainign.
 
           <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">System Identification</h3>
           <p>
-            In the system identification phase, our goal is to adapt specific parameters in the simulator, so that it faithfully reproduces the real-world dynamics observed during the exploration phase.
-            First, a trajectory $\tau_{\text{real}} \sim p_{\boldsymbol{\theta}}^*( \cdot | \pi_{\text{exp}})$ is collected by executing the learned exploration policy $\pi_{\text{exp}}$ in the real environment. 
+            In the system identification phase, our goal is to adapt specific parameters in the simulator, so that it reproduces the real-world dynamics observed during the exploration phase.
+            First, a trajectory $\boldsymbol{\tau}_{\text{real}} \sim p_{\boldsymbol{\theta}}^*( \cdot | \pi_{\text{exp}})$ is collected by executing the learned exploration policy $\pi_{\text{exp}}$ in the real environment. 
             The simulator is then updated such that simulated rollouts align with this reference trajectory. 
             Concretely, the objective is to find a distribution over simulation parameters $\boldsymbol{q}_{\phi}$ that minimizes the expected trajectory mismatch between observations
             <p style="text-align: center;">
-              $$ \mathbb{E}_{\boldsymbol{\theta} \sim q_\phi} [ \mathbb{E}_{\tau_{\text{sim}} \sim p_{\boldsymbol{\theta}}( \cdot | \mathcal{A}(\tau_{\text{real}}) )}  [|| \tau_{\text{real}} - \tau_{\text{sim}} ||_2^2] ]$$
+              $$ \mathbb{E}_{\boldsymbol{\theta} \sim q_\phi} [ \mathbb{E}_{\tau_{\text{sim}} \sim p_{\boldsymbol{\theta}}( \cdot | \mathcal{A}(\tau_{\text{real}}) )}  [|| \boldsymbol{\tau}_{\text{real}} - \boldsymbol{\tau}_{\text{sim}} ||_2^2] ]$$
             </p>
-            where $p_{\boldsymbol{\theta}}(\cdot | \mathcal{A}(\tau_{\text{real}}))$ is the trajectory distribution in the simulator when replaying the exact action sequence from the real trajectory $\tau_{\text{real}}$ (offline).
+            where $p_{\boldsymbol{\theta}}(\cdot | \mathcal{A}(\tau_{\text{real}}))$ is the trajectory distribution in the simulator when replaying the exact action sequence from the real trajectory $\boldsymbol{\tau}_{\text{real}}$ (offline).
             This ensures that discrepancies in dynamics are attributed to parameter misspecification, rather than policy mismatch.<br>
 
-            In our reimplementation, we additionally explore a variation of the procedure where trajectory samples are generated by executing the current policy directly (online) 
+            In our re-implementation, we additionally explore a variation of the procedure where trajectory samples are generated by executing the current policy directly (online) 
             instead of replaying the real-world action sequence. This experimental comparison enables us to investigate the trade-off between strict action-replay matching and on-policy identification.<br>
             
-            For the trajectory optimization, the ASID framework allows the use of any black-box optimizer. The authors use Relative Entropy Policy Search (REPS) for simulation and Cross Entropy Method (CEM) for the real experiments. 
+            For the trajectory optimization, the ASID framework allows the use of any black-box optimizer. The authors use Cross Entropy Method <a href="#cem_19" class="citation">[19]</a> for the real experiments, and Relative Entropy Policy Search <a href="#reps_20" class="citation">[20]</a> for simulation. 
             In this project, we implement both methods and compare them. <br>
           </p>
           <p>
             <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Cross Entropy Method</h3>
-            CEM is a population-based black-box optimization algorithm. It maintains a Gaussian distribution $q(\theta) = \mathcal{N}(\mu, \sigma^2)$ over parameters $\theta$ and iteratively refines this distribution by 
+            The Cross Entropy Method (CEM) is a population-based black-box optimization algorithm. It maintains a Gaussian distribution $q(\boldsymbol{\theta}) = \mathcal{N}(\mu, \sigma^2)$ over parameters $\boldsymbol{\theta}$ and iteratively refines this distribution by 
             focusing on "elite" samples - those with the lowest objective values (or equivalently, highest rewards). Over time, $q$ concentrates around promising regions of the parameter space.
 
             Hyperparameters include:
-            <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
-              <li><em>Number of samples $N$.</em> the number of candidate parameter vectors sampled per iteration.</li>
-              <li><em>Elite ratio $e$.</em> fraction of samples selected as elites ($N_e = eN$).</li>
-              <li><em>Smoothing factor $\alpha$.</em> controls how strongly the new mean/std deviate from the previous iteration.</li>
-              <li><em>Number of iterations $T$.</em> number of optimization cycles (termination condition).</li>
-            </ol>
+            <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
+              <li><b>$S$</b> - the number of candidate parameter vectors sampled per iteration.</li>
+              <li><b>$e$</b> - fraction of samples selected as elites.</li>
+              <li><b>$\alpha$</b> - smoothing factor controls how strongly the new mean/std deviate from the previous iteration.</li>
+              <li><b>$T$</b> number of optimization steps (termination condition).</li>
+            </ul>
 
             Our implementation proceeds as follows:
             <div class="pseudocode-container">
@@ -565,25 +553,31 @@ End  -->
                 <h4 class="pseudocode-title">Pseudocode for CEM </h4>
               </div>
               <div class="pseudocode-content">
-                <span class="pseudocode-line">Input: objective_fn, initial mean μ0, std σ0</span>
-                <span class="pseudocode-line">For iteration = 1 … T:</span>
-                <span class="pseudocode-line">    Sample θ1 … θN ~ N(μ, σ^2)</span>
-                <span class="pseudocode-line">    Evaluate objectives objectives ← f(θi)</span>
-                <span class="pseudocode-line">    Select top (minimum) Ne elite samples</span>
-                <span class="pseudocode-line">    Update mean: μ ← α μ + (1-α) mean(elites)</span>
-                <span class="pseudocode-line">    Update std:  σ ← α σ + (1-α) std(elites)</span>
-                <span class="pseudocode-line">    Enforce minimum σ per parameter (exploration floor)</span>
-                <span class="pseudocode-line">Output: final mean μ</span>
+                <span class="pseudocode-line">  initialize mean ← initial_params</span>
+                <span class="pseudocode-line">  initialize min_std, std ← from parameter bounds</span>
+                <span class="pseudocode-line"></span>
+                <span class="pseudocode-line">  For i in range(T):</span>
+                <span class="pseudocode-line">      samples ← sample from N(mean, std^2)</span>
+                <span class="pseudocode-line">      objectives ← objective_fn(samples)</span>
+                <span class="pseudocode-line"> </span>
+                <span class="pseudocode-line">      # Select e*S elite samples</span>
+                <span class="pseudocode-line">      elite ← sort(objectives)[:e*S] </span>
+                <span class="pseudocode-line"> </span>
+                <span class="pseudocode-line">      # Smooth update</span>
+                <span class="pseudocode-line">      mean ← alpha * mean + (1-alpha) mean(elites)</span>
+                <span class="pseudocode-line">      std ← alpha * std + (1-alpha) std(elites)</span>
+                <span class="pseudocode-line">      std ← maximum(std, min_std)</span>
+                <span class="pseudocode-line">  return mean</span>
               </div>
             </div>
 
             Note the following implementation details:
-            <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
+            <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
               <li>Following a rule-of-thumb, the initial standard deviation is chosen as $\text{range}/\sqrt{12}$ per parameter, corresponding to the standard deviation of a uniform distribution over the parameter bounds. 
                 This ensures that the Gaussian initially covers the parameter space reasonably. </li>
-              <li>A minimum variance constraint is enforced to prevent premature collapse of the search distribution.</li>
+              <li>A minimum standard deviation constraint is enforced to keep a minimal search distribution.</li>
               <li>Updates to the mean and standard deviation are smoothed using the hyperparameter $\alpha$.</li>
-            </ol>
+            </ul>
           </p>
 
           <p>
@@ -594,7 +588,7 @@ End  -->
             Formally, given a set of sampled rewards $r_i$ REPS solves the constrained optimization problem
           </p>
           <p style="text-align: center;">
-          $$\max_q \sum_{i} q_i r_i \text{s.t.} D_{KL}(q || u) \leq \epsilon, \sum_{i} q_i = 1$$
+          $$\max_q \sum_{i} q_i r_i \quad\mathrm{}\quad \text{s.t.} \quad\mathrm{}\quad D_{KL}(q || u) \leq \epsilon, \quad\mathrm{}\quad \sum_{i} q_i = 1$$
           </p>
 
           where $u$ is the uniform distribution over samples and $\epsilon > 0$ controls the size of the update. The dual problem introduces a Lagrange multiplier $\eta$, leading to the optimal distribution
@@ -602,17 +596,17 @@ End  -->
           $$q^*_i \propto \text{exp}(\frac{r_i}{\eta})$$
           </p>
 
-          Thus, the sample weights $w_i$ are given by a normalized exponential tilt of the rewards, where \eta is obtained by minimizing the convex dual
+          Thus, the sample weights $w_i$ are given by a normalized exponential tilt of the rewards, where $\eta$ is obtained by minimizing the convex dual
           <p style="text-align: center;">
-          $$ g(\eta) = \eta \epsilon + \eta log(\frac{1}{N} \sum_{i=1}^N exp(\frac{r_i}{\eta}))$$
+          $$ g(\eta) = \eta \epsilon + \eta \log(\frac{1}{S} \sum_{i=1}^S \text {exp}(\frac{r_i}{\eta}))$$
           </p>
 
           Hyperparameters include:
-          <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
-              <li><em>$\epsilon$</em> KL-divergence bound controlling update size.</li>
-              <li><em>num_sampels</em> num_samples: Number of parameter samples drawn per iteration.</li>
-              <li><em>Number of iterations $T$.</em> Number of optimization steps (termination condition).</li>
-          </ol>
+          <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
+              <li><b>$\boldsymbol{\epsilon}$</b> - KL-divergence bound controlling update size.</li>
+              <li><b>$S$</b> - Number of parameter samples drawn per iteration.</li>
+              <li><b>$T$</b> - Number of optimization steps (termination condition).</li>
+          </ul>
           
           Our implementation proceeds as follows:
           <div class="pseudocode-container">
@@ -620,29 +614,31 @@ End  -->
                 <h4 class="pseudocode-title">Pseudocode for REPS </h4>
         </div>
               <div class="pseudocode-content">
-                <span class="pseudocode-line">Initialize mean = initial_params</span>
-                <span class="pseudocode-line">Initialize covariance from parameter bounds</span>
-                <span class="pseudocode-line">samples ← draw num_samples from N(mean, covariance)</span>
-                <span class="pseudocode-line">rewards ← - objective_fn(samples)   # negative trajectory mismatch</span>
+                <span class="pseudocode-line">  Initialize mean ← initial_params</span>
+                <span class="pseudocode-line">  Initialize cov ← from parameter bounds</span>
                 <span class="pseudocode-line"></span>
-                <span class="pseudocode-line"># Solve dual</span>
-                <span class="pseudocode-line">η* ← argmin g(η) using Newton's method</span>
-                <span class="pseudocode-line">weights ← softmax(rewards / η*)</span>
+                <span class="pseudocode-line">  For i in range(T):</span>
+                <span class="pseudocode-line">      samples ← samples from N(mean, cov)</span>
+                <span class="pseudocode-line">      rewards ← - objective_fn(samples)</span>
                 <span class="pseudocode-line"></span>
-                <span class="pseudocode-line"># Moment matching update</span>
-                <span class="pseudocode-line">mean ← Σ_i w_i * samples[i]</span>
-                <span class="pseudocode-line">covariance ← Σ_i w_i * (samples[i] - mean)(samples[i] - mean)^T</span>
+                <span class="pseudocode-line">      # Solve dual using Newton's method</span>
+                <span class="pseudocode-line">      eta* ← argmin g(eta)</span>
+                <span class="pseudocode-line">      weights ← softmax(rewards / eta*)</span>
                 <span class="pseudocode-line"></span>
-                <span class="pseudocode-line">return mean</span>
+                <span class="pseudocode-line">      # Moment matching update</span>
+                <span class="pseudocode-line">      mean ← weights * samples[i]</span>
+                <span class="pseudocode-line">      cov ← cov * weights * (samples[i] - mean)(samples[i] - mean)^T</span>
+                <span class="pseudocode-line"></span>
+                <span class="pseudocode-line">  return mean</span>
               </div>
             </div>
 
-          Note some implementation details:
-          <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
+          Note the following implementation details:
+          <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
             <li>Similar to CEM, the initial covariance is set to $\text{diag}(\text{range}\sqrt{12})^2$, accoding to parameter ranges.</li>
             <li>Instead of commonly used Broyden-Fletcher-Goldfarb-Shanno method (BFGS), we solve the dual optimization problem with Newton's method, exploiting the closed-form gradient and Hessian of $g(\eta)$ </li>
             <li>To avoid numerical overflow, we use the log-sum-exp trick in the computation of the partition function.</li>
-          </ol>
+          </ul>
           
 
           
@@ -660,15 +656,15 @@ End  -->
             <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Experimental Setup</h3>
             The simulated Franka Emika Panda robot arm is mounted on a fixed table. According to the applied domain randomization, the placement of the rod is perturbed uniformly within fixed ranges:
             $x = 0.4 \pm 0.1$ meters and $y = 0.3 + 0.1$.
-            The rod itself is modeled as a box of dimensions 0.04 $\times$ 0.3 $\times$ 0.04 meters. For exploring, the parameter of interest is the mass distribution 
-            (inertia) along the length of the rod, which is uniformly varied within $[-0.1, 0.1]$ for each episode. Therefore,
+            The rod itself is modeled as a box of dimensions 0.04 x 0.3 x 0.04 meters. For exploring, the parameter of interest is the mass distribution 
+            (inertia) along the length of the rod, which is uniformly varied within [-0.1, 0.1] for each episode. Therefore,
             we train the exploration policy only w.r.t. to the distribution of mass, but use the resulting policy to infer the inertia and friction parameters of the rod. <br>
           </p>
           
           <p>
             The robot is controlled at the end-effector level. Following the original design, the arm is constrained to operate in the x-y plane, resulting in two degrees of freedom (2-DoF) for the exploration task.
             <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
-              <li><b>Action space.</b> The 7 dimensional control signal corresponds to the 7-DoF joint velocities of the Franka arm plus the gripper width. Each dimension is bounded within $[-0.1, 0.1]$.</li>
+              <li><b>Action space.</b> The 7 dimensional control signal corresponds to the 7-DoF joint velocities of the Franka arm plus the gripper width. Each dimension is bounded within [-0.1, 0.1].</li>
               <li><b>Observation space.</b> The 22 dimensional observation vector is composed of three components: (1) joint positions of the 7-DoF arm and gripper width, (2) 7-DoF end-effector pose and gripper width, 
                 and (3) 7 dimensional rod pose using quaternion orientation. </li>
             </ul>
@@ -743,7 +739,7 @@ End  -->
             We apply CEM and REPS. For each method, we evaluate the two modes:
             <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
               <li><b>Offline</b> mode follows the ASID framework, the optimizer replays the action sequence of the real trajectory when generating simulated rollouts.</li>
-              <li><b>Online</b> mode introduced here as an experimental variation, the optimizer instead generates rollouts by executing the current policy.</li>
+              <li><b>Online</b> mode introduced here as an experimental variation, the optimizer instead generates rollouts by executing actions from the current policy.</li>
             </ul>
           </p>
           
@@ -806,7 +802,7 @@ End  -->
           
           <p>
             Based on this experiment, we find that our REPS variants are both able to reduce the trajectory missmatch nearly perfectly. Although the offline version 
-            required less iterations to convergence, we can confirm both are suited for ASID. However, the CEM methods do not perform at all. We tested different 
+            required less iterations to convergence, we can confirm both are suited for system identificiation. However, the CEM methods do not perform at all. We tested different 
             conservation rations for the alpha update of the standard deviation to prevent premature narrowing, but could not find a suited configuration. Therefore, 
             we don't want to exclude the possibility that this is an implementation error.
           </p>
@@ -877,7 +873,7 @@ End  -->
             </p>
           </div>
 
-          The visual resutls confirm the numerical results. The REPS variants are able to recover the correct trajectory more accurately than the CEM variants.
+          The visual results confirm the numerical results. The REPS variants are able to recover the correct trajectory more accurately than the CEM variants.
 
         </div>
       </div>
@@ -893,50 +889,53 @@ End  -->
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
-        <h2 class="title is-3">Fisher Information for Skill Discovery</h2>
+        <h2 class="title is-3">Adapting ASID for Skill Discovery</h2>
         <div class="content has-text-justified">
           
           
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Idea</h3>
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Idea of Weighted Fisher Information</h3>
           <p>
-            In the original ASID framework, the reward for the exploration policy is defined as the trace of the Fisher Information Matrix (FIM), 
+            We introduce our idea of weighted Fisher information intuitively by deriving it from the exploration objective of ASID framework.
+            ASID's reward for the exploration policy is defined as the trace of the Fisher Information Matrix (FIM), 
             i.e., the sum of its diagonal components. This encourages the policy to collect trajectories that are informative with respect to all 
             system parameters simultaneously. While this formulation is principled, it implicitly treats all parameters as equally relevant, 
-            which may not always be desirable in practice.
+            which may not always be desirable in practice. While it leads to informative trajectories for system idenfification, for skill discovery 
+            focuses on exploring a variaty of "information directions".
           </p>
           <p>
-            We extend this objective by introducing parameter-specific weights on the diagonal components of the FIM. 
+            We adapt the objective by introducing parameter-specific weights for each parameters information component. 
             Instead of maximizing the total information, the agent can now be guided to prioritize certain directions in parameter space over others. 
-            This design allows us to interpret the weights as a form of curiosity modulation: high weights encourage exploration towards a parameter, 
-            while low or even negative weights discourage it.
-            Taking the rod balancing task as an example. If the exploration policy is rewarded for maximizing information about mass while 
-            ignoring (or penalizing) information about friction, we hypothesize that the robot would attempt to learn some kind of grasping skill.
+            This design allows us to interpret the weights as a form of curiosity modulation: high weights encourage exploration behavior towards a parameter, 
+            while low weights discourage it.
+            Taking the rod balancing task as an example, if the exploration policy is rewarded for maximizing information about mass while 
+            ignoring (or penalizing) information about friction, we hypothesize that the robot might attempt to learn some kind of grasping skill.
           </p>
-          <p>  
-            This mechanism allows us to sample different weight configurations and obtain families of exploratory skills, 
-            each corresponding to a distinct focus on specific system parameters. In a later stage, task policies could be conditioned on 
-            such latent skills to leverage parameter-focused exploration. Furthermore, the sample distribution could be iteratively adapted
-            to encourage learning usefull skills. 
+          <p>
+            In a broader sense, this mechanism allows sampling different weight configurations and obtain families of exploratory skills, 
+            each corresponding to a distinct focus on specific system parameters. Ultimately, the goal would be to condition task policies on 
+            such latent skills to leverage parameter-focused exploration. Furthermore, the sample distribution of weights could be iteratively adapted
+            to encourage learning usefull skills for downstream tasks. 
           </p>
           
 
           
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Implementation</h3>
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Implementing Weighted Fisher Information</h3>
 
-          We introduce a vector of parameter weights $w \in \mathbb{R}^{d_{\text{param}}}$, which allows scaling of the diagonal entries of the Fisher Information Matrix $F$. 
+          To realize the concept of weighted Fisher Information, we introduce a vector of parameter weights $w \in \mathbb{R}^{d_{\text{param}}}$, 
+          which allows scaling of the diagonal entries of the Fisher Information Matrix $\mathcal{I}$. 
           The modified reward becomes:
           <p style="text-align: center;">
-            $$ r = \sum_{j = 1}^{d_{\text{param}}} w_j F_{jj}$$
+            $$ r = \sum_{j = 1}^{d_{\text{param}}} w_j \mathcal{I}_{jj}$$
           </p>
-          This formulation generalizes the original "ASID case", which corresponds to the special case $w_j = 1$.
+          This formulation generalizes ASIDs objective, which corresponds to the special case $w_j = 1$.
           Unlike the original ASID reward, our formulation may yield negative values when some weights are set negative, effectively penalizing information gain in 
-          certain directions. Therefore, we additionally clip the reward values to the interval [-1000, 1000].
+          certain directions. Therefore, to maintain stability, we additionally clip the reward values to the interval [-1000, 1000].
 
 
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Challenges and Solutions in Weighted FIM Exploration</h3>
+          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Challenges and Solutions</h3>
           <p>
-            The introduction of weighted Fisher Information rewards required extensive experimentation to address several non-trivial challenges. 
-            To keep the complexity manageable, we restricted our analysis to pairs of parameters (e.g. inertia - friction), which already revealed key difficulties 
+            The introduction of weighted Fisher information rewards required extensive experimentation to address several non-trivial challenges. 
+            To keep the complexity manageable, we restricted our analysis to pairs of parameters (e.g. inertia vs. friction), which already revealed key difficulties 
             in balancing sensitivities, shaping rewards, and selecting weights.
           </p>
 
@@ -949,72 +948,112 @@ End  -->
           </p>
 
           <p>
-            A related problem arose in the computation of finite-difference gradients for the FIM, where different parameters required different step sizes $\delta t$.
+            A related problem arose in the computation of finite-difference gradients for the FIM, where different parameters required different step sizes $\Delta t$.
             We experimented with several solutions:
+          </p>
 
-            <ol style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
-              <li><em>Normalizing the entire FIM or its diagonal entries.</em> this preserved relative magnitudes but destroyed the absolute information scale, 
-                which is crucial for interpretability. With only two parameters, normalization collapses one component to 1, making the reward uninformative.</li>
-              <li><em>Parameter-specific normalization factors and delta values:</em> by assigning tailored scaling to each parameter, the reward contributions 
-                could be balanced without distorting the underlying information structure. This proved most effective, though it required careful tuning to 
-                identify good normalization constants.</li>
-            </ol>
+          <p>
+            <b>Normalizing the FIM</b>: In an initial attempt, we applied a simple normalization strategy to the the diagonal information components:
+            <p style="text-align: center;">
+              $$ \text{diag}(F) \leftarrow \frac{\text{diag}(F)}{\max{\text{diag}(F)}} \cdot 500$$
+            </p>
+            However, results did not turn out convincing (flat or slightly negative return curves), 
+            probably due to this modification preserving relative magnitudes but destroying the absolute information scale. </li>
+          </p>
+
+          <p> 
+            <b>Parameter-specific normalization factors and delta values:</b>
+            By assigning tailored scaling to each parameter, the reward contributions 
+            can be balanced without distorting the underlying information structure. 
+            This proved most effective, though it requires careful tuning to 
+            identify good normalization constants.
+          </p>
+
+
 
           </p>
           <h3 class="title is-5" style="margin-top: 2rem; margin-bottom: 1rem;">Sparse Reward Environment</h3>
           <p>
             The environment only yields meaningful Fisher information when the robot interacts with the rod. Without such contact, 
             rewards vanish, leading to sparse signals and slow policy improvement. To alleviate this, we introduced reward shaping by 
-            adding a penalty proportional to the Euclidean distance between the gripper and the rod. This encouraged the robot to approach the rod, 
-            thus increasing the chance of interaction.
-
+            adding a penalty proportional to the Euclidean distance between the end-effector and the rod:
+            <p style="text-align: center;">
+              $$ r \leftarrow  r - || x_\text{ee} - x_\text{rod}||^2_2 \cdot 10$$
+            </p>
           </p>
           <p>
-            A subtle trade-off emerged: too strong a penalty biased the policy towards simply reaching the rod without performing informative interactions. 
+            This encouraged the robot to approach the rod, thus increasing the chance of interaction. <br>
+            A subtle trade-off emerged: too strong penalty biased the policy towards simply reaching the rod without performing informative interactions. 
             To mitigate this, we initially deactivated the distance penalty once the rod was reached. However, experiments showed that keeping a small shaping 
-            term active was beneficial, as it encouraged the robot to sustain contact with the rod - even in cases where the resulting Fisher reward was negative - thereby 
-            maintaining exploration pressure.
+            term active was beneficial, as it encouraged the robot to sustain contact with the rod thereby maintaining exploration pressure.
           </p>
+
+
+          <div class="multi-images-layout">
+            <div class="image-container">
+              <img src="static/images/others/avoid_crop.gif" alt="First step image" loading="lazy"style="max-width: 70%; height: auto; border-radius: 12px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);"/>
+              <p class="image-caption">Example of the agent avoiding interaction due to inbalanced reward components resulting in negative rewards.</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/others/still_dist_bias_crop.gif" alt="Second step image" loading="lazy" style="max-width: 70%; height: auto; border-radius: 12px; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);"/>
+              <p class="image-caption">Example of the agent avoiding interaction due to inbalanced reward components despite reward shaping.</p>
+            </div>
+          </div>
+
+
           <h3 class="title is-5" style="margin-top: 2rem; margin-bottom: 1rem;">Selecting Effective Weights</h3>
           <p>
             
-            inally, choosing suitable weight combinations was itself a challenge. Some parameters exhibited coupled responses, making it difficult 
-            to separate their effects, especially during early interactions. For example, assigning weights $[+1, -1]$ often led to near-zero rewards, 
-            as coupled dynamics canceled out. Conversely, small asymmetries such as $[+1, \pm 1]$ did not sufficiently enforce distinct parameter-specific 
+            Ininally, choosing suitable weight combinations was itself a challenge. Some parameters exhibited coupled responses, making it difficult 
+            to separate their effects, especially during early interactions. For example, assigning weights [+1, -1] often led to near-zero rewards, 
+            as coupled dynamics canceled out. Conversely, small asymmetries such as [+1, \pm 0.1] did not sufficiently enforce distinct parameter-specific 
             exploration.
 
           </p>
           <p>
-            Through initial empirical evaluation, we found that moderate asymmetries such as $[1.0, -0.5]$ worked reasonably. 
-            provided a compromise: they introduced a clear bias towards one parameter while still penalizing the other, without completely collapsing the 
-            reward signal. While this choice already encouraged meaningful parameter-focused skills, there is still optimization potential.
+            Through initial empirical evaluation, we found that moderate asymmetries such as [1.0, -0.5] worked reasonably. 
+            They introduced a clear bias towards one parameter while still penalizing the other, without completely collapsing the reward signal.
           </p>
 
 
 
 
           <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Discovering Skills</h3>
-
+          
+          In this section we present the setup and results for unsupervised skill discovery applying the concept of weighted Fisher information.
+          
           <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Experimental Setup</h3>
-          In this section we pesent experimental setup and results for unsupervised learning of skills using the adapted fisher information objective.
-          We perform an wholistic experiment in the same rod ballancing environement as introduced before.
+          
+          <p>
+          The goal is to study the effect of the modified - Fisher information weighted - reward function by observing the learned interaction behavior of the robot. 
+          Specifically, we would like to find out whether it is possible to learn different manipulation skills and analyze how they correspond to the weighted parameters. 
+          We use three parameters and systematically test each pair with both weighting combinations ([1.0, -0.5] and [-0.5, 1.0]) totaling in six skills.
+        </p>
+        <p>
+          The experiment is carried out in the same rod balancing environment as introduced earlier in the re-implementation sections. Importantly, we do not apply domain randomization. 
+          For unlimited exploration capability, we also drop the xy-plane restriction of the endeffector and allow free control of pose and gripper width (7-DoF).
+          Note, this significantly increases the action space and requires longer training times. Despite applying reward shaping, we account for that by using a pretrained policy for initialization. 
+          We trained one for 200,000 timesteps w.r.t. inertia and friction and selected a policy state with minimal interaction to keep the introduced bias reasonable.
+        </p>
+        <p>
+          Each of the six policies induced by a combination of weights and parameters is trained for 250,000 total steps (~5 hours - CPU only) and the episode length is limited to 30 steps.
+          Following parameters are considered: <b>inertia</b> (position of the rods center of mass), <b>friction</b> and <b>mass</b> (properties of the rod).
+        </p> 
 
-
-
-
+          <p>To ensure that each parameters information contribution to the reward can be weighted consistently, it is essential to tune the normalization factors 
+          and finite differences delta time steps. A simple interaction resulting from the pretrained policy is used as a benchmark for tuning: 
+          We adjust normalization factors and gradient deltas for each parameter manualy based on the cumulative parameter information for each parameter (diagonals of FIM) 
+          obtained through interaction over four episodes. The following animation visualizes reference interaction, return, distance penalty, and importantly the information responses 
+          for each parameter after tuning.</p>
           <div style="text-align: center; margin: 2rem 0;">
             <img src="static/images/others/tuned.gif" alt="Exploration policy" style="max-width: 100%; height: auto; border-radius: 12px;"/>
             <p style="text-align: center; font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">
-              Trajectory and reward with tuned components including individual parameter contributions for inertia, friction and mass. Additionaly the distance penalty is shown.
+              Animated trajectory (generated by pretrained policy), resulting distance penalty and reward signal with tuned components including individual information contributions for inertia, friction and mass (weighted by 1).
             </p>
           </div>
 
-          
-
-
-
           <p>
-            The following table presents the configuration parameters used across different exploration trainings.
+            The table summarizes (tuned) parameter configurations:
           </p>
           
           <div style="overflow-x: auto; margin: 2rem 0;">
@@ -1022,117 +1061,61 @@ End  -->
               <thead>
                 <tr style="background-color: #f8fafc;">
                   <th style="text-align: center; font-weight: 600;"></th>
-                  <th style="text-align: center; font-weight: 600;"></th>
-                  <th style="text-align: center; font-weight: 600;"></th>
-                  <th style="text-align: center; font-weight: 600;"></th>
-                  <th style="text-align: center; font-weight: 600;"></th>
-                  <th style="text-align: center; font-weight: 600;"></th>
-                  <th style="text-align: center; font-weight: 600;"></th>
-                  <th style="text-align: center; font-weight: 600;"></th>
+                  <th style="text-align: center; font-weight: 600;">Normalization Factor</th>
+                  <th style="text-align: center; font-weight: 600;">Gradient Delta</th>
+                  <th style="text-align: center; font-weight: 600;">Rod (deterministic)</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style="text-align: center; font-weight: 500;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
+                  <td style="text-align: center; font-weight: 500;">Inertia</td>
+                  <td style="text-align: center;">0.005</td>
+                  <td style="text-align: center;">0.01</td>
+                  <td style="text-align: center;">-0.1 | 0.0 *</td>
                 </tr>
                 <tr>
-                  <td style="text-align: center; font-weight: 500;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
+                  <td style="text-align: center; font-weight: 500;">Friction</td>
+                  <td style="text-align: center;">0.005</td>
+                  <td style="text-align: center;">0.5</td>
+                  <td style="text-align: center;">2.0</td>
                 </tr>
                 <tr>
-                  <td style="text-align: center; font-weight: 500;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                </tr>
-                <tr>
-                  <td style="text-align: center; font-weight: 500;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                </tr>
-                <tr>
-                  <td style="text-align: center; font-weight: 500;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                </tr>
-                <tr>
-                  <td style="text-align: center; font-weight: 500;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                </tr>
-                <tr>
-                  <td style="text-align: center; font-weight: 500;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                </tr>
-                <tr>
-                  <td style="text-align: center; font-weight: 500;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
-                  <td style="text-align: center;"></td>
+                  <td style="text-align: center; font-weight: 500;">Mass</td>
+                  <td style="text-align: center;">0.008</td>
+                  <td style="text-align: center;">0.2</td>
+                  <td style="text-align: center;">0.15</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          
-          <p style="margin-top: 1.5rem; font-style: italic; color: #64748b;">
-          
+          <p style="margin-top: -1.5rem; font-style: italic; color: #64748b; text-align: center">
+            * configured -0.1 (left), if the skill (or reward) considers inertia, else 0.0 (middle).
           </p>
 
           <h3 class="title is-5" style="margin-top: 1rem; margin-bottom: 1rem;">Results</h3>
+          
+          <p>To analyze the skill lerning process, we compute return and <em>information return</em> during evaluations performed after each 5.000 training steps.
+          The returns shown in the following static plots are computed, by cummulating rewards (clipped) and averaging over four parallel evaluation episodes.
+          Analogous, the information-return of a parameter consists of the parameters Fisher information commulated and averaged over evaluation episodes (no clipping). 
+          The resulting plots enable comparing the returns and the parameters individual contribution to the return (without weighting) during the learning process.</p>
 
-
+          <p>A skill based on rewards e.g. computed based on 1.0 weighted inertia and -0.5 weighted friction information is denoted as <b><em>inertia-friction</em></b> skill; 
+          for reversed weights, we write <b><em>friction-inertia</em></b> skill.
+          For each skill, we present the animated trajectory of the behavior extracted from the evaluation step with the highest return (marked by the blue arrow).</p>
+          
           <p>
-            <b>Inertia vs Friction </b>
+            <b>Inertia vs. Friction </b>
           </p>
-
+          Return based learning curves for both skills are relatively low [-1000; 3000] compared to other skills. High inertia spikes in the left plot suggest that there are multiple interaction behaviors achieving similar 
+          returns in the mid-phase of training. For the total training duraion, the friction-inertia skill learning resulted in only one notable friction-explorative skill instance. Both learning processes are unstable.
           <div class="two-images-layout">
             <div class="image-container">
               <img src="static/images/skills/plots/inertia-friction_arrow.png" alt="First comparison image" loading="lazy"/>
-              <p class="image-caption"></p>
+              <p class="image-caption">Return, and information-returns for learning the <b>inertia-friction</b> skill.</p>
             </div>
             <div class="image-container">
               <img src="static/images/skills/plots/friction-inertia_arrow.png" alt="Second comparison image" loading="lazy"/>
-              <p class="image-caption"></p>
+              <p class="image-caption">Return, and information-returns for learning the <b>friction-inertia</b> skill.</p>
             </div>
           </div>
 
@@ -1141,11 +1124,11 @@ End  -->
               <div class="carousel-track">
                 <div class="carousel-slide">
                   <img src="static/images/skills/gifs/inertia-friction_682_crop.gif" alt="Inertia - Friction" loading="lazy"/>
-                  <div class="carousel-caption"></div>
+                  <div class="carousel-caption">Animated trajectory of the <b>inertia-friction</b> skill with corresponding return, distance penalty, and information componenents (weighted).</div>
                 </div>
                 <div class="carousel-slide">
                   <img src="static/images/skills/gifs/friction-inertia_1536_crop.gif" alt="Friction - Inertia" loading="lazy"/>
-                  <div class="carousel-caption"></div>
+                  <div class="carousel-caption">Animated trajectory of the <b>friction-inertia</b> skill with corresponding return, distance penalty, and information componenents (weighted).</div>
                 </div>
               </div>
               <button class="carousel-nav prev" aria-label="Previous image">
@@ -1158,25 +1141,75 @@ End  -->
             <div class="carousel-indicators">
               <button class="carousel-indicator active" aria-label="Go to slide 1"></button>
               <button class="carousel-indicator" aria-label="Go to slide 2"></button>
-              <button class="carousel-indicator" aria-label="Go to slide 3"></button>
-              <button class="carousel-indicator" aria-label="Go to slide 4"></button>
             </div>
           </div>
 
-
+          <p>Both skills exhibit behavior that would be expected: The inertia-friction skill focuses on repeatingly rotating of the rod (maximizing inertia information because this only works if the force is 
+          applied near the center of mass) and chosing the rods long axis to minimize friction information. The friction-inertia skill seemingly tries to minimize any movement of the rod while brushing over 
+          its surface to maximizes friction information.</p>
 
           <p>
-            <b>Mass vs Inertia </b>
+            <b>Friction vs. Mass </b>
           </p>
+          The left plot indicates a very strong friction-mass skill, whose learning process started late (half of training time), but generated a return (10,000) that is significantly higher than for the contrasting skill (2.000).
+          The learning curve of the mass-friction skill shows that the pretrained behavior which aquired already the same mass information as reached - only once again - by the end of the training.
+
+          <div class="two-images-layout">
+            <div class="image-container">
+              <img src="static/images/skills/plots/friction-mass_arrow.png" alt="Second comparison image" loading="lazy"/>
+              <p class="image-caption">Return, and information-returns for learning the <b>friction-mass</b> skill.</p>
+            </div>
+            <div class="image-container">
+              <img src="static/images/skills/plots/mass-friction_arrow.png" alt="First comparison image" loading="lazy"/>
+              <p class="image-caption">Return, and information-returns for learning the <b>mass-friction</b> skill.</p>
+            </div>
+          </div>
+
+          <div class="content-carousel single-image">
+            <div class="carousel-container">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img src="static/images/skills/gifs/friction-mass_1662_crop.gif" alt="Inertia - Mass" loading="lazy"/>
+                  <div class="carousel-caption">Animated trajectory of the <b>friction-mass</b> skill with corresponding return, distance penalty, and information componenents (weighted).</div>
+                </div>
+                <div class="carousel-slide">
+                  <img src="static/images/skills/gifs/mass-friction_2089_crop.gif" alt="Mass - Inertia" loading="lazy"/>
+                  <div class="carousel-caption">Animated trajectory of the <b>mass-friction</b> skill with corresponding return, distance penalty, and information componenents (weighted).</div>
+                </div>
+              </div>
+              <button class="carousel-nav prev" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="carousel-nav next" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="carousel-indicators">
+              <button class="carousel-indicator active" aria-label="Go to slide 1"></button>
+              <button class="carousel-indicator" aria-label="Go to slide 2"></button>
+            </div>
+          </div>
+
+          <p>Observing the friction-mass skill, we can see friction and mass informative movements. By analyzing the episodic information-return responses, we can confirm that both parameters exhibit similar curves 
+          and lead to positive rewards only due to the weighting. We can conclude that the agent does not really learn to differentiate between mass and friction explorative behavior in this case.
+          For the mass-friction skill, same applies in a weaker way. We suspect that this is related to strong parameter coupling. Furthermore, based on the limited training of 250.000 timesteps, we can not verify
+          our hypothesis that friction-mass skill results in grasping behavior.
+          </p>
+
+          <p>
+            <b>Mass vs. Inertia </b>
+          </p>
+          Training the mass-inertia policy resulted in oscilating return curves, however, with multiple skill "states" reaching 4.000. For the given training time, the return curve of the inertia-mass skill
+          shows a sharp decline (-5.000). It recoveres reaching a maximum return of 1.000 (excluding the pretrained state) but remains near zero, indicating a weak skill.
 
           <div class="two-images-layout">
             <div class="image-container">
               <img src="static/images/skills/plots/mass-inertia_arrow.png" alt="Second comparison image" loading="lazy"/>
-              <p class="image-caption"></p>
+              <p class="image-caption">Return, and information-returns for learning the <b>mass-inertia</b> skill.</p>
             </div>
             <div class="image-container">
               <img src="static/images/skills/plots/inertia-mass_arrow.png" alt="First comparison image" loading="lazy"/>
-              <p class="image-caption"></p>
+              <p class="image-caption">Return, and information-returns for learning the <b>inertia-mass</b> skill.</p>
             </div>
           </div>
 
@@ -1185,11 +1218,11 @@ End  -->
               <div class="carousel-track">
                 <div class="carousel-slide">
                   <img src="static/images/skills/gifs/mass-inertia_1576_crop.gif" alt="Mass - Inertia" loading="lazy"/>
-                  <div class="carousel-caption"></div>
+                  <div class="carousel-caption">Animated trajectory of the <b>mass-inertia</b> skill with corresponding return, distance penalty, and information componenents (weighted).</div>
                 </div>
                 <div class="carousel-slide">
                   <img src="static/images/skills/gifs/inertia-mass_1066_crop.gif" alt="Inertia - Mass" loading="lazy"/>
-                  <div class="carousel-caption"></div>
+                  <div class="carousel-caption">Animated trajectory of the <b>inertia-mass</b> skill with corresponding return, distance penalty, and information componenents (weighted).</div>
                 </div>
               </div>
               <button class="carousel-nav prev" aria-label="Previous image">
@@ -1202,56 +1235,12 @@ End  -->
             <div class="carousel-indicators">
               <button class="carousel-indicator active" aria-label="Go to slide 1"></button>
               <button class="carousel-indicator" aria-label="Go to slide 2"></button>
-              <button class="carousel-indicator" aria-label="Go to slide 3"></button>
-              <button class="carousel-indicator" aria-label="Go to slide 4"></button>
             </div>
           </div>
-
-
-          
-
-          <p>
-            <b>Mass vs Friction </b>
-          </p>
-
-          <div class="two-images-layout">
-            <div class="image-container">
-              <img src="static/images/skills/plots/mass-friction_arrow.png" alt="Second comparison image" loading="lazy"/>
-              <p class="image-caption"></p>
-            </div>
-            <div class="image-container">
-              <img src="static/images/skills/plots/friction-mass_arrow.png" alt="First comparison image" loading="lazy"/>
-              <p class="image-caption"></p>
-            </div>
-          </div>
-
-          <div class="content-carousel single-image">
-            <div class="carousel-container">
-              <div class="carousel-track">
-                <div class="carousel-slide">
-                  <img src="static/images/skills/gifs/mass-friction_2089_crop.gif" alt="Mass - Inertia" loading="lazy"/>
-                  <div class="carousel-caption"></div>
-                </div>
-                <div class="carousel-slide">
-                  <img src="static/images/skills/gifs/friction-mass_1662_crop.gif" alt="Inertia - Mass" loading="lazy"/>
-                  <div class="carousel-caption"></div>
-                </div>
-              </div>
-              <button class="carousel-nav prev" aria-label="Previous image">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <button class="carousel-nav next" aria-label="Next image">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
-            <div class="carousel-indicators">
-              <button class="carousel-indicator active" aria-label="Go to slide 1"></button>
-              <button class="carousel-indicator" aria-label="Go to slide 2"></button>
-              <button class="carousel-indicator" aria-label="Go to slide 3"></button>
-              <button class="carousel-indicator" aria-label="Go to slide 4"></button>
-            </div>
-          </div>
-
+          The mass-inertia skill seems to secure the position of the rod after bumping it - maybe preventing it from further movement.
+          When performing the inertia-mass skill, the robot does not directly aim at the center of mass, as it was the case when exploring toward mass. 
+          Contrary to expectations, nearly no mass information response results from the short but impulsive rod push. 
+          (We can imagine that the agent learned to exploit the masses bigger gradient delta time (0.2 >> 0.005) - effectively bypassing the response through fast interaction.)
         </div>
       </div>
     </div>
@@ -1267,26 +1256,29 @@ End  -->
         <h2 class="title is-3">Discussion and Future Work</h2>
         <div class="content has-text-justified">
 
-          Our experiments with weighted Fisher Information rewards revealed several open challenges and design trade-offs. First, 
-          the choice of negative weights must be handled carefully. While moderate values such as 0.5 worked well in balancing parameter exploration, 
-          larger negative weights often amplified parameter coupling and collapsed the reward signal. 
-          Smaller magnitudes for penalizing information appear more stable and should be systematically studied in future work.<br>
+          Our experiments with weighted Fisher Information rewards revealed several open challenges and design trade-offs. 
+          <ul style="margin-top: 0.0rem; margin-left: 2.0rem; margin-bottom: 0.0rem;">
+              <li><b>Weights.</b> The choice of negative weights must be handled carefully. While moderate values such as -0.5 combined with 1.0 worked well in balancing parameter exploration, 
+                larger negative weights often amplified parameter coupling and collapsed the reward signal. 
+                Smaller magnitudes for penalizing information appear more stable, however might not result in parameter-distinguishable behavior and should be studied in future work.</li>
+                <li><b>Non-linear Weighting.</b> A promising direction for stabilizing learning lies in experimenting with non-linear weighting functions. Instead of simple linear combinations of FIM components, 
+                  operations such as square roots could smooth out extreme values and improve training robustness. Finally, our current formulation only exploits the diagonal of 
+                  the Fisher matrix. The off-diagonal entries encode parameter coupling and could be leveraged to explicitly reward disentanglement of parameter sensitivities, potentially 
+                  leading to richer skill sets. </li>
+                <li><b>Reward Shaping.</b> A second key trade-off lies in reward shaping. While the introduced distance penalty successfully reduced sparsity and encouraged continuous rod interaction, 
+                  it comes at the risk of biasing exploration towards mere proximity rather than meaningful skill discovery. Striking the right balance between shaping and unbiased 
+                  learning remains an open question.</li>
+              <li><b>Tuning.</b> Another limitation is the manual tuning requirement. Both normalization factors and finite-difference delta parameters must be adjusted manualy for each environment and parameter. 
+                  This introduces overhead and prevents straightforward generalization. Automating this tuning process, e.g., via adaptive normalization 
+                  would make the method more practical.</li>
+                <li><b>Hardware Limitation.</b> On the systems side, hardware limitations restricted the amount of training we could perform. To compensate, we used pretrained policies, but this inevitably 
+                      introduced bias into exploration. Future work should focus on enabling longer training schedules and longer episode lengths to hopefully learn more complex behavior.
+                    Additionally, this would accelerate experimenting with higher numbers of parameters.</li>
+              <li><b>Domain Randomization.</b> Further experimentation with randomizing parameters used for skill discovery, as well as randomizing the pose of the rod is encouraged for future work, to learn robust skills. </li>
+              <li><b>Sampling weights.</b> To automate the skill discovery, weight sampling can be introduced with adaptive sampling distributions 
+                    to guide and refine the discovery toward usefull skills.</li>
+          </ul>
 
-          A second key trade-off lies in reward shaping. While the introduced distance penalty successfully reduced sparsity and encouraged continuous rod interaction, 
-          it comes at the risk of biasing exploration towards mere proximity rather than meaningful skill discovery. Striking the right balance between shaping and unbiased 
-          learning remains an open question.<br>
-
-          Another limitation is the manual tuning requirement. Both normalization factors and finite-difference deltas must be hand-picked for each environment and parameter. 
-          This introduces overhead and prevents straightforward generalization. Automating this tuning process, e.g., via adaptive normalization or gradient-based calibration, 
-          would make the method more practical.<br>
-
-          On the systems side, hardware limitations restricted the amount training we could perform. To compensate, we used pretrained policies, but this inevitably 
-          introduced bias into exploration. Future work should focus on enabling longer training schedules to hopefully learn more complex behavior.<br>
-
-          A promising direction for stabilizing learning lies in experimenting with non-linear weighting functions. Instead of simple linear combinations of FIM components, 
-          transformations such as square roots could smooth out extreme values and improve training robustness. Finally, our current formulation only exploits the diagonal of 
-          the Fisher matrix. The off-diagonal entries encode parameter coupling and could be leveraged to explicitly reward disentanglement of parameter sensitivities, potentially 
-          leading to richer skill sets.<br>
         </div>
       </div>
     </div>
@@ -1301,19 +1293,16 @@ End  -->
       <div class="column is-full">
         <h2 class="title is-3">Conclusion</h2>
         <div class="content has-text-justified">
-
-          <h3 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Conclusion</h3>
-          In this work, we re-implemented the two central stages of the ASID (Active Exploration for System Identification in Robotic Manipulation) framework: Explotation and System Identificatoin.<br>
+          In this work, we re-implemented the two central stages of the ASID (Active Exploration for System Identification in Robotic Manipulation) framework: Explotation and System Identification.<br>
           
-          Our results confirm the viability of ASID's design: exploration guided by Fisher information enables informative interactions, and the identified parameters substantially reduce the sim-to-real gap. 
-          At the same time, our extensions with weighted Fisher Information reward point towards more flexible, skill-conditioned exploration.<br>
+          Our results confirm the viability of ASID's design: exploration guided by Fisher information enables informative interactions, enabling the identificaion of unknown parameters - 
+          even if the exploration policy was trained w.r.t. only one parameter.
+          
+          Our weighted-FIM extension demonstrates the feasibility of steering exploration towards parameter-specific skills, but also highlights the difficulty of balancing information scaling, 
+          sparsity, and coupling effects. 
 
           Overall, the re-implementation and adaptation of the objective not only validated the original paper's findings but also opened new directions for extending the framework 
-          towards curiosity-driven, skill-conditioned exploration and more robust system identification in robotic manipulation.<br>
-
-          Our weighted-FIM extension demonstrates the feasibility of steering exploration towards parameter-specific skills, but also highlights the difficulty of balancing information scaling, 
-          sparsity, and coupling effects. Moving forward, a natural next step is to condition the policy on learned skills induced by different weight configurations, and to transfer these skills to 
-          downstream tasks, accelerating their learning.
+          towards curiosity-driven, skill-conditioned exploration in robotic manipulation.<br>
 
         </div>
       </div>
@@ -1331,80 +1320,104 @@ End  -->
         <h2 class="title is-3">References</h2>
         <div class="content">
           <ul class="references-list">
-            <li id="dr">
+            <li id="sim_1">
               <span class="reference-text">
-                Tobin, J., Fong, R., Ray, A., Schneider, J., Zaremba, W., & Abbeel, P. (2017). Domain randomization for transferring deep neural networks from simulation to the real world. <em>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>, 23-30.
+                Liu, C. K., & Negrut, D. (2021). The role of physics-based simulators in robotics. Annual Review of Control, Robotics, and Autonomous Systems, 4(1), 35-58.
               </span>
             </li>
-            <li id="ref2">
+            <li id="gap_2">
               <span class="reference-text">
-                Peng, X. B., Andrychowicz, M., Zaremba, W., & Abbeel, P. (2018). Sim-to-real transfer of robotic control with dynamics randomization. <em>IEEE International Conference on Robotics and Automation (ICRA)</em>, 3803-3810.
+                E. Salvato, G. Fenu, E. Medvet and F. A. Pellegrino, "Crossing the Reality Gap: A Survey on Sim-to-Real Transferability of Robot Controllers in Reinforcement Learning," in IEEE Access, vol. 9, pp. 153171-153187, 2021, doi: 10.1109/ACCESS.2021.3126658.
               </span>
             </li>
-            <li id="ref3">
+            <li id="dr_3">
               <span class="reference-text">
-                Sadeghi, F., & Levine, S. (2016). CAD2RL: Real single-image flight without a single real image. <em>Robotics: Science and Systems</em>.
+                J. Tobin, R. Fong, A. Ray, J. Schneider, W. Zaremba and P. Abbeel, "Domain randomization for transferring deep neural networks from simulation to the real world," 2017 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Vancouver, BC, Canada, 2017, pp. 23-30, doi: 10.1109/IROS.2017.8202133.
               </span>
             </li>
-            <li id="ref4">  <!--fisher information-->
+            <li id="si_4">
               <span class="reference-text">
-                Chebotar, Y., Handa, A., Makoviychuk, V., Macklin, M., Issac, J., Ratliff, N., & Fox, D. (2019). Closing the sim-to-real loop: Adapting simulation randomization with real world progress. <em>IEEE International Conference on Robotics and Automation (ICRA)</em>, 8973-8979.
+                Keesman, K. J. (2011). System identification: an introduction. Springer Science & Business Media.
               </span>
             </li>
-            <li id="ref5">
+            <li id="asid_5">
               <span class="reference-text">
-                Smith, J., Johnson, A., & Williams, B. (2023). Active exploration for system identification in robotic manipulation. <em>International Conference on Machine Learning (ICML)</em>, 12345-12356.
+                Memmel, M., Wagenmaker, A., Zhu, C., Yin, P., Fox, D., & Gupta, A. (2024). Asid: Active exploration for system identification in robotic manipulation. arXiv preprint arXiv:2404.12308.
               </span>
             </li>
-            <li id="ref6">
+            <li id="curios_6">
               <span class="reference-text">
-                Pathak, D., Agrawal, P., Efros, A. A., & Darrell, T. (2017). Curiosity-driven exploration by self-supervised prediction. <em>International Conference on Machine Learning (ICML)</em>, 2778-2787.
+                Pathak, Deepak, et al. "Curiosity-driven exploration by self-supervised prediction." International conference on machine learning. PMLR, 2017.
               </span>
             </li>
-            <li id="ref7">
+            <li id="diayn_7">
               <span class="reference-text">
-                Burda, Y., Edwards, H., Storkey, A., & Klimov, O. (2018). Exploration by random network distillation. <em>International Conference on Learning Representations (ICLR)</em>.
+                Eysenbach, B., Gupta, A., Ibarz, J., & Levine, S. (2018). Diversity is all you need: Learning skills without a reward function. arXiv preprint arXiv:1802.06070.
               </span>
             </li>
-            <li id="ref8">
+            <li id="dynr_8">
               <span class="reference-text">
-                Nachum, O., Gu, S., Lee, H., & Levine, S. (2018). Data-efficient hierarchical reinforcement learning. <em>Advances in Neural Information Processing Systems (NeurIPS)</em>, 3303-3313.
+                Peng, X. B., Andrychowicz, M., Zaremba, W., & Abbeel, P. (2018, May). Sim-to-real transfer of robotic control with dynamics randomization. In 2018 IEEE international conference on robotics and automation (ICRA) (pp. 3803-3810). IEEE.
               </span>
             </li>
-            <li id="ref9">
+            <li id="dropo_9">
               <span class="reference-text">
-                Eysenbach, B., Gupta, A., Ibarz, J., & Levine, S. (2018). Diversity is all you need: Learning skills without a reward function. <em>International Conference on Learning Representations (ICLR)</em>.
+                Tiboni, G., Arndt, K., & Kyrki, V. (2023). DROPO: Sim-to-real transfer with offline domain randomization. Robotics and Autonomous Systems, 166, 104432.
               </span>
             </li>
-            <li id="ref10">
+            <li id="doraemon_10">
               <span class="reference-text">
-                Sharma, A., Gu, S., Levine, S., Kumar, V., & Hausman, K. (2018). Dynamics-aware unsupervised discovery of skills. <em>International Conference on Learning Representations (ICLR)</em>.
+                Tiboni, G., Klink, P., Peters, J., Tommasi, T., D'Eramo, C., & Chalvatzaki, G. (2023). Domain randomization via entropy maximization. arXiv preprint arXiv:2311.01885.
               </span>
             </li>
-            <li id="ref11">
+            <li id="cmaes_11">
               <span class="reference-text">
-                Warde-Farley, D., Van de Wiele, T., Kulkarni, T., Ionescu, C., Hansen, S., & Mnih, V. (2019). Unsupervised control through non-parametric discriminative rewards. <em>International Conference on Learning Representations (ICLR)</em>.
+                Hansen, N. (2016). The CMA evolution strategy: A tutorial. arXiv preprint arXiv:1604.00772.
               </span>
             </li>
-            <li id="ref12">
+            <li id="simopt_12">
               <span class="reference-text">
-                Gregor, K., Rezende, D. J., & Wierstra, D. (2016). Variational intrinsic control. <em>International Conference on Learning Representations (ICLR)</em>.
+                Chebotar, Y., Handa, A., Makoviychuk, V., Macklin, M., Issac, J., Ratliff, N., & Fox, D. (2019, May). Closing the sim-to-real loop: Adapting simulation randomization with real world experience. In 2019 International Conference on Robotics and Automation (ICRA) (pp. 8973-8979). IEEE.
               </span>
             </li>
-            <li id="ref13">
+            <li id="bm_13">
               <span class="reference-text">
-                Lynch, C., Khansari, M., Xiao, T., Kumar, V., Tompson, J., Levine, S., & Sermanet, P. (2019). Learning latent plans from play. <em>Conference on Robot Learning (CoRL)</em>, 1113-1132.
+                Tiboni, Gabriele, et al. "Online vs. offline adaptive domain randomization benchmark." International Workshop on Human-Friendly Robotics. Cham: Springer International Publishing, 2022.
               </span>
             </li>
-            <li id="ref14">
+            <li id="vic_14">
               <span class="reference-text">
-                Fisher, R. A. (1922). On the mathematical foundations of theoretical statistics. <em>Philosophical Transactions of the Royal Society of London</em>, 222(594-604), 309-368.
+                Gregor, Karol, Danilo Jimenez Rezende, and Daan Wierstra. "Variational intrinsic control." arXiv preprint arXiv:1611.07507 (2016).
               </span>
             </li>
-            <li id="ref15">
+            <li id="dads_15">
               <span class="reference-text">
-                MacKay, D. J. (2003). <em>Information Theory, Inference and Learning Algorithms</em>. Cambridge University Press.
+                Sharma, A., Gu, S., Levine, S., Kumar, V., & Hausman, K. (2019). Dynamics-aware unsupervised discovery of skills. arXiv preprint arXiv:1907.01657
               </span>
+            </li>
+            <li id="count_16">
+              <span class="reference-text">
+                Bellemare, M., Srinivasan, S., Ostrovski, G., Schaul, T., Saxton, D., & Munos, R. (2016). Unifying count-based exploration and intrinsic motivation. Advances in neural information processing systems, 29.
+              </span>
+            </li>
+            <li id="cover_17">
+              <span class="reference-text">
+                Jiang, Z., Gao, J., & Chen, J. (2022). Unsupervised skill discovery via recurrent skill training. Advances in Neural Information Processing Systems, 35, 39034-39046.
+              </span>
+            </li>
+            <li id="robman_18">
+              <span class="reference-text">
+                D. Cho, J. Kim and H. J. Kim, "Unsupervised Reinforcement Learning for Transferable Manipulation Skill Discovery," in IEEE Robotics and Automation Letters, vol. 7, no. 3, pp. 7455-7462, July 2022, doi: 10.1109/LRA.2022.3171915. 
+              </span>
+            </li>
+            <li id="cem_19">
+              <span class="reference-text">
+                Botev, Z. I., Kroese, D. P., Rubinstein, R. Y., & L’ecuyer, P. (2013). The cross-entropy method for optimization. In Handbook of statistics (Vol. 31, pp. 35-59). Elsevier.
+              </span>
+            <li id="reps_20">
+              <span class="reference-text">
+                Peters, J., Mulling, K., & Altun, Y. (2010, July). Relative entropy policy search. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 24, No. 1, pp. 1607-1612).    
+            </span>
             </li>
           </ul>
         </div>
